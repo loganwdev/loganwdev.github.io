@@ -1,0 +1,592 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+        <!-- CSS -->
+        <style>
+          /* TABLE OF CONTENTS
+
+SECTION 1: GENERAL
+SECTION 2: FONTS
+SECTION 3: PRELOADER
+SECTION 4: HEADER
+SECTION 5: HOME
+SECTION 6: ABOUT
+SECTION 7: MUSIC
+SECTION 8: GALLERY
+SECTION 9: CONTACT
+SECTION 10: PAGE FOOTER
+SECTION 11: FOOTER
+SECTION 12: BACK TO TOP BTN
+SECTION 13: ANIMATIONS
+SECTION 14: FADE IN PAGE
+SECTION 15: MEDIA
+
+*/
+
+
+/* SECTION 1: GENERAL */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Audiowide', cursive;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    font-family: 'Optician Sans';
+    color: black;
+}
+
+a, body, div, h1, h2, h3, html, p, section, span, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* SECTION 2: FONT */
+
+/*@font-face {
+    font-family: Optician Sans;
+    src: url(font/Optician-Sans.otf);
+}
+*/
+/* SECTION 3: PRELOADER */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity .3s .6s ease;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity .3s ease
+}
+
+#loadtitle {
+    color: white;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+#preloader .line {
+  width: 10vh;
+  height: 10px;
+  background: #fff;
+  left:0;
+  display: inline-block;
+  animation: opacity 1000ms infinite ease-in-out;
+  transform: skew(-138deg);
+}
+
+#preloader span {
+    position: relative;
+    left: 33%;
+}
+
+#preloader .line-1 {
+    animation-delay: 700ms;
+}
+#preloader .line-2 {
+    animation-delay: 500ms;
+}
+#preloader .line-3 {
+    animation-delay: 300ms;
+}
+#preloader .line-4 {
+    animation-delay: 100ms;
+}
+#preloader .line-6 {
+    animation-delay: 100ms;
+}
+#preloader .line-7 {
+    animation-delay: 300ms;
+}
+#preloader .line-8 {
+    animation-delay: 500ms;
+}
+#preloader .line-9 {
+    animation-delay: 700ms;
+}
+#preloader .line-10 {
+    animation-delay: 900ms;
+}
+
+@keyframes opacity { 
+  0% { 
+    opacity: 1;
+    height: 25px;
+  }
+  50% { 
+    opacity: 0;
+    height: 19px;
+  }
+  100% { 
+    opacity: 1;
+    height: 25px;
+  }  
+}
+
+.topnav {
+  overflow: hidden;
+  z-index: 90;
+  position: relative;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .45);
+  box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.75);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  min-width: 20px;
+  transition: box-shadow 1s ease;
+}
+
+/* .topnav a:hover {
+  background-color: #ddd;
+  color: #2b2422;
+  border-bottom: 1px solid #ddd;
+} */
+
+.topnav a:hover {
+  box-shadow: inset 0 0 0 50px rgba(255, 255, 255, .2);
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.topnav a.active {
+  border-bottom: 1px solid gold;
+}
+
+.social {
+  display: flex;
+  width: 200px;
+  background-color: #70665c;
+}
+
+.social a {
+  flex: 1;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.main {
+  margin-top: -49px;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  display: flex;
+}
+
+.side {
+  flex: 2;
+  background: #70665c;
+  display: flex;
+  flex-direction: column;
+}
+
+.txt {
+  flex: 1;
+}
+
+.header {
+  position: absolute;
+  z-index: 91;
+  color: white;
+  margin-left: 40px;
+  margin-top: 100px;
+  padding-left: 15px;
+  border-left: 2px solid white;
+  font-family: 'Mukta', sans-serif;
+  letter-spacing: 1px;
+}
+
+.header h1 {
+  font-size: 4vw;
+  margin-top: -5px;
+}
+
+.header h2 {
+  margin-top: -2vw;
+  font-size: 80%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.boxes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.first-line {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+#f1 {
+  background: #83726b;
+  flex: 1;
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f1:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+.second-line {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+#f2 {
+  flex: 1;
+  background: #7f636d;
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f2:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+#f3 {
+  flex: 1;
+  background: #7d4850;
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f3:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+.inside {
+  width: 100%;
+  height: Calc(100% - 40px);
+  margin: 20px 0;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.inside span {
+  height: 1px;
+  width: 30%;
+  background: white;
+  display: block;
+  margin: 0 auto;
+}
+
+.inside h3 {
+  font-size: 100%;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.inside h4 {
+  font-size: 80%;
+  color: #2b2422;
+  position: relative;
+  bottom: -30%;
+  transform: translateY(-50%);
+}
+
+.slidep {
+  background: silver;
+  flex: 5;
+  overflow: hidden;
+}
+
+/*SLIDESHOW*/
+
+/* ---------------------------------- */
+
+/* Essential Styles */
+
+.slider {
+  display: flex;
+}
+
+.slide {
+  width: 100%;
+  margin-right: -100%;
+  position: relative;
+  z-index: 1;
+}
+
+.slide:first-child {
+  z-index: 2;
+}
+
+.slide:focus,
+.slide:focus-within {
+  z-index: 10;
+}
+
+/* ---------------------------------- */
+
+/* Animation-based styles */
+
+.slide {
+  transition: all .6s cubic-bezier(.5, 0, .5, 1), z-index .7s linear;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+}
+
+.slider:not(:focus-within) .slide:first-child,
+.slide:focus,
+.slide:focus-within {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* ---------------------------------- */
+
+/* Stylistic Choices */
+
+.slide {
+  height: 100vh;
+  display: flex;
+  background: red;
+  background: hsl( calc(360deg * ( var(--i) / var(--total))), 60%, 60%);
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slide-nav {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  text-align: center;
+  z-index: 12;
+}
+
+.button {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  text-align: center;
+  z-index: 12;
+  width: 100px;
+  background-color: rgba(0, 0, 0, .4);
+  color: white;
+  font-size: 100%;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+  font-family: 'Mukta', sans-serif;
+  letter-spacing: 1px;
+  transition: box-shadow 1s ease;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 0 50px rgba(255, 255, 255, .2);
+}
+
+.slide-nav a {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: white;
+  padding: 0 5px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1rem;
+  border: solid 2px transparent;
+}
+
+.slide-nav a:hover {
+  color: silver;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*responsive*/
+
+@media only screen and (max-width:950px) {
+  .main {
+    flex-direction: column;
+    height:200vh;
+  }
+  .side {
+    flex: 1;
+  }
+        </style>
+        
+        <!-- JS FOR INSTAGRAM -->
+        <script src="js/instafeed.min.js"></script>
+     <!--    <script src="js/custominsta.js"></script> -->
+        
+        <title>NeoCord Visuals</title>
+    </head>
+    <body>
+        <div id="preloader" style="display: none;">
+            <div id="loader">
+                <div id="loadtitle">NeoCord Visuals</div>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+                <span class="line line-4"></span>
+                <span class="line line-5"></span>
+                <span class="line line-6"></span>
+                <span class="line line-7"></span>
+                <span class="line line-8"></span>
+                <span class="line line-9"></span>
+                <span class="line line-10"></span>
+            </div> 
+        </div>
+       
+   
+<div class="topnav">
+  <div class="topnav-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">Collections</a>
+    <a href="#contact">Discover</a>
+    <span class="social">
+    <a href="#twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#insta"><i class="fab fa-instagram"></i></a>
+    </span>
+  </div>
+</div>
+<div class="main">
+  <div class="header">
+    <h1>
+      Stylish ideas for your home
+    </h1>
+    <h2>
+      Look for your inspiration on our site.<br> Fresh solutions every day.
+    </h2>
+  </div>
+
+  <div class="side">
+
+    <div class="txt">
+
+    </div>
+    <div class="boxes">
+      <div class="first-line">
+        <div id="f1">
+          <div class="inside">
+            <span></span>
+            <h3>KITCHEN INTERIER</h3>
+            <h4>
+              Watch ideas!
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="second-line">
+        <div id="f2">
+          <div class="inside">
+            <span></span>
+            <h3>BEDROOM INTERIOR</h3>
+            <h4>
+              Watch ideas!
+            </h4>
+          </div>
+        </div>
+        <div id="f3">
+          <div class="inside">
+            <span></span>
+            <h3>BATHROOM INTERIER</h3>
+            <h4>
+              Watch ideas!
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slidep">
+    <!-- .slider>.slide*5{$} -->
+
+
+    <div class="slider" style="--total: 5">
+      <div id="slide-1" class="slide" style="--i:1" tabindex="0"><img src="http://cdn.home-designing.com/wp-content/uploads/2012/09/Brown-cream-living-room.jpeg">
+        <div class="button">
+          More
+        </div>
+      </div>
+      <div id="slide-2" class="slide" style="--i:2" tabindex="0"><img src="https://imageresizer.static9.net.au/Eq2ZhMc_p_5VOLyDvY_50R3iscE=/1920x0/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FTV%2FT%2FThe-Block%2FSeason13%2FRoom-Reveals%2FH4-RM1-Bathroom-Sticks-Wombat-Low-res%2FH4-RM1-Bathroom-Sticks--Wombat05.jpg">
+        <div class="button">
+          More
+        </div>
+      </div>
+      <div id="slide-3" class="slide" style="--i:3" tabindex="0"><img src="https://i.pinimg.com/originals/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg">
+        <div class="button">
+          More
+        </div>
+      </div>
+      <div id="slide-4" class="slide" style="--i:4" tabindex="0"><img src="https://www.bebitalia.com/sites/default/files/styles/original/public/04_B%26B_MichelClub.jpg?itok=SaSGHEou">
+        <div class="button">
+          More
+        </div>
+      </div>
+
+      <nav class="slide-nav">
+        <a href="#slide-1" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-2" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-3" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-4" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+
+    </body>
+</html>
