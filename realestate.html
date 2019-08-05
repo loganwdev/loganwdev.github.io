@@ -1,0 +1,794 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+         <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+        
+        <!-- CSS -->
+        <style>
+          /* TABLE OF CONTENTS
+
+SECTION 1: GENERAL
+SECTION 2: FONTS
+SECTION 3: PRELOADER
+SECTION 4: HEADER
+SECTION 5: HOME
+SECTION 6: ABOUT
+SECTION 7: MUSIC
+SECTION 8: GALLERY
+SECTION 9: CONTACT
+SECTION 10: PAGE FOOTER
+SECTION 11: FOOTER
+SECTION 12: BACK TO TOP BTN
+SECTION 13: ANIMATIONS
+SECTION 14: FADE IN PAGE
+SECTION 15: MEDIA
+
+*/
+
+
+/* SECTION 1: GENERAL */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    font-family: 'Optician Sans';
+    color: black;
+}
+
+a, body, div, h1, h2, h3, html, p, section, span, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+ul {
+    list-style: none;
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* SECTION 2: FONT */
+
+/*@font-face {
+    font-family: Optician Sans;
+    src: url(font/Optician-Sans.otf);
+}
+*/
+/* SECTION 3: PRELOADER */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    z-index: 2000;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity .3s .6s ease;
+}
+
+#loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: opacity .3s ease
+}
+
+#loadtitle {
+    color: white;
+    margin: 5px 0;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+#preloader .line {
+  width: 10vh;
+  height: 10px;
+  background: #fff;
+  left:0;
+  display: inline-block;
+  animation: opacity 1000ms infinite ease-in-out;
+  transform: skew(-138deg);
+}
+
+#preloader span {
+    position: relative;
+    left: 33%;
+}
+
+#preloader .line-1 {
+    animation-delay: 700ms;
+}
+#preloader .line-2 {
+    animation-delay: 500ms;
+}
+#preloader .line-3 {
+    animation-delay: 300ms;
+}
+#preloader .line-4 {
+    animation-delay: 100ms;
+}
+#preloader .line-6 {
+    animation-delay: 100ms;
+}
+#preloader .line-7 {
+    animation-delay: 300ms;
+}
+#preloader .line-8 {
+    animation-delay: 500ms;
+}
+#preloader .line-9 {
+    animation-delay: 700ms;
+}
+#preloader .line-10 {
+    animation-delay: 900ms;
+}
+
+@keyframes opacity { 
+  0% { 
+    opacity: 1;
+    height: 25px;
+  }
+  50% { 
+    opacity: 0;
+    height: 19px;
+  }
+  100% { 
+    opacity: 1;
+    height: 25px;
+  }  
+}
+
+.topnav {
+  overflow: hidden;
+  z-index: 90;
+  position: relative;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .88);
+  box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.75);
+}
+
+.topnav a {
+  float: left;
+  color: #020202;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  min-width: 20px;
+  transition: box-shadow 1s ease;
+}
+
+/* .topnav a:hover {
+  background-color: #ddd;
+  color: #2b2422;
+  border-bottom: 1px solid #ddd;
+} */
+
+.topnav a:hover {
+  /*box-shadow: inset 0 0 0 50px rgba(255, 255, 255, .2);*/
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.topnav a.active {
+  border-bottom: 1px solid gold;
+}
+
+.social {
+  display: flex;
+  width: 200px;
+  background-color: transparent;
+}
+
+.social a {
+  flex: 1;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.main {
+  margin-top: -49px;
+  width: 100%;
+  height: 100vh;
+  flex-direction: row;
+  display: flex;
+}
+
+.side {
+  flex: 2;
+  background: #70665c;
+  display: flex;
+  flex-direction: column;
+}
+
+.txt {
+  flex: 1;
+}
+
+.header {
+  position: absolute;
+  z-index: 91;
+  color: white;
+  margin-left: 40px;
+  margin-top: 100px;
+  padding-left: 15px;
+  border-left: 2px solid white;
+  font-family: 'Mukta', sans-serif;
+  letter-spacing: 1px;
+}
+
+.header h1 {
+  font-size: 4vw;
+  margin-top: -5px;
+}
+
+.header h2 {
+  margin-top: -2vw;
+  font-size: 80%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.boxes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+.inside{
+  min-width: 132px;
+  min-height:142px;
+}
+
+.first-line {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+#f1 {
+ /* background: #83726b;*/
+  flex: 1;
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f1:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+.second-line {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+#f2 {
+  flex: 1;
+  /*background: #7f636d;*/
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f2:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+#f3 {
+  flex: 1;
+ /* background: #7d4850;*/
+ background: #149a9a;
+  cursor: pointer;
+  transition: box-shadow 1s ease;
+}
+
+#f3:hover {
+  box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .4);
+}
+
+.inside {
+  width: 100%;
+  height: Calc(100% - 40px);
+  margin: 20px 0;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.inside span {
+  height: 1px;
+  width: 30%;
+  background: white;
+  display: block;
+  margin: 0 auto;
+}
+
+.inside h3 {
+  font-size: 100%;
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+.inside h4 {
+  font-size: 80%;
+  color: #2b2422;
+  position: relative;
+  bottom: -30%;
+  transform: translateY(-50%);
+}
+
+.slidep {
+  background: silver;
+  flex: 5;
+  overflow: hidden;
+}
+
+/*SLIDESHOW*/
+
+/* ---------------------------------- */
+
+/* Essential Styles */
+
+.slider {
+  display: flex;
+}
+
+.slide {
+  width: 100%;
+  margin-right: -100%;
+  position: relative;
+  z-index: 1;
+}
+
+.slide:first-child {
+  z-index: 2;
+}
+
+.slide:focus,
+.slide:focus-within {
+  z-index: 10;
+}
+
+/* ---------------------------------- */
+
+/* Animation-based styles */
+
+.slide {
+  transition: all .6s cubic-bezier(.5, 0, .5, 1), z-index .7s linear;
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+}
+
+.slider:not(:focus-within) .slide:first-child,
+.slide:focus,
+.slide:focus-within {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+  z-index: 10;
+}
+
+/* ---------------------------------- */
+
+/* Stylistic Choices */
+
+.slide {
+  height: 100vh;
+  display: flex;
+  background: red;
+  background: hsl( calc(360deg * ( var(--i) / var(--total))), 60%, 60%);
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slide-nav {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  text-align: center;
+  z-index: 12;
+}
+
+.button {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  text-align: center;
+  z-index: 12;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 100%;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
+  font-family: 'Mukta', sans-serif;
+  letter-spacing: 1px;
+  transition: box-shadow 1s ease;
+}
+
+.button:hover {
+  box-shadow: inset 0 0 0 50px rgba(255, 255, 255, .2);
+}
+
+.slide-nav a {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: white;
+  padding: 0 5px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 1rem;
+  border: solid 2px transparent;
+}
+
+.slide-nav a:hover {
+  color: silver;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*responsive*/
+
+.section-header {
+  text-align: center;
+  margin: 60px auto 20px auto;
+
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.section-header-underline {
+  border: 1px solid #222;
+  width: 3rem;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.video-gallery {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.video-gallery .gallery-item {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 320px;
+  max-width: 580px;
+  max-height: 360px;
+  width: 48%;
+  background: #000;
+  cursor: pointer;
+}
+
+.video-gallery .gallery-item img {
+  position: relative;
+  display: block;
+  opacity: .45;
+  width: 105%;
+  height: 300px;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: translate3d(-23px, 0, 0);
+  backface-visibility: hidden;
+}
+
+.video-gallery .gallery-item .gallery-item-caption {
+  padding: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.25em;
+}
+
+.video-gallery .gallery-item .gallery-item-caption,
+.video-gallery .gallery-item .gallery-item-caption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-gallery .gallery-item h2 {
+  font-weight: 300;
+  overflow: hidden;
+  padding: 0.5em 0;
+}
+
+
+.video-gallery .gallery-item h2,
+.video-gallery .gallery-item p {
+  position: relative;
+  margin: 0;
+  z-index: 10;
+}
+
+.video-gallery .gallery-item p {
+  letter-spacing: 1px;
+  font-size: 68%;
+
+  padding: 1em 0;
+  opacity: 0;
+  transition: opacity 0.35s, transform 0.35s;
+  transform: translate3d(10%, 0, 0);
+}
+
+.video-gallery .gallery-item:hover img {
+  opacity: .3;
+  transform: translate3d(0, 0, 0);
+
+}
+
+.video-gallery .gallery-item .gallery-item-caption {
+  text-align: left;
+}
+
+.video-gallery .gallery-item h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  height: 1px;
+  background: #fff;
+  
+  transition: transform 0.3s;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.video-gallery .gallery-item:hover h2::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.video-gallery .gallery-item:hover p {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media screen and (max-width: 50em) {
+  .video-gallery .gallery-item {
+    display: inline-block;
+    float: none;
+    margin: 10px auto;
+    width: 100%;
+  }
+}
+
+
+
+        </style>
+        
+        <!-- JS FOR INSTAGRAM -->
+        <script src="js/instafeed.min.js"></script>
+     <!--    <script src="js/custominsta.js"></script> -->
+        
+        <title>Real Estate</title>
+    </head>
+    <body>
+        <div id="preloader" style="display: none;">
+            <div id="loader">
+                <div id="loadtitle">PreloaderLogie</div>
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+                <span class="line line-4"></span>
+                <span class="line line-5"></span>
+                <span class="line line-6"></span>
+                <span class="line line-7"></span>
+                <span class="line line-8"></span>
+                <span class="line line-9"></span>
+                <span class="line line-10"></span>
+            </div> 
+        </div>
+       
+   
+<div class="topnav" >
+  <div class="topnav-right">
+    <a class="active" href="#home">Home</a>
+    <a href="#news">Collections</a>
+    <a href="#contact">Discover</a>
+    <span class="social">
+    <a href="#twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#fb"><i class="fab fa-facebook-f"></i></a>
+    <a href="#insta"><i class="fab fa-instagram"></i></a>
+    </span>
+  </div>
+</div>
+<div class="main">
+  <div class="header">
+    <h1 style="filter: drop-shadow(1px 2px black);">
+      Find homes first, tour homes fast
+    </h1>
+    <h2 style="margin-top: -0.75vh;filter: drop-shadow(1px 2px rgba(0,0,0,0.67));">
+      It's never been easier. Look for your homes on our site.<br> Fresh listings every day.
+    </h2>
+    <span style="position: absolute;left: 67%;z-index: 99;width: 32vw;color: black;">
+      <h4 style="font-size: 0.88rem;color: #fff;filter: drop-shadow(1px 1px rgba(0,0,0,0.5));">Request a free, no-obligation consultation with a local GemSpots.</h6>
+         
+        <div class="old" style="display: inline-flex;justify-content: space-between;">
+
+      <input type="text" placeholder="enter your email for free consultation" style="width: 44vw;height: 6.7vh; font-size: 1.1rem;padding: 5px 7px 5px 7px;">
+
+      <button class="btn" style="display: inline-flex;border: 0px solid black;border-left:none;border-top:none;border-bottom:none;border-top-right-radius: 10%;border-bottom-right-radius: 10%;width: 7vw;height: 6.7vh;font-size: 1.1rem;background-color: #b20;padding: 5px 7px 5px 7px;color: white;text-align: center;">Next</button></div></span>
+  </div>
+
+  <div class="side" style="background-color: maroon">
+    <!-- ; -->
+
+    <div class="txt">
+
+    </div>
+    <div class="boxes" style="margin-top: -8rem">
+      <div class="first-line" style="background-color: maroon;filter: invert(-132%);">
+        <div id="f1">
+          <div class="inside">
+            
+            <h3 style="margin-top: 2vh">Pay as Low as a <span style="font-size: 5vh;margin-top: -4vh;padding: 25px 20px 50px 0px;background-color: transparent;"><strong class="onePercent">1%</strong></span>  listing fee</h3>
+           
+            <h4 style="color: brown;filter: drop-shadow(1px 1px rgba(0,0,0,0.44));">
+              find out more
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div class="second-line" style="background-color: #d50;filter: invert(132%);">
+        <div id="f2">
+          <div class="inside">
+            <span></span>
+            <h3>Call to Action!!!</h3>
+            <h4>
+              Watch ideas!
+            </h4>
+          </div>
+        </div>
+        <div id="f3" style="background-color: gray;filter: invert(132%); ">
+          <div class="inside" >
+            <span></span>
+             <h3 style="margin-top: 3vh;margin-left: ;">Reach<span style="font-size: 5vh;margin-top: -4vh;padding: 25px 20px 50px 0px;background-color: transparent;"><strong class="onePercent">3X </strong></span> more buyers</h3>
+            <h4>
+              Watch ideas!
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slidep">
+    <!-- .slider>.slide*5{$} -->
+
+<!-- <div class="abMid" style="position: absolute;left: 50%;top: 80vh;height: 100%;width: 100%;padding-bottom: 20px;">
+  <a href="#slide-1" tabindex="-1"><i class="fa fa-dot-circle"></i></a>
+        <a href="#slide-2" tabindex="-1"><i class="fa fa-dot-circle"></i></a>
+        <a href="#slide-3" tabindex="-1"><i class="fa fa-dot-circle"></i></a>
+        <a href="#slide-4" tabindex="-1"><i class="fa fa-dot-circle"></i></a>
+</div> -->
+    <div class="slider" style="--total: 5">
+      <div id="slide-1" class="slide" style="--i:1" tabindex="0"><img src="https://photos.zillowstatic.com/cc_ft_1536/ISmmb2yloypa041000000000.webp">
+
+        <!--
+        http://cdn.home-designing.com/wp-content/uploads/2012/09/Brown-cream-living-room.jpeg -->
+       <!--  <div class="button" style="width: 67vw;height: 32vh;">
+          <img style="height: 90%;width: 67%;padding: 10px 14px 10px 14px;" src="https://imageresizer.static9.net.au/Eq2ZhMc_p_5VOLyDvY_50R3iscE=/1920x0/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FTV%2FT%2FThe-Block%2FSeason13%2FRoom-Reveals%2FH4-RM1-Bathroom-Sticks-Wombat-Low-res%2FH4-RM1-Bathroom-Sticks--Wombat05.jpg" alt="">
+          <p>The mountains are calling</p>
+       
+        </div> -->
+      </div>
+      <div id="slide-2" class="slide" style="--i:2" tabindex="0"><img src="https://imageresizer.static9.net.au/Eq2ZhMc_p_5VOLyDvY_50R3iscE=/1920x0/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FTV%2FT%2FThe-Block%2FSeason13%2FRoom-Reveals%2FH4-RM1-Bathroom-Sticks-Wombat-Low-res%2FH4-RM1-Bathroom-Sticks--Wombat05.jpg">
+        <div class="button">
+          More
+        </div>
+      </div>
+      <div id="slide-3" class="slide" style="--i:3" tabindex="0"><img src="https://i.pinimg.com/originals/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg">
+        <div class="button">
+          More
+        </div>
+      </div>
+      <div id="slide-4" class="slide" style="--i:4" tabindex="0"><img src="https://www.bebitalia.com/sites/default/files/styles/original/public/04_B%26B_MichelClub.jpg?itok=SaSGHEou">
+        <div class="button">
+          More
+        </div>
+      </div>
+
+      <nav class="slide-nav">
+        <a href="#slide-1" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-2" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-3" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+        <a href="#slide-4" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="yo"><br><br><br>
+<div class="content">
+  <h1 class="section-header">Sell for more than the home next door</h1>
+  <div class="section-header-underline"></div>
+  <div class="video-gallery">
+    <div class="gallery-item">
+      <img src="https://i.pinimg.com/originals/75/f9/97/75f997ee6acf59dc51bbea05eae36677.jpg" alt="North Cascades National Park" />
+      <div class="gallery-item-caption">
+        <div>
+          <h2>North Cascades</h2>
+          <p>The mountains are calling</p>
+        </div>
+        <a class="vimeo-popup" href="https://vimeo.com/3653567"></a>
+      </div>
+    </div>
+
+    <div class="gallery-item ">
+      <img src="https://cdn.davemorrowphotography.com/wp-content/uploads/2016/08/Mount-Rainier-Star-Photography-Workshops-and-Tours-Header-900x394.jpg" alt="Mt. Rainier" />
+      <div class="gallery-item-caption">
+        <div>
+          <h2>Mt. Rainier</h2>
+          <p>14410 feet of adventure</p>
+        </div>
+        <a class="vimeo-popup" href="https://vimeo.com/179049611"></a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://wqtcq1f34a8kduuv3sc0e76o-wpengine.netdna-ssl.com/wp-content/uploads/2018/06/12394537_web1_180620-pdn-goat-web.jpg" alt="Olympic National Park" />
+      <div class="gallery-item-caption">
+        <div>
+          <h2>Olympic National Park</h2>
+          <p>Mountains, rain forests, wild coastlines</p>
+        </div>
+        <a class="vimeo-popup" href="https://vimeo.com/108785446"></a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://www.sciencenewsforstudents.org/sites/default/files/main/articles/cvob0070_openerfree.jpg" alt="Mount St. Helens" />
+      <div class="gallery-item-caption">
+        <div>
+          <h2>Mount St. Helens</h2>
+          <p>The one and only</p>
+        </div>
+        <a class="vimeo-popup" href="https://vimeo.com/171540296"></a>
+      </div>
+    </div>
+
+  </div>
+</div></div>
+
+
+    </body>
+</html>
