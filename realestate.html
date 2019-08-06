@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
          <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-        
+        <link rel="stylesheet" href="stylesRE.css">
         <!-- CSS -->
         <style>
           /* TABLE OF CONTENTS
@@ -45,6 +45,8 @@ html, body {
     background: #FFF;
     font-family: 'Optician Sans';
     color: black;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 a, body, div, h1, h2, h3, html, p, section, span, video {
@@ -160,6 +162,18 @@ a {
   }  
 }
 
+#mahi {
+  height: 100%;width: 67%;padding: 10px 14px 10px 14px;margin-top: 5vh
+}
+
+.actively { 
+  color: #0fd;
+  filter: drop-shadow(1px 2px rgba(0,0,0,0.16));
+
+ }
+
+
+ 
 .topnav {
   overflow: hidden;
   z-index: 90;
@@ -593,8 +607,52 @@ a {
   }
 }
 
+      @media (max-width:650px){
+        .heading1 {
+          display: flex;
+        }
+        #inputHeading {
+          display: block;
+          margin-left: 0vw;
+        }
+        .input1 {
+          margin-left: 0vw;
+          width: 68vw;
 
+        }
+      }
 
+            @media (min-width:501px){
+        .heading1 {
+          display: flex;
+        }
+        #inputHeading {
+          display: block;
+          margin-left: 32vw;
+        }
+        .input1 {
+          margin-left: 0vw;
+          margin-top: 50px;
+          width: 50vw;
+          height: 6.7vh; 
+          font-size: 1.1rem;
+          padding: 5px 7px 5px 7px;
+        }
+      }
+
+      .btn1 {
+        margin-top: 50px;
+        display: inline-flex;
+        border: 0px solid black;
+        border-left:none;
+        border-top:none;border-bottom:none;border-top-right-radius: 10%;border-bottom-right-radius: 10%;
+        width: 7vw;
+        height: 6.7vh;
+        font-size: 1.1rem;
+        background-color: #b20;
+        padding: 5px 7px 5px 7px;color: white;
+      /*  text-align: center;*/
+      }
         </style>
         
         <!-- JS FOR INSTAGRAM -->
@@ -635,62 +693,29 @@ a {
 </div>
 <div class="main">
   <div class="header">
-    <h1 style="filter: drop-shadow(1px 2px black);">
+   <!--  <h1 class="heading1" style="filter: drop-shadow(1px 2px black);">
       Find homes first, tour homes fast
     </h1>
-    <h2 style="margin-top: -0.75vh;filter: drop-shadow(1px 2px rgba(0,0,0,0.67));">
+
+    <h2 class="heading1" style="margin-top: -0.75vh;filter: drop-shadow(1px 2px rgba(0,0,0,0.67));">
       It's never been easier. Look for your homes on our site.<br> Fresh listings every day.
-    </h2>
-    <span style="position: absolute;left: 67%;z-index: 99;width: 32vw;color: black;">
-      <h4 style="font-size: 0.88rem;color: #fff;filter: drop-shadow(1px 1px rgba(0,0,0,0.5));">Request a free, no-obligation consultation with a local GemSpots.</h6>
+    </h2> -->
+    
+      
          
-        <div class="old" style="display: inline-flex;justify-content: space-between;">
+        <div class="old" style="display: inline-flex;justify-content: space-between;margin-left: 0vh;z-index: 9999999 !important;position: inline">
+<img src="https://dl2.pushbulletusercontent.com/dHDRyZ9IKDDGelzEpCa9PIgASED0pndb/Inner%20G%20logo1v2.jpeg" alt="" class="logoTops" style="height: 10rem;width: 10rem;border-radius: 50%">
+      <input class="input1" type="text" placeholder="enter your email for free consultation" style="visibility: hidden;" />
 
-      <input type="text" placeholder="enter your email for free consultation" style="width: 44vw;height: 6.7vh; font-size: 1.1rem;padding: 5px 7px 5px 7px;">
-
-      <button class="btn" style="display: inline-flex;border: 0px solid black;border-left:none;border-top:none;border-bottom:none;border-top-right-radius: 10%;border-bottom-right-radius: 10%;width: 7vw;height: 6.7vh;font-size: 1.1rem;background-color: #b20;padding: 5px 7px 5px 7px;color: white;text-align: center;">Next</button></div></span>
+      <button class="btn btn1" style="visibility: hidden;">Next</button></div>
   </div>
 
-  <div class="side" style="background-color: maroon">
+<!-- <input type="text"><input type="submit">
+ -->  <div class="" style="background-color: maroon">
     <!-- ; -->
 
-    <div class="txt">
-
-    </div>
-    <div class="boxes" style="margin-top: -8rem">
-      <div class="first-line" style="background-color: maroon;filter: invert(-132%);">
-        <div id="f1">
-          <div class="inside">
-            
-            <h3 style="margin-top: 2vh">Pay as Low as a <span style="font-size: 5vh;margin-top: -4vh;padding: 25px 20px 50px 0px;background-color: transparent;"><strong class="onePercent">1%</strong></span>  listing fee</h3>
-           
-            <h4 style="color: brown;filter: drop-shadow(1px 1px rgba(0,0,0,0.44));">
-              find out more
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="second-line" style="background-color: #d50;filter: invert(132%);">
-        <div id="f2">
-          <div class="inside">
-            <span></span>
-            <h3>Call to Action!!!</h3>
-            <h4>
-              Watch ideas!
-            </h4>
-          </div>
-        </div>
-        <div id="f3" style="background-color: gray;filter: invert(132%); ">
-          <div class="inside" >
-            <span></span>
-             <h3 style="margin-top: 3vh;margin-left: ;">Reach<span style="font-size: 5vh;margin-top: -4vh;padding: 25px 20px 50px 0px;background-color: transparent;"><strong class="onePercent">3X </strong></span> more buyers</h3>
-            <h4>
-              Watch ideas!
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+    
   </div>
   <div class="slidep">
     <!-- .slider>.slide*5{$} -->
@@ -706,30 +731,28 @@ a {
 
         <!--
         http://cdn.home-designing.com/wp-content/uploads/2012/09/Brown-cream-living-room.jpeg -->
-       <!--  <div class="button" style="width: 67vw;height: 32vh;">
-          <img style="height: 90%;width: 67%;padding: 10px 14px 10px 14px;" src="https://imageresizer.static9.net.au/Eq2ZhMc_p_5VOLyDvY_50R3iscE=/1920x0/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FTV%2FT%2FThe-Block%2FSeason13%2FRoom-Reveals%2FH4-RM1-Bathroom-Sticks-Wombat-Low-res%2FH4-RM1-Bathroom-Sticks--Wombat05.jpg" alt="">
-          <p>The mountains are calling</p>
-       
-        </div> -->
+        <div class="button" style="width: 50vw;height: 36vh;display:block;margin-left: 50vw;">
+         
+        
+       <script>document.querySelector('')</script>
+        </div>
       </div>
       <div id="slide-2" class="slide" style="--i:2" tabindex="0"><img src="https://imageresizer.static9.net.au/Eq2ZhMc_p_5VOLyDvY_50R3iscE=/1920x0/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2FTV%2FT%2FThe-Block%2FSeason13%2FRoom-Reveals%2FH4-RM1-Bathroom-Sticks-Wombat-Low-res%2FH4-RM1-Bathroom-Sticks--Wombat05.jpg">
-        <div class="button">
-          More
-        </div>
+      
       </div>
       <div id="slide-3" class="slide" style="--i:3" tabindex="0"><img src="https://i.pinimg.com/originals/b7/48/98/b74898796fd9073ebd85ca9a6ce9d8b7.jpg">
-        <div class="button">
+        <!-- <div class="button">
           More
-        </div>
+        </div> -->
       </div>
       <div id="slide-4" class="slide" style="--i:4" tabindex="0"><img src="https://www.bebitalia.com/sites/default/files/styles/original/public/04_B%26B_MichelClub.jpg?itok=SaSGHEou">
-        <div class="button">
+        <!-- <div class="button" >
           More
-        </div>
+        </div> -->
       </div>
 
-      <nav class="slide-nav">
-        <a href="#slide-1" tabindex="-1"><i class="far fa-dot-circle"></i></a>
+      <nav class="slide-nav" style="transform: scale(1.7);">
+        <a href="#slide-1" tabindex="-1"><i class="far fa-dot-circle actively"></i></a>
         <a href="#slide-2" tabindex="-1"><i class="far fa-dot-circle"></i></a>
         <a href="#slide-3" tabindex="-1"><i class="far fa-dot-circle"></i></a>
         <a href="#slide-4" tabindex="-1"><i class="far fa-dot-circle"></i></a>
@@ -788,7 +811,26 @@ a {
 
   </div>
 </div></div>
-
+<div class="poopy" style="display: flex;width: 30vw;height: 59vh;background-color:rgba(255,255,255,0.68);position: relative;margin-top: -127vh;z-index: 10">
+  </div>
+<div class="poopy" style="display: flex;width: 30vw;height: 34.5vh;background-color: rgba(255,255,255,0.68);z-index: 99999">
+  <div class="butt" style="z-index: 99999;display: grid;grid-template-areas: 
+  'apple banana'
+  'cherry dragonberry';width: 100%">
+  <div class="aNew" style="grid-area:apple ;width: 100%;background-color:rgba(255,255,255,0.68); ;"> 
+    <a style="width: 100%;height: 100%;" href=""><button style="height: 100%;width: 100%;background-color: rgba(255,255,255,0.32);">1</button></a>
+  </div>
+  <div class="aNew" style="grid-area: banana;width: 100%;background-color:rgba(255,255,255,0.68); ;"> 
+    <a style="width: 100%;height: 100%;" href=""><button style="height: 100%;width: 100%;background-color: rgba(255,255,255,0.32);">2</button></a>
+  </div>
+  <div class="aNew" style="grid-area: cherry ;width: 100%;background-color:rgba(255,255,255,0.68); ;"> 
+    <a style="width: 100%;height: 100%;" href=""><button style="height: 100%;width: 100%;background-color: rgba(255,255,255,0.32);">3</button></a>
+  </div>
+  <div class="aNew" style="grid-area: dragonberry ;width: 100%;background-color:rgba(255,255,255,0.68); ;"> 
+    <a style="width: 100%;height: 100%;" href=""><button style="height: 100%;width: 100%;background-color: rgba(255,255,255,0.32);">4</button></a>
+  </div>
+  </div>
+</div>
 
     </body>
 </html>
