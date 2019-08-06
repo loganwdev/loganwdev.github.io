@@ -1498,6 +1498,9 @@ blockquote {
                 <a href="#contact"><span class="navNum" >04.</span>CONTACT</a>
             </div>
             <style>
+            #postIt{
+              display:none;
+            }
                 .socials > a {
                      filter: drop-shadow(1px 1px 3px rgba(245,245,245,0.12));
                 }
@@ -1511,6 +1514,9 @@ blockquote {
                 }
                     
                 }
+                .monkey {
+                  display: block !important;
+                }
             </style>
            
         </header>
@@ -1523,18 +1529,25 @@ blockquote {
 
             <h1>I build things for the web</h1>
             <br>
-            <p style="color: #8890b1;font-family: 'Fira Code', monospace;text-shadow: 1px 1px 1px rgba(240,240,240,0.32);margin-top: -1rem;">I'm a software engineer based in Chicago specializing in building and conceptualizing high-quality websites and applications. <a href="https://uxdesign.cc/unicorn-designer-training-manual-eb2439a10bc9">I'm a unicorn 🦄 (click here to find out what that means!</a></p>
-             <div class="socials" style="transform: translate(20vw,61.32vh);position: absolute;z-index: 999999;">
-                <a href="https://www.linkedin.com/" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_002_linkedin_social_network_android_material-128.png"></a>
-                <a style="margin-left: 5vw" href="https://www.instagram.com//" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_011_instagram_mobile_photo_network_android_material-128.png"></a>
-              <!--   <a href="https://twitter.com/" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_007_dribbble_social_network_android_material-128.png"></a> -->
-             
-                <a style="margin-left: 5vw" href="mailto:LoganWDev@gmail.com" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/materia-flat-social-free/24/038_029_share_link_friends_send_mail_android_material-128.png"></a>
-            </div>
-          </div>
-       <!--    <div class="inHurry" style="border: 0px solid black;height: 210px;width: 180px;transform: translate(9vw,24vh);position: absolute;background-color: rgba(245,245,245,0.32);padding: 5px 7px 5px 7px;z-index: 99999999 !important;font-size: 14px;color: black;"> <span class="boutSpan"><strong>Unicorn: </strong></span> the term has recently evolved to - a supernatural being that can design, code, conduct user research, come up with business strategies, write UX copy, and [insert additional super powers here]
+            <p style="color: #8890b1;font-family: 'Fira Code', monospace;text-shadow: 1px 1px 1px rgba(240,240,240,0.32);margin-top: -1rem;">I'm a software engineer based in Chicago specializing in building and conceptualizing high-quality websites and applications. <a id="toolTipper" href="https://uxdesign.cc/unicorn-designer-training-manual-eb2439a10bc9">I'm a unicorn 🦄 (click here to find out what that means!</a></p>
+
+            <script>
+            
+           const trigger = document.querySelector('#toolTipper');
+           const postIt = document.querySelector('#postIt');
+           trigger.addEventListener('mouseenter',() => {
+            /* postIt.style.display = 'flex'; */
+            console.log('wrksss');
+           })
+
+            </script>
+            <div id="postIt" class="inHurry" style="border: 0px solid black;height: 210px;width: 180px;transform: translate(32vw,3vh);position: absolute;background-color: rgba(245, 245, 245, 0.32);padding: 5px 7px 5px 7px;z-index: 99999999 !important;font-size: 14px;color: black;"> <span class="boutSpan"><strong>Unicorn: </strong></span> the term has recently evolved to - a supernatural being that can design, code, conduct user research, come up with business strategies, write UX copy, and [insert additional super powers here]
               
-          </div> -->
+            </div>
+
+             
+          </div>
+           
             <!--/-->
                     <a id="contactBtn" style="" href="#contact"><button class="btn" style="font-size: 1.44rem;font-family: 'Archivo Black', sans-serif;" >Get in Touch</button></a>
                 </div>
