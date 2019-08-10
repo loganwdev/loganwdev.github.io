@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+         <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
+
+         <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+         rel="stylesheet">
+         <style type="text/css">
+      
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Base Styles
+/* -------------------------------------*/
+body { overflow-x: hidden; }
+
+p { font-size: 20px; }
+
+p.small { font-size: 16px; }
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    color: #18bc9c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+html {
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Lato", Sans-serif;
+  text-transform: uppercase;
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none !important;
+  font-family: "Lato", Sans-serif;
+  text-transform: uppercase;
+  color: #ddd;
+  word-spacing: -0.15em;
+  font-weight: 300;
+}
+a span {
+  font-weight: 400;
+}
+a:hover {
+  color: #fff;
+}
+
+p, blockquote {
+  font-family: "Open Sans", Sans-serif;
+}
+
+.container {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/*** search 
+skill:
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 150px solid #444;
+
+ ***/
+.search {
+  position: fixed;
+  bottom:0;
+  z-index: 1;
+  transition: all .35s ease;
+  -webkit-transform: translateY(70px);
+          transform: translateY(70px);
+}
+.search.open {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+.search .input-group {
+  margin-right: auto;
+  margin-left: auto;
+  width: 67.5vw;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+.search .input-group .form-control {
+  border-radius: 0 !important;
+  border: none;
+  height: 50px;
+  margin: 8px 15px;
+}
+.search .input-group .input-group-text {
+  background: #444;
+  opacity: .9;
+  display: flex;
+  height: 70px;
+}
+.search .input-group .input-group-btn .btn {
+  width: 120px;
+  border-radius: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: none !important;
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  font-size: 25px;
+}
+/*@media (max-width: 500px) {
+    .search .input-group .input-group-btn .btn {
+  width: 120px;
+  border-radius: 0 !important;
+  margin-left: 32%;
+  margin-right: auto;
+  display: block;
+  border: none !important;
+  background: transparent;
+  border-color: transparent;
+  color: #fff;
+  font-size: 25px;
+}
+    
+}*/
+.search .input-group .input-group-btn .btn:focus {
+  outline: none;
+}
+.search .input-group .input-group-btn .btn:before {
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+
+  display: block;
+  position: absolute;
+  
+  border-radius: 50%;
+  opacity: .9;
+}
+
+/*** slider ***/
+.intro {
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+.intro .carousel.slide .carousel-indicators li {
+  transition: all .35s ease;
+}
+.intro .carousel.slide .carousel-indicators li:hover {
+  background-color: #777;
+}
+.intro .carousel.slide .carousel-indicators li.active {
+  background-color: #444;
+}
+.intro .carousel.slide .carousel-inner .item {
+  background: #3085a3;
+  max-height: 80vh;
+  height: 80vh;
+  width: 100%;
+}
+.intro .carousel.slide .carousel-inner .item img {
+  min-height: 100%;
+  width: 100%;
+  opacity: .7;
+  z-index: -1;
+}
+.intro .continue {
+  max-height: 20vh;
+  height: 20vh;
+  position: relative;
+  text-align: center;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+.intro .continue i {
+  color: #fff;
+  margin-top: 7.5px;
+  font-size: 35px;
+  cursor: pointer;
+}
+.intro .continue:before {
+  content: '';
+  width: 3em;
+  height: 3em;
+ /* border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-top: 70px solid #444;*/
+  background-color: grey;
+  border-radius: 50%;
+  padding: 5px 7px 5px 7px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: .9;
+}
+
+/*** NAVBAR BETA ***/
+.navbar {
+  border-radius: 0px;
+  top: 8px;
+  min-height: 50px !important;
+  position: absolute;
+  width: 100%;
+}
+.navbar .brand {
+  position: absolute;
+  z-index: 1030;
+}
+.navbar .brand a {
+  height: 35px;
+  font-size: 30px;
+  padding: 0 10px;
+  color: #fff;
+  transition: color .35s ease;
+}
+.navbar .brand a:hover {
+  color: #777;
+}
+.navbar .sandwich {
+  width: 45px;
+  height: 35px;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1030;
+  transition: all .35s ease;
+}
+.navbar .sandwich span {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  transition: all .35s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  z-index: 50;
+}
+.navbar .sandwich span:nth-of-type(2) {
+  top: 30px;
+}
+.navbar .sandwich span:nth-of-type(3) {
+  top: 40px;
+}
+.navbar .sandwich.active .top {
+  -webkit-transform: translateY(10px) translateX(0) rotate(45deg);
+          transform: translateY(10px) translateX(0) rotate(45deg);
+}
+.navbar .sandwich.active .middle {
+  opacity: 0;
+}
+.navbar .sandwich.active .bottom {
+  -webkit-transform: translateY(-10px) translateX(0) rotate(-45deg);
+          transform: translateY(-10px) translateX(0) rotate(-45deg);
+}
+.navbar .sandwich.active:hover .top {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.navbar .sandwich.active:hover .middle {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.navbar .sandwich.active:hover .bottom {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.navbar .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all .35s ease;
+  background: transparent;
+  z-index: 1029;
+}
+.navbar .menu:before {
+  content: '';
+  position: absolute;
+  border-top: 150px solid #444;
+  border-left: 150px solid transparent;
+  transition: all .35s ease;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  visibility: visible;
+  opacity: .9;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+  -webkit-filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+.navbar .menu.open {
+  opacity: 1;
+  visibility: visible;
+  background: #3085a3;
+}
+.navbar .menu.open:before {
+  border-top: 100vh solid #444;
+  border-left: 100vw solid transparent;
+}
+.navbar .menu.open li {
+  -webkit-animation: fadeInRight .35s ease forwards;
+          animation: fadeInRight .35s ease forwards;
+  -webkit-animation-delay: .35s;
+          animation-delay: .35s;
+}
+.navbar .menu.open li:nth-of-type(2) {
+  -webkit-animation-delay: .45s;
+          animation-delay: .45s;
+}
+.navbar .menu.open li:nth-of-type(3) {
+  -webkit-animation-delay: .55s;
+          animation-delay: .55s;
+}
+.navbar .menu.open li:nth-of-type(4) {
+  -webkit-animation-delay: .55s;
+          animation-delay: .55s;
+}
+.navbar .menu .menu-list {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 50px;
+  font-family: 'Lato', serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  z-index: 100;
+}
+.navbar .menu .menu-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.navbar .menu .menu-list ul li {
+  display: block;
+  height: 25%;
+  height: calc(100% / 4);
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.navbar .menu .menu-list ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 8px 15px;
+  transition: all .5s 0.05s ease;
+}
+.navbar .menu .menu-list ul li a:hover {
+  color: #FF5252;
+}
+.navbar .menu .menu-list ul li a:hover:after, .navbar .menu .menu-list ul li a:focus:after, .navbar .menu .menu-list ul li a:active:after {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  left: 100%;
+}
+.navbar .menu .menu-list ul li a:after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: -100px;
+  width: 100px;
+  height: 20%;
+  background: #777;
+  transition: all .5s ease;
+}
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+.navbar .go-up {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1029;
+  display: none;
+}
+.navbar .go-up i {
+  color: #fff;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  z-index: 1030;
+  font-size: 35px;
+  cursor: pointer;
+}
+.navbar .go-up:before {
+  position: absolute;
+  bottom: 0;
+  content: '';
+  width: 0;
+  height: 0;
+  opacity: .9;
+  border-left: 150px solid #444;
+  border-top: 150px solid transparent;
+  z-index: 1029;
+}
+
+/*** MENU METRO ***/
+.col-sm-4 figure:hover figcaption {
+  height: calc(60% + 60px);
+}
+
+figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 0;
+  max-height: 400px;
+  width: 100%;
+  background: #3085a3;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  opacity: 0.8;
+  width: calc(100% + 50px);
+  opacity: 0.7;
+  transition: all .35s ease;
+}
+figure figcaption {
+  top: auto;
+  bottom: 0;
+  padding: 0 15px;
+  background: #fff;
+  color: #3c4a50;
+  opacity: .9;
+  transition: all 0.35s ease;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 60px;
+}
+figure figcaption::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  right: 25%;
+  margin: auto;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 25px solid #fff;
+  transition: border-bottom-color .35s .05s ease;
+}
+figure figcaption a {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+figure figcaption p {
+  display: inline-block;
+  padding: 0 5%;
+  color: #444;
+  text-transform: none;
+  font-size: 90%;
+  opacity: 0;
+  transition: all .35s .05s ease;
+  -webkit-transform: translate3d(0, 50px, 0);
+  transform: translate3d(0, 50px, 0);
+  margin: 0 0 !important;
+  text-transform: uppercase;
+}
+figure figcaption h2 {
+  font-weight: 300;
+  width: 100%;
+  margin: 15px 0;
+  text-align: left;
+  transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  transition: transform 0.35s, -webkit-transform 0.35s;
+}
+figure figcaption span {
+  font-weight: 400;
+}
+figure:hover figcaption {
+  height: calc(25% + 60px);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+figure:hover figcaption::before {
+  border-bottom-color: #FF5252;
+}
+figure:hover h2, figure:hover p {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+figure:hover img, figure:hover p {
+  opacity: 1;
+}
+figure:hover p {
+  border-top-color: #fff;
+}
+
+@media (max-width: 768px) {
+  #main-nav.navbar .navbar-nav > li > a {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .col-xs-12 figure:hover figcaption {
+    height: calc(40% + 60px);
+  }
+}
+
+         </style>
+     </head>
+     <body>
+     	    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <a href="#"><span>&<span>LUCA</a>
+            </div>
+            <div class="sandwich" id="btn">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+            <div class="menu">
+                <div class="menu-list">
+                    <ul>
+                        <li><a href="#">Chi <span>Siamo</span></a></li>
+                        <li><a href="#">Port<span>foglio</span></a></li>
+                        <li><a href="#">Offerte</a></li>
+                        <li><a href="#">Contatti</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="go-up">
+                <i class="material-icons">arrow_upward</i>
+            </div>
+        </nav>
+        <div class="search">
+             <button style="background-color: aqua" id="search-btn" class="btn" type="button">
+                        <span style="height: 3rem;width: 3rem;font-size: 2.3rem;padding: 5px 7px 5px 7px;" class="glyphicon glyphicon-search"></span>
+                    </button>
+            <div class="input-group col-md-12">
+                <div class="input-group-text">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <span class="input-group-btn">
+                   
+                </span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="intro">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                        </div>
+
+                        <div class="item">
+                            <img src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="continue">
+                    <icon>
+                        <i class="material-icons">arrow_downward</i>
+                    </icon>
+                </div>
+            </div>
+            <div class="article-showcase">
+                <div class="container">
+                    <!-- col full screen -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- col half screen -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- col 1/3 screen -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>      
+                        <div class="col-xs-12 col-sm-6">
+                            <figure class="article-container">
+                                <img class="article" src="http://fst-sziu.ru/wp-content/uploads/2013/10/low-poly-texture-18.png">
+                                <figcaption>
+                                    <h2>Lorem <span>ipsum</span></h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vehicula sit amet odio at fringilla.</p>                     
+                                    <a href="#">View more</a>
+                                </figcaption>                       
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+    <script>$(document).ready(function(){
+    $('#btn').click(function() { 
+        $(this).toggleClass('active');
+        $('.menu').toggleClass('open');
+        $('body').toggleClass('blocked');
+    });
+
+    $('#search-btn').click(function(){
+        $('.search').toggleClass('open');
+    });
+    
+    $('icon').click(function() {
+        var scroll = $('.article-showcase').offset().top;
+        $('html,body').animate({
+            scrollTop: scroll,
+        },'slow',function(){
+            $('.go-up').fadeIn(300);
+        });     
+    });
+    
+    $('.go-up').click(function(){
+        $('html,body').animate({
+            scrollTop: 0,
+        },'slow',function(){
+            $('.go-up').fadeOut(300)
+        });
+    });
+});
+</script>
+     	<!-- type hello here	 -->
+     </body>
+     </html>
