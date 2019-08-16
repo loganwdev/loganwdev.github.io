@@ -397,9 +397,12 @@ hr {
   float:left; 
   width: 96px;
     height: 70px;
-    background: url("https://placehold.it/50x50.jpg") 16px 10px no-repeat;
+    background: url("https://dl3.pushbulletusercontent.com/nK5RUN2ljCNDL1YzjvDUr4aqzcuJwJiW/info1g.jpg") 10px 0  no-repeat;
+
+
+
 }
-#topmenu span.friends{margin-bottom:-1px;}
+#topmenu span.friends{margin-bottom:-1px;border-bottom: 3px solid blue}
 #topmenu span.chats{background-position:-95px 25px; cursor:pointer;}
 #topmenu span.chats:hover{background-position:-95px -46px; cursor:pointer;}
 #topmenu span.history{background-position:-190px 24px; cursor:pointer;}
@@ -841,7 +844,7 @@ border-radius:6px;
         
         <div id="friends">
           <!---->
-          <div class="tab2" style="display:none">
+          <div class="tab2" style="display:none;">
            <div class="friend2">
               <img src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
                 <p>
@@ -857,7 +860,7 @@ border-radius:6px;
           <div class="friend">
               <img src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
                 <p>
-                  <strong style="font-size: 16px">How Do I Get Started?</strong>
+                  <strong style="font-size: 16px">Welcome to Inner G!</strong>
                   <br>
                   <span>Is It Your First Time?</span>
                 </p>
@@ -970,19 +973,681 @@ border-radius:6px;
     <header class="article-header">
       <h1></h1>
     </header>
-    <article><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/pzad5uaz49e-oskar-krawczyk.jpg"/>
+    <article><img src="https://dl3.pushbulletusercontent.com/H5E2vQaN0uLgnTmbXM66T54mvhrcRgx9/innergPoster.jpg"/>
       <article class="article">
         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sequi praesentium, sint earum error porro ut necessitatibus ullam, aut dolorem quibusdam laborum reprehenderit, natus modi dolore inventore hic veniam labore.</p>
-        <aside class="more-trigger">
+       <!--  <aside class="more-trigger">
           <p>Read More</p>
         </aside>
-        <article class="more">
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim nobis aliquid et accusantium. Necessitatibus hic quam voluptas pariatur sed architecto officia dignissimos error quaerat dicta. Id recusandae autem modi voluptatum veniam, inventore nostrum deleniti, dignissimos temporibus distinctio corporis sunt non fugit illo nihil velit at reprehenderit ullam quisquam. Exercitationem.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat animi minus ad eius dignissimos nostrum necessitatibus ab dicta est totam.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in facere sint tempora velit eaque consectetur recusandae quaerat natus ut quibusdam quos numquam nemo amet sequi officia expedita quam iure ducimus nisi asperiores explicabo a, aliquam consequuntur! Atque nulla quasi quidem corporis accusantium, placeat iusto obcaecati quae iure optio ab?</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa tempore fugit, sunt obcaecati esse adipisci assumenda quibusdam doloribus doloremque consectetur nihil molestiae neque suscipit maxime, aut accusamus est molestias iusto.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, illum sequi rem. Quisquam sed blanditiis, magni dolor, saepe laborum aspernatur consectetur officiis doloribus! Eum nobis, illo placeat accusamus. Tempore eum explicabo odit eos, voluptate modi similique saepe in, fuga facilis impedit excepturi omnis unde, doloremque ipsa ducimus sit dolore ipsum?</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio odit mollitia rerum saepe iste sequi voluptates eligendi sint tenetur. Officiis quis doloribus asperiores corporis praesentium dolorum molestiae quisquam velit eaque nisi, dignissimos magni vitae rem, dolor? Qui cumque nihil omnis!</p>
+        <article class="more"> -->
+<style>.container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 90%;
+  width: calc(100% - 150px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .container {
+    width: calc(100% - 100px);
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    width: calc(100% - 50px);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 25px);
+  }
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h3 {
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.button3 {
+  display: inline-block;
+  text-decoration: none;
+  white-space: inherit;
+  line-height: 34px;
+  padding: 0 18px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  margin: 5px 5px 5px 0 !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #cdc09c;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 0 3px rgba(255, 255, 255, 0.3), 0 2px 0 rgba(0, 0, 0, 0.08) !important;
+}
+.button3:hover {
+  background: #C4B797;
+}
+/* --- NUFlex begin --- */
+.nuflex {
+  display: block;
+  height: 100%;
+  margin: 20px auto;
+  padding: 0;
+  padding-right: 50px;
+  position: relative;
+  /* -- NUFlex Item Sizing -- */
+  /* - Horizontal - */
+  /* - Vertical - */
+  /* -- Controls -- */
+}
+@media screen and (max-width: 450px) {
+  .nuflex {
+    padding-right: 0px !important;
+  }
+}
+.nuflex ul {
+  display: block;
+  height: 325px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF9F5;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-size: 0;
+  white-space: nowrap;
+  transform: translateX(0px);
+  text-align: center;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul {
+    height: 275px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul {
+    height: 225px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul {
+    overflow-x: auto;
+    margin: 0 -12.5px;
+    background: none;
+    height: 175px;
+  }
+}
+.nuflex ul,
+.nuflex ul li {
+  transition: all 490ms cubic-bezier(0.7, 0, 0, 1);
+}
+.nuflex ul li {
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  white-space: normal;
+  vertical-align: top;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul li {
+    width: 80% !important;
+    margin-right: 10px;
+  }
+  .nuflex ul li:first-child {
+    margin-left: 10px;
+  }
+  .nuflex ul li.flex-only-child {
+    width: calc(100% - 20px) !important;
+  }
+}
+.nuflex ul[data-nuflexHor="2"] li {
+  width: 50%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="2"] li {
+    width: 100%;
+  }
+}
+.nuflex ul[data-nuflexHor="3"] li {
+  width: 33.333%;
+}
+.nuflex ul[data-nuflexHor="3"] li.large {
+  width: 66.666%;
+  height: 100%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="3"] li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="3"] li {
+    width: 100%;
+  }
+}
+.nuflex ul[data-nuflexHor="4"] li {
+  width: 25%;
+}
+.nuflex ul[data-nuflexHor="4"] li.large {
+  width: 75%;
+  height: 100%;
+}
+.nuflex ul[data-nuflexHor="4"] li.large-half {
+  width: 50%;
+  height: 100%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="4"] li {
+    width: 33.333%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="4"] li {
+    width: 50%;
+  }
+}
+.nuflex ul[data-nuflexHor="5"] li {
+  width: 20%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="5"] li {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="5"] li {
+    width: 33.333%;
+  }
+}
+.nuflex ul[data-nuflexVert="2"],
+.nuflex ul[data-nuflexVert="3"] {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+.nuflex ul[data-nuflexVert="2"] li {
+  height: 50%;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul[data-nuflexVert="2"] li {
+    height: 100%;
+    display: block;
+  }
+}
+.nuflex ul[data-nuflexVert="3"] li {
+  height: 33.333%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexVert="3"] li {
+    height: 50%;
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul[data-nuflexVert="3"] li {
+    height: 100%;
+    display: block;
+  }
+}
+.nuflex .next,
+.nuflex .prev {
+  display: block;
+  color: white;
+  width: 40px;
+  height: 50%;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.15), 0 -1px 0 white;
+}
+.nuflex .next:hover,
+.nuflex .prev:hover {
+  background-color: #1E4478;
+}
+@media screen and (max-width: 450px) {
+  .nuflex .next,
+  .nuflex .prev {
+    display: none !important;
+  }
+}
+.nuflex .next.button-inactive,
+.nuflex .prev.button-inactive {
+  background-color: #8297B4 !important;
+  cursor: default !important;
+}
+.nuflex .next.button-inactive:hover,
+.nuflex .prev.button-inactive:hover {
+  background-color: #8297B4 !important;
+}
+.nuflex .next {
+  top: 0;
+  right: 0;
+  background: #375987 url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/chevron-right-white.svg) center center no-repeat;
+  background-size: 22px;
+}
+.nuflex .prev {
+  bottom: 0;
+  right: 0;
+  background: #375987 url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/chevron-left-white.svg) center center no-repeat;
+  background-size: 22px;
+}
+/* -- Individual Styles -- */
+/* - Gallery - */
+.nuflex ul.gallery li .flex-image {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 1px 0 0 white;
+  background-position: center center;
+  background-size: cover;
+}
+.nuflex ul.gallery[data-nuflexVert="2"] li .flex-image:nth-child(odd) {
+  box-shadow: inset 0 -1px 0 white, inset 1px 0 0 white;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.gallery[data-nuflexVert="2"] li .flex-image:nth-child(odd) {
+    box-shadow: inset 1px 0 0 white;
+  }
+}
+.nuflex ul.gallery[data-nuflexVert="3"] li .flex-image:nth-child(odd) {
+  box-shadow: inset 0 -1px 0 white, inset 1px 0 0 white;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.gallery[data-nuflexVert="3"] li .flex-image:nth-child(odd) {
+    box-shadow: inset 1px 0 0 white;
+  }
+}
+/* - Single,Double,Full - */
+@media screen and (max-width: 600px) {
+  .nuflex ul.single,
+  .nuflex ul.double,
+  .nuflex ul.full {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single,
+  .nuflex ul.double,
+  .nuflex ul.full {
+    height: 350px;
+  }
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-image,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-image,
+.nuflex ul.full li .flex-caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #FAF9F5;
+  background-size: 19px 41px;
+  background-image: linear-gradient(65deg, #FAF9F5 47%, #F0ECE1 50%, #F0ECE1 50%, #FAF9F5 53%);
+  box-shadow: inset 0 0 0 1px #E6DFCD;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  transition: opacity 0.22s ease;
+  white-space: normal;
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.double li .flex-image,
+.nuflex ul.full li .flex-image,
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-caption {
+  transition: all 250ms cubic-bezier(0.7, 0, 0, 1);
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.double li .flex-image,
+.nuflex ul.full li .flex-image {
+  background: center center no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-link-tag,
+.nuflex ul.double li .flex-image .flex-link-tag,
+.nuflex ul.full li .flex-image .flex-link-tag {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nuflex ul.single li .flex-image .flex-link-tag.flex-link:before,
+.nuflex ul.double li .flex-image .flex-link-tag.flex-link:before,
+.nuflex ul.full li .flex-image .flex-link-tag.flex-link:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(5, 47, 105, 0.3) url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/link-white-blue.svg) center center no-repeat;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-link-tag.flex-video:before,
+.nuflex ul.double li .flex-image .flex-link-tag.flex-video:before,
+.nuflex ul.full li .flex-image .flex-link-tag.flex-video:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(5, 47, 105, 0.3) url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/video-white-blue.svg) center center no-repeat;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-video-container,
+.nuflex ul.double li .flex-image .flex-video-container,
+.nuflex ul.full li .flex-image .flex-video-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background: black;
+  display: none;
+}
+.nuflex ul.single li .flex-content,
+.nuflex ul.double li .flex-content,
+.nuflex ul.full li .flex-content {
+  display: block;
+  position: relative;
+  padding: 0 15px;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+.nuflex ul.single li h2,
+.nuflex ul.double li h2,
+.nuflex ul.full li h2 {
+  font-family: 'Baskerville', 'Georgia', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 0 0 30px 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+.nuflex ul.single li h2:after,
+.nuflex ul.double li h2:after,
+.nuflex ul.full li h2:after {
+  display: block;
+  content: '';
+  width: 80px;
+  height: 3px;
+  background: #CDC19A;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+.nuflex ul.single li p,
+.nuflex ul.double li p,
+.nuflex ul.full li p {
+  display: block;
+  width: 80%;
+  max-width: 550px;
+  margin: 0 auto;
+  color: #999;
+  font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 25px;
+}
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-caption {
+  opacity: 0;
+}
+.nuflex ul.single li:hover .flex-caption,
+.nuflex ul.double li:hover .flex-caption,
+.nuflex ul.full li:hover .flex-caption {
+  opacity: 1;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.single li .flex-caption h2,
+  .nuflex ul.double li .flex-caption h2,
+  .nuflex ul.full li .flex-caption h2 {
+    font-size: 23px;
+  }
+  .nuflex ul.single li .flex-caption p,
+  .nuflex ul.double li .flex-caption p,
+  .nuflex ul.full li .flex-caption p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nuflex ul.single li .flex-caption h2,
+  .nuflex ul.double li .flex-caption h2,
+  .nuflex ul.full li .flex-caption h2 {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+  .nuflex ul.single li .flex-caption p,
+  .nuflex ul.double li .flex-caption p,
+  .nuflex ul.full li .flex-caption p {
+    line-height: 19px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single li,
+  .nuflex ul.double li,
+  .nuflex ul.full li {
+    max-width: 275px;
+  }
+  .nuflex ul.single li .flex-image,
+  .nuflex ul.double li .flex-image,
+  .nuflex ul.full li .flex-image {
+    height: 35%;
+    top: 0;
+  }
+  .nuflex ul.single li .flex-caption,
+  .nuflex ul.double li .flex-caption,
+  .nuflex ul.full li .flex-caption {
+    opacity: 1;
+    height: 65%;
+    bottom: 0;
+  }
+}
+.nuflex ul.single li .flex-image {
+  width: 60%;
+}
+.nuflex ul.single li .flex-caption {
+  width: 40%;
+  opacity: 1;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.single li .flex-image {
+    width: 45%;
+  }
+  .nuflex ul.single li .flex-caption {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.single li .flex-image {
+    width: 100%;
+  }
+  .nuflex ul.single li .flex-caption {
+    width: 100%;
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single li .flex-caption {
+    opacity: 1;
+  }
+}
+.nuflex ul.double li {
+  width: 50%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.double li {
+    width: 100%;
+  }
+}
+.nuflex ul.full li {
+  width: 100%;
+}
+.show-caption {
+  opacity: 1;
+}
+/* - News - */
+.nuflex ul.news {
+  text-align: left;
+  background: transparent;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.news {
+    height: 325px;
+  }
+  .nuflex ul.news li.large {
+    width: 100%;
+  }
+}
+.nuflex ul.news li {
+  position: relative;
+  box-shadow: inset 1px 0 0 #ccc;
+}
+.nuflex ul.news li:nth-child(odd) .flex-story:not(.feature) h3 {
+  box-shadow: inset 0 1px 0 #ccc;
+  margin-top: 1px;
+  padding-top: 15px;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.news li {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+.flex-story {
+  font-family: 'Proxima Nova W01 Alternate', sans-serif;
+  padding: 0 25px;
+}
+.flex-story h3 {
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.flex-story a {
+  color: #B94444;
+  font-size: 15px;
+  font-weight: 500;
+}
+.flex-story a:hover {
+  color: black;
+}
+.flex-story.feature {
+  padding: 0 15px 0 0;
+  height: 100%;
+}
+.flex-story.feature .feat-image {
+  width: 325px;
+  height: 325px;
+  background: white center center no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  float: left;
+  margin-right: 25px;
+}
+.flex-story.feature h3 {
+  box-shadow: none;
+  padding: 0px;
+}
+.flex-story.feature p {
+  display: block;
+  max-height: 155px;
+  overflow: hidden;
+  color: #676767;
+  font-size: 15px;
+  padding: 0;
+  margin: 0 0 18px 0;
+  line-height: 22px;
+}
+.flex-story.feature.feature-mobile {
+  text-align: left;
+  box-shadow: 0 1px 0 #ccc;
+  padding-bottom: 25px;
+}
+.flex-story.feature.feature-mobile .feat-image {
+  float: none;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+@media screen and (max-width: 750px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+</style>
+          <h3>Gallery - 3x1</h3>
+  <div class="nuflex">
+    <ul class="gallery" data-nuflexHor="3" data-nuflexVert="1">
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/nature)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/people)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/animals)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/cats)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/nature)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/people)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/animals)"></div></li>
+    </ul>
+  </div>
+         <!--/-->
         </article>
       </article>
     </article>
@@ -1205,7 +1870,125 @@ $('#overlay, #mobile-trigger-close').on('click', function() {
   });     
 });</script>
 
+<script>var flexWidthLG = 1200,
+    flexWidthMD = 960,
+    flexWidthSM = 750,
+    flexWidthXSM = 600,
+    flexWidthXXSM = 450;
 
+// NUFlex begin
+$('.nuflex').each(function() {
+  var nuflex = $(this);
+  var nuflexContainer = nuflex.find('ul').width();
+  var nuflexWidth = nuflex.find('ul')[0].scrollWidth;
+  var nuflexItemWidth = nuflex.find('li').width();
+  var nuflexCount = nuflex.find('li').length;
+  var widthMinus = nuflexWidth-nuflexContainer;
+  var nuflexPos = 0;
+  // Fix for that darn IE9!
+  if ($('ul[data-nuflexVert="2"],ul[data-nuflexVert="3"]').css('display') == 'block') {
+    $(this).find('li').css('height','100%');
+  }
+  // Fade out and remove video-container 
+  function removeFlexVideo(thisFlexVideo) {
+    if (thisFlexVideo[0]) {
+      thisFlexVideo.fadeOut(150);
+      setTimeout(function() {thisFlexVideo.remove();},150); 
+    }
+  }
+  // How to treat list items with links
+  nuflex.find('li').each(function() {
+    var flexItem = $(this);
+    // If list item contains a link
+    if (flexItem.find('a')[0]) {
+      var itemLink = flexItem.find('a').attr('href');
+      var itemImage = flexItem.find('.flex-image');
+      var flexEmbedName = itemLink.replace(/[^\w\s]/gi, '').replace(/ /g, '').toLowerCase();
+      // Wrap flex-image in an <a> element
+      itemImage.prepend('<a class="flex-link-tag" href="'+itemLink+'"></a>');
+      // If link is a video
+      if (itemLink.match(/(youtube|vimeo)/)) {
+        // Add play icon to image
+        itemImage.find('.flex-link-tag').addClass('flex-video');
+        // If video link is clicked
+        flexItem.find('a').click(function() {
+          // Turn link into embed link based on the source - currently either youtube or vimeo
+          var embedLink = itemLink.match(/(youtube)/)?itemLink.replace('&list=', '?list=').replace('watch?v=', 'embed/') + '?rel=0&amp;autoplay=1&showinfo=0&autohide=1':itemLink.replace('vimeo.com/', 'player.vimeo.com/video/') + '?autoplay=1';
+          var flexIframe = '<iframe src="'+embedLink+'" class="flex-video-container '+flexEmbedName+'-video-container'+'" frameborder="0" scrolling="auto" allowfullscreen="true" allowtransparency="true" height="100%" width="100%" style="min-height:100%;"></iframe>';
+          if (!$('.'+flexEmbedName+'-video-container')[0]) {
+            removeFlexVideo($('.flex-video-container'));
+            itemImage.append(flexIframe);
+            itemImage.find('.'+flexEmbedName+'-video-container').fadeIn(125);
+          }
+          return false;
+        });
+      }
+      else {
+        // Add link icon to image
+        itemImage.find('.flex-link-tag').addClass('flex-link');
+      }
+    }
+  });
+  // Adding and removing buttons based on number of items
+  nuflex.append('<span class="next"></span><span class="prev button-inactive"></span>');
+  function nuflexDoStuff() {
+    // Check to see if buttons are necessary
+    if (nuflexWidth > nuflexContainer) {
+      nuflex.find('.next,.prev').show();
+      nuflex.css('padding-right','50px');
+    }
+    else {
+      nuflex.find('.next,.prev').hide();
+      nuflex.css('padding-right','0px');
+      nuflex.find('ul li').addClass('flex-only-child');
+    }
+    // Inactive state
+    if (nuflexPos == 0) {nuflex.find('.button-inactive').removeClass('button-inactive');nuflex.find('.prev').addClass('button-inactive');}
+    else if (Math.abs(nuflexPos) == widthMinus) {nuflex.find('.button-inactive').removeClass('button-inactive');nuflex.find('.next').addClass('button-inactive');}
+    else {nuflex.find('.button-inactive').removeClass('button-inactive');}
+    // Mobile click to show caption
+    nuflex.find('li').each(function() {
+      var item = $(this);
+      if (item.find('.caption').css('opacity') == '0') {
+        item.find('.caption').click(function() {
+          item.find('.caption').addClass('show-caption');
+        });
+      }
+    });
+  }nuflexDoStuff();
+  // If window is resized, remeasure nuflex width
+  $(window).resize(function() {
+    nuflexPos = 0;
+    nuflex.find('ul').scrollLeft(0);
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    setTimeout(function() {
+      nuflexContainer = nuflex.width();
+      nuflexWidth = nuflex.find('ul')[0].scrollWidth;
+      nuflexItemWidth = nuflex.find('li').width();
+      widthMinus = nuflexWidth-nuflexContainer;
+      nuflexDoStuff();
+    },500);
+  });
+  // If next is clicked, push slides left
+  nuflex.find('.next').click(function() {
+    if (widthMinus-Math.abs(nuflexPos) <= nuflexContainer) {nuflexPos = -widthMinus;}
+    else {nuflexPos = nuflexPos - nuflexContainer;}
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    return false;
+  });
+  // If prev is clicked, push slides right
+  nuflex.find('.prev').click(function() {
+    if (Math.abs(nuflexPos) <= nuflexContainer) {nuflexPos = 0;}
+    else if (nuflexPos < 0) {nuflexPos = nuflexPos + nuflexContainer;}
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    return false;
+  });
+  // Inactive button state
+  nuflex.find('.next,.prev').click(function() {
+    removeFlexVideo(nuflex.find('.flex-video-container'));
+    nuflexDoStuff();return false;
+  });
+});</script>
 
     </body>
 </html>
