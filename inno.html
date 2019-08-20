@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
         <!-- CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="base.css">
         <style>
           /* TABLE OF CONTENTS
 
@@ -124,7 +125,7 @@ p {
 }
 
 #top-header {
-  background-color: #C7320D;
+  background-color: #4c177d;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -301,10 +302,10 @@ hr {
   transition: all 200ms ease;
 }
 .more-trigger:hover {
-  border-color: #C7320D;
+  border-color: #4c177d;
 }
 .more-trigger p {
-  color: #C7320D;
+  color: #4c177d;
 }
 
 #mobile-trigger-open {
@@ -355,7 +356,13 @@ hr {
   left: 0;
   z-index: 1;}
 
-  .imgCarousel {background-color: blue;width: 32%;height: 100vh;display: flex;justify-content: space-around;/*padding: 10px 14px 10px 14px;margin-top: 60px;*/top: 0}
+  .imgCarousel {
+    background: linear-gradient(-138deg, blue , rgba(255,255,255,0.68) 137.5%);
+    width: 32%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;/*padding: 10px 14px 10px 14px;margin-top: 60px;*/
+    top: 0}
 
   .carouselInside {
     background-color: red;width: 100%;width: 100%;padding: 15px 27px 15px 27px;
@@ -369,7 +376,7 @@ hr {
   background:#fff;
   border-radius:6px;
   overflow:hidden;
-  height:484px;
+  height:517px;
   position:absolute;
   top:100px;
   left:32%;
@@ -397,13 +404,16 @@ hr {
   float:left; 
   width: 96px;
     height: 70px;
-    background: url("https://placehold.it/50x50.jpg") 16px 10px no-repeat;
+    background: url("https://dl3.pushbulletusercontent.com/dZF3bo1pLso7KBaagrr81l9BHEJixYbV/info1g.png") 10px 0  no-repeat;
+
+
+
 }
-#topmenu span.friends{margin-bottom:-1px;}
-#topmenu span.chats{background-position:-95px 25px; cursor:pointer;}
-#topmenu span.chats:hover{background-position:-95px -46px; cursor:pointer;}
-#topmenu span.history{background-position:-190px 24px; cursor:pointer;}
-#topmenu span.history:hover{background-position:-190px -47px; cursor:pointer;}
+#topmenu span.friends{margin-bottom:-1px;border-bottom: 3px solid blue}
+#topmenu span.chats{background-position:-95px 25px; cursor:pointer;border-bottom: 3px solid transparent;background: url("https://dl3.pushbulletusercontent.com/LWwFVtYIQXU7wJGVbKnFlU39lTwYOVyk/nextarrowmidg.png") 10px 0  no-repeat;}
+#topmenu span.chats:hover{border-bottom: 3px dashed transparent; cursor:pointer;}
+#topmenu span.history{background-position:-190px 24px; cursor:pointer;border-bottom: 3px solid transparent;background: url("https://dl3.pushbulletusercontent.com/l1w2EH7A8iYktYJW01xPdNXANnAWLSs4/midgiconmessage.png") 10px 0  no-repeat;}
+#topmenu span.history:hover{border-bottom: 3px dashed transparent; cursor:pointer;}
 
 .friend2{
   height:70px;
@@ -546,7 +556,7 @@ hr {
   color:#fff;
 }
 .p1 #profile{
-  background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/timeline1.png") 0 0 no-repeat;
+  background:#fff url("https://dl3.pushbulletusercontent.com/TEGjuvE1nMcfqllp2hbPXPUrHVtyxECx/midGPic.jpg") 0 0 no-repeat;
 }
 #profile .avatar{
   width:68px;
@@ -712,6 +722,7 @@ div.message.right .corner{
   width:20px;
   height:20px;
   cursor:pointer;
+
 }
 #close:hover{
   opacity:1;
@@ -792,6 +803,48 @@ overflow:hidden;
 border-radius:6px; 
 }
 
+.circAttempt{
+  width: 150px;
+  height: 150px;
+  background-color: blue;
+  border-radius: 50%;
+  margin-left: 22%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  align-content: center;
+  transition: ease-in-out all 1s;
+
+
+}
+
+.circAttempt:hover {
+  background-color: #02d41c;
+  transition: ease-in-out all 1s;
+
+}
+
+.ofcHours {
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+  list-style: none;
+  color: #777;
+  padding: 3px 0 0 18px;
+}
+.ofcHours > span {
+padding-left: 2vw
+}
+
+#innerGLogo {
+  height: 6.7rem;
+  width: 6.7rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 7vh;
+  top: 5vh;
+
+}
         </style>
         
         <!-- JS FOR INSTAGRAM -->
@@ -804,56 +857,103 @@ border-radius:6px;
   <div class="overOverlay">
     <!-- nav -->
     <div class="imgCarousel">
-      <h1 class="servicesH1">Logo</h1>
+      <h1 class="servicesH1" id="pro"><img id="innerGLogo" src="https://dl2.pushbulletusercontent.com/dHDRyZ9IKDDGelzEpCa9PIgASED0pndb/Inner%20G%20logo1v2.jpeg" alt="inner g logo"></h1>
     <!---->
-<!-- try mobile thingy  -->
+
+<!-- ####start ChatBOX  -->
 
 <div id="chatbox">
   <div id="friendslist">
+    <!-- ###start top icons -->
       <div id="topmenu">
           <span class="friends"></span>
             <span class="chats"></span>
             <span class="history"></span>
         </div>
-        
+        <!-- ###start second tab view  -->
         <div id="friends">
+          <!---->
+         <div id="works2" class="inActive">
+           <div class="friend2" id="">
+            <img style="visibility: 1;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
+            <p>
+              <strong style="font-size: 16px">Services We Offer</strong>
+              <br>
+              <span>Which is right for me? >></span>
+            </p>
+            <div class="status away"></div>
+         </div>
+
+          <div class="friend2">
+           
+            <p>
+              <strong style="font-size: 16px">BioDynamic CranioSacral</strong>
+              <br>
+              <span>Which is right for me? >></span>
+            </p><div class="status away" style="background-color: goldenrod"></div>
+          </div>
+          <div class="friend2">
+            <img style="visibility: hidden" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
+                <p><strong style="font-size: 16px">FAQ</strong><br></p><div class="status away" style="background-color: goldenrod"></div></div><div class="friend2"><img style="visibility: hidden;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
+                  <p><strong style="font-size: 16px">FAQ</strong><br></p><div class="status away" style="background-color: goldenrod"></div></div><div class="friend2"><img style="visibility: hidden;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" /><p><strong style="font-size: 16px">FAQ</strong><br></p><div class="status away" style="background-color: goldenrod"></div>
+           </div><!--/--#works2-->
+         </div>
+            <!--/-->
+           <!--  ###start first tab view -->
+          <div id="works" class="active">
           <div class="friend">
               <img src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
                 <p>
-                  <strong>How Do I Get Started?</strong>
+                  <strong style="font-size: 16px;color: #333">Welcome to Inner G!</strong>
                   <br>
-                  <span>Is It Your First Time?</span>
+                  <span>Is It Your First Time? >></span>
                 </p>
                 <div class="status available"></div>
 
 
             </div>
 
-            <div class="friend2">
+            <div class="friend2" id="tab2">
              <!--  <img src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" /> -->
                 <p>
-                  <strong>How Do I Get Started?</strong>
+                  <strong style="font-size: 16px">How Do I Get Started?</strong>
                   <br>
                   <span>Is It Your First Time?</span>
                 </p>
                 <div class="status away"></div>
-
-                
             </div>
+               <div class="friend2">
+              <img style="visibility: hidden;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" />
+                <p>
+                  <strong style="font-size: 16px">FAQ</strong>
+                  <br>
+                  <span>have a question?</span>
+                </p>
+                <div class="status away" style="background-color: goldenrod"></div>
+            </div>
+            <p style="text-align: center; padding: 10px 0 0 0;margin-left: -19%;font-size: 0.88rem;color: #111"><b>Office Hours</b><li class="ofcHours"><b>Sun </b><span style="">9:00 AM - 7:00 PM</span></li>
+            <li class="ofcHours"><b>Mon</b><span>10:00 AM - 5:00 PM</span></li>
+            <li class="ofcHours"><b>Tue </b><span> 11:00 AM - 7:30 PM</span></li>
+            <li class="ofcHours"><b>Wed</b><span style="padding-left: 1.7vw">
+9:00 AM - 6:00 PM</span></li>
+            <li class="ofcHours"><b>Th </b><span style="padding-left: 2.5vw">11:00 AM - 6:30 PM</span></li>
+            <li class="ofcHours"><b>Fri </b><span style="padding-left: 2.6vw"> 
+9:00 AM - 6:00 PM</span></li>
+            <li class="ofcHours"><b>Sat </b><span style="padding-left: 2.3vw"> 9:00 AM - 6:00 PM</span></li></p>
+          </div><!--/.works-->
+
+          <!-- ###start bottom intake portion -->   
             
-            
-            
-            
-           
-            
-            <div id="search">
-              <input type="text" id="searchfield" value="Search contacts..." />
+            <div id="holder" style="background-color: #999;margin-top: 1vh;padding-bottom: 0vh;height: 9vh;text-align: center;padding: 5px 7px 5px 7px;">
+              <span style="font-size: 0.8rem;padding: 7px 5px 7px 5px;margin-left: -2vw;margin-top: -0.5vh;">Enter Your Email for deals & updates</span>
+              <input type="email" id="email" placeholder="enter your email" style="width: 68%;height: 4.4vh;margin-left: -12px;" />
+             <a href=""><button style="color: white;background-color: blue;height: calc(4.4vh - 7px);">submit</button></a>
             </div>
             
         </div>                
         
     </div>  
-    
+  <!--   #####inside first card -->
     <div id="chatview" class="p1">      
         <div id="profile">
 
@@ -870,11 +970,12 @@ border-radius:6px;
             
             <div class="message" style="position: absolute;z-index: 11;">
              
-             <h1>It's easy </h1>
-             <p>this is a lesson on how to get down <br>
+             <h1>Our Mission </h1>
+             <p>
+is to provide an exceptional service that exceeds your expectations<br>
 
-              <a href="#later"><button>later</button></a></p>
-              <div class="circAttempt" style="width: 150px;height: 150px;background-color: blue;border-radius: 50%;margin-left: 22%;display: flex;justify-content: center;text-align: center;color: white;align-content: center;"> <a href="#yas" style="cursor: pointer;color: white"><h3 style="margin-top: 50px">Schedule an appt</h3></a></div>
+              <a href="#later"><button>How can massage benefit me?</button></a></p>
+              <div class="circAttempt" style=""> <a href="#yas" style="cursor: pointer;color: white"><h3 style="margin-top: 50px">Schedule an appt</h3></a></div>
             </div>
             
             <div class="message">
@@ -888,7 +989,44 @@ border-radius:6px;
     
     </div>        
 </div>  
-    
+    <script>
+
+
+      const uiHistory = document.querySelector('span.history');
+      const uiHolder = document.querySelector('#holder');
+      const uiFriend2 = document.querySelectorAll('.friend2');
+      const uiFriends = document.querySelector('.friends');
+        const uiChats = document.querySelector('span.chats');
+        const works2 = document.querySelector('#works2')
+        const works = document.querySelector('#works')
+  /*click on middle arrow png AKA middle tab w/arrow in hero to 
+    show/hide  other tabs info by 'classList.replace'        */
+  uiChats.addEventListener('click',()=>{
+        works2.classList.replace('inActive', 'active' );
+        works.classList.replace('active', 'inActive' );
+        // uiHistory.classList.replace('active', 'inActive' );
+        uiChats.style.borderBottom = '3px solid blue';
+        uiFriends.style.borderBottom = '3px solid transparent';
+        uiHolder.style.marginTop = '4.75vh';
+
+      })
+  // End Middle Arrow code
+
+  /*click on 1st tab AKA infos in hero to 
+    show/hide  other tabs info by 'classList.replace'        */
+  uiFriends.addEventListener('click',()=>{
+        works2.classList.replace('active', 'inActive' );
+        works.classList.replace('inActive', 'active' );
+        // works3.classList.replace('inActive', 'active' );
+        uiChats.style.borderBottom = '3px solid transparent';
+        uiFriends.style.borderBottom = '3px solid blue';
+        uiHolder.style.marginTop = '1vh';
+
+        
+
+
+      })
+  </script>
 
     <!--/-->
 <!-- 
@@ -901,7 +1039,7 @@ border-radius:6px;
 <header id="top-header">
   <div id="branding"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/combat-1300519_640.png"/></div>
   <nav id="main-menu">
-    <ul><a href="">
+    <ul style="color: white"><a href="">
         <li>Link 1</li></a><a href="">
         <li>Link 2</li></a><a href="">
         <li>Link 3</li></a></ul>
@@ -916,51 +1054,1213 @@ border-radius:6px;
     <header class="article-header">
       <h1></h1>
     </header>
-    <article><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/pzad5uaz49e-oskar-krawczyk.jpg"/>
+    <article><img src="https://dl3.pushbulletusercontent.com/H5E2vQaN0uLgnTmbXM66T54mvhrcRgx9/innergPoster.jpg"/>
+      <!-- https://dl3.pushbulletusercontent.com/u6LRLIuetZuTyzMSOK6IqlHUT9O7icm1/innerGbanner.jpg -->
       <article class="article">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sequi praesentium, sint earum error porro ut necessitatibus ullam, aut dolorem quibusdam laborum reprehenderit, natus modi dolore inventore hic veniam labore.</p>
-        <aside class="more-trigger">
+        <p style="color: #4c177d;filter: drop-shadow(1px 1px rgba(0,0,0,0));padding: 5px 7px 5px 7px;background-color: rgba(255,255,255,0.1);">Inner G Health, is one of Illinois' most versatile. No Need to decide whether you need a Swedish, Deep Tissue or Sports Massage. Each session is tailored to target troublesome areas, stretch and lengthen tight musculature and encourage relaxation. Schedule an appointment today!</p>
+       <!--  <aside class="more-trigger">
           <p>Read More</p>
         </aside>
-        <article class="more">
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim nobis aliquid et accusantium. Necessitatibus hic quam voluptas pariatur sed architecto officia dignissimos error quaerat dicta. Id recusandae autem modi voluptatum veniam, inventore nostrum deleniti, dignissimos temporibus distinctio corporis sunt non fugit illo nihil velit at reprehenderit ullam quisquam. Exercitationem.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat animi minus ad eius dignissimos nostrum necessitatibus ab dicta est totam.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in facere sint tempora velit eaque consectetur recusandae quaerat natus ut quibusdam quos numquam nemo amet sequi officia expedita quam iure ducimus nisi asperiores explicabo a, aliquam consequuntur! Atque nulla quasi quidem corporis accusantium, placeat iusto obcaecati quae iure optio ab?</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa tempore fugit, sunt obcaecati esse adipisci assumenda quibusdam doloribus doloremque consectetur nihil molestiae neque suscipit maxime, aut accusamus est molestias iusto.</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, illum sequi rem. Quisquam sed blanditiis, magni dolor, saepe laborum aspernatur consectetur officiis doloribus! Eum nobis, illo placeat accusamus. Tempore eum explicabo odit eos, voluptate modi similique saepe in, fuga facilis impedit excepturi omnis unde, doloremque ipsa ducimus sit dolore ipsum?</p>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio odit mollitia rerum saepe iste sequi voluptates eligendi sint tenetur. Officiis quis doloribus asperiores corporis praesentium dolorum molestiae quisquam velit eaque nisi, dignissimos magni vitae rem, dolor? Qui cumque nihil omnis!</p>
+        <article class="more"> -->
+<style>.container {
+  padding-left: 0;
+  padding-right: 0;
+  width: 90%;
+  width: calc(100% - 150px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .container {
+    width: calc(100% - 100px);
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    width: calc(100% - 50px);
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 25px);
+  }
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h3 {
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+.button3 {
+  display: inline-block;
+  text-decoration: none;
+  white-space: inherit;
+  line-height: 34px;
+  padding: 0 18px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+  margin: 5px 5px 5px 0 !important;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #cdc09c;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15), inset 0 0 0 3px rgba(255, 255, 255, 0.3), 0 2px 0 rgba(0, 0, 0, 0.08) !important;
+}
+.button3:hover {
+  background: #C4B797;
+}
+/* --- NUFlex begin --- */
+.nuflex {
+  display: block;
+  height: 100%;
+  margin: 20px auto;
+  padding: 0;
+  padding-right: 50px;
+  position: relative;
+  /* -- NUFlex Item Sizing -- */
+  /* - Horizontal - */
+  /* - Vertical - */
+  /* -- Controls -- */
+}
+@media screen and (max-width: 450px) {
+  .nuflex {
+    padding-right: 0px !important;
+  }
+}
+.nuflex ul {
+  display: block;
+  height: 325px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF9F5;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  font-size: 0;
+  white-space: nowrap;
+  transform: translateX(0px);
+  text-align: center;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul {
+    height: 275px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul {
+    height: 225px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul {
+    overflow-x: auto;
+    margin: 0 -12.5px;
+    background: none;
+    height: 175px;
+  }
+}
+.nuflex ul,
+.nuflex ul li {
+  transition: all 490ms cubic-bezier(0.7, 0, 0, 1);
+}
+.nuflex ul li {
+  display: inline-block;
+  font-size: 16px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  white-space: normal;
+  vertical-align: top;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul li {
+    width: 80% !important;
+    margin-right: 10px;
+  }
+  .nuflex ul li:first-child {
+    margin-left: 10px;
+  }
+  .nuflex ul li.flex-only-child {
+    width: calc(100% - 20px) !important;
+  }
+}
+.nuflex ul[data-nuflexHor="2"] li {
+  width: 50%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="2"] li {
+    width: 100%;
+  }
+}
+.nuflex ul[data-nuflexHor="3"] li {
+  width: 33.333%;
+}
+.nuflex ul[data-nuflexHor="3"] li.large {
+  width: 66.666%;
+  height: 100%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="3"] li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="3"] li {
+    width: 100%;
+  }
+}
+.nuflex ul[data-nuflexHor="4"] li {
+  width: 25%;
+}
+.nuflex ul[data-nuflexHor="4"] li.large {
+  width: 75%;
+  height: 100%;
+}
+.nuflex ul[data-nuflexHor="4"] li.large-half {
+  width: 50%;
+  height: 100%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="4"] li {
+    width: 33.333%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="4"] li {
+    width: 50%;
+  }
+}
+.nuflex ul[data-nuflexHor="5"] li {
+  width: 20%;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul[data-nuflexHor="5"] li {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexHor="5"] li {
+    width: 33.333%;
+  }
+}
+.nuflex ul[data-nuflexVert="2"],
+.nuflex ul[data-nuflexVert="3"] {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+}
+.nuflex ul[data-nuflexVert="2"] li {
+  height: 50%;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul[data-nuflexVert="2"] li {
+    height: 100%;
+    display: block;
+  }
+}
+.nuflex ul[data-nuflexVert="3"] li {
+  height: 33.333%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul[data-nuflexVert="3"] li {
+    height: 50%;
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul[data-nuflexVert="3"] li {
+    height: 100%;
+    display: block;
+  }
+}
+.nuflex .next,
+.nuflex .prev {
+  display: block;
+  color: white;
+  width: 40px;
+  height: 50%;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.15), 0 -1px 0 white;
+}
+.nuflex .next:hover,
+.nuflex .prev:hover {
+  background-color: #1E4478;
+}
+@media screen and (max-width: 450px) {
+  .nuflex .next,
+  .nuflex .prev {
+    display: none !important;
+  }
+}
+.nuflex .next.button-inactive,
+.nuflex .prev.button-inactive {
+  background-color: #8297B4 !important;
+  cursor: default !important;
+}
+.nuflex .next.button-inactive:hover,
+.nuflex .prev.button-inactive:hover {
+  background-color: #8297B4 !important;
+}
+.nuflex .next {
+  top: 0;
+  right: 0;
+  background: #375987 url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/chevron-right-white.svg) center center no-repeat;
+  background-size: 22px;
+}
+.nuflex .prev {
+  bottom: 0;
+  right: 0;
+  background: #375987 url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/chevron-left-white.svg) center center no-repeat;
+  background-size: 22px;
+}
+/* -- Individual Styles -- */
+/* - Gallery - */
+.nuflex ul.gallery li .flex-image {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 1px 0 0 white;
+  background-position: center center;
+  background-size: cover;
+}
+.nuflex ul.gallery[data-nuflexVert="2"] li .flex-image:nth-child(odd) {
+  box-shadow: inset 0 -1px 0 white, inset 1px 0 0 white;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.gallery[data-nuflexVert="2"] li .flex-image:nth-child(odd) {
+    box-shadow: inset 1px 0 0 white;
+  }
+}
+.nuflex ul.gallery[data-nuflexVert="3"] li .flex-image:nth-child(odd) {
+  box-shadow: inset 0 -1px 0 white, inset 1px 0 0 white;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.gallery[data-nuflexVert="3"] li .flex-image:nth-child(odd) {
+    box-shadow: inset 1px 0 0 white;
+  }
+}
+/* - Single,Double,Full - */
+@media screen and (max-width: 600px) {
+  .nuflex ul.single,
+  .nuflex ul.double,
+  .nuflex ul.full {
+    height: 200px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single,
+  .nuflex ul.double,
+  .nuflex ul.full {
+    height: 350px;
+  }
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-image,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-image,
+.nuflex ul.full li .flex-caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #FAF9F5;
+  background-size: 19px 41px;
+  background-image: linear-gradient(65deg, #FAF9F5 47%, #F0ECE1 50%, #F0ECE1 50%, #FAF9F5 53%);
+  box-shadow: inset 0 0 0 1px #E6DFCD;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  transition: opacity 0.22s ease;
+  white-space: normal;
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.double li .flex-image,
+.nuflex ul.full li .flex-image,
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-caption {
+  transition: all 250ms cubic-bezier(0.7, 0, 0, 1);
+}
+.nuflex ul.single li .flex-image,
+.nuflex ul.double li .flex-image,
+.nuflex ul.full li .flex-image {
+  background: center center no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-link-tag,
+.nuflex ul.double li .flex-image .flex-link-tag,
+.nuflex ul.full li .flex-image .flex-link-tag {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.nuflex ul.single li .flex-image .flex-link-tag.flex-link:before,
+.nuflex ul.double li .flex-image .flex-link-tag.flex-link:before,
+.nuflex ul.full li .flex-image .flex-link-tag.flex-link:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(5, 47, 105, 0.3) url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/link-white-blue.svg) center center no-repeat;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-link-tag.flex-video:before,
+.nuflex ul.double li .flex-image .flex-link-tag.flex-video:before,
+.nuflex ul.full li .flex-image .flex-link-tag.flex-video:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(5, 47, 105, 0.3) url(http://dev.newmanu.edu/templates/t3_bs3_blank/fonts/nucon-icons/svg/video-white-blue.svg) center center no-repeat;
+  box-shadow: inset -1px 0 0 white;
+}
+.nuflex ul.single li .flex-image .flex-video-container,
+.nuflex ul.double li .flex-image .flex-video-container,
+.nuflex ul.full li .flex-image .flex-video-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  background: black;
+  display: none;
+}
+.nuflex ul.single li .flex-content,
+.nuflex ul.double li .flex-content,
+.nuflex ul.full li .flex-content {
+  display: block;
+  position: relative;
+  padding: 0 15px;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+.nuflex ul.single li h2,
+.nuflex ul.double li h2,
+.nuflex ul.full li h2 {
+  font-family: 'Baskerville', 'Georgia', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 25px;
+  letter-spacing: 1px;
+  margin: 0 0 30px 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+.nuflex ul.single li h2:after,
+.nuflex ul.double li h2:after,
+.nuflex ul.full li h2:after {
+  display: block;
+  content: '';
+  width: 80px;
+  height: 3px;
+  background: #CDC19A;
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+.nuflex ul.single li p,
+.nuflex ul.double li p,
+.nuflex ul.full li p {
+  display: block;
+  width: 80%;
+  max-width: 550px;
+  margin: 0 auto;
+  color: #999;
+  font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 25px;
+}
+.nuflex ul.single li .flex-caption,
+.nuflex ul.double li .flex-caption,
+.nuflex ul.full li .flex-caption {
+  opacity: 0;
+}
+.nuflex ul.single li:hover .flex-caption,
+.nuflex ul.double li:hover .flex-caption,
+.nuflex ul.full li:hover .flex-caption {
+  opacity: 1;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.single li .flex-caption h2,
+  .nuflex ul.double li .flex-caption h2,
+  .nuflex ul.full li .flex-caption h2 {
+    font-size: 23px;
+  }
+  .nuflex ul.single li .flex-caption p,
+  .nuflex ul.double li .flex-caption p,
+  .nuflex ul.full li .flex-caption p {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .nuflex ul.single li .flex-caption h2,
+  .nuflex ul.double li .flex-caption h2,
+  .nuflex ul.full li .flex-caption h2 {
+    font-size: 20px;
+    letter-spacing: 0;
+  }
+  .nuflex ul.single li .flex-caption p,
+  .nuflex ul.double li .flex-caption p,
+  .nuflex ul.full li .flex-caption p {
+    line-height: 19px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single li,
+  .nuflex ul.double li,
+  .nuflex ul.full li {
+    max-width: 275px;
+  }
+  .nuflex ul.single li .flex-image,
+  .nuflex ul.double li .flex-image,
+  .nuflex ul.full li .flex-image {
+    height: 35%;
+    top: 0;
+  }
+  .nuflex ul.single li .flex-caption,
+  .nuflex ul.double li .flex-caption,
+  .nuflex ul.full li .flex-caption {
+    opacity: 1;
+    height: 65%;
+    bottom: 0;
+  }
+}
+.nuflex ul.single li .flex-image {
+  width: 60%;
+}
+.nuflex ul.single li .flex-caption {
+  width: 40%;
+  opacity: 1;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.single li .flex-image {
+    width: 45%;
+  }
+  .nuflex ul.single li .flex-caption {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.single li .flex-image {
+    width: 100%;
+  }
+  .nuflex ul.single li .flex-caption {
+    width: 100%;
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.single li .flex-caption {
+    opacity: 1;
+  }
+}
+.nuflex ul.double li {
+  width: 50%;
+}
+@media screen and (max-width: 750px) {
+  .nuflex ul.double li {
+    width: 100%;
+  }
+}
+.nuflex ul.full li {
+  width: 100%;
+}
+.show-caption {
+  opacity: 1;
+}
+/* - News - */
+.nuflex ul.news {
+  text-align: left;
+  background: transparent;
+}
+@media screen and (max-width: 960px) {
+  .nuflex ul.news {
+    height: 325px;
+  }
+  .nuflex ul.news li.large {
+    width: 100%;
+  }
+}
+.nuflex ul.news li {
+  position: relative;
+  box-shadow: inset 1px 0 0 #ccc;
+}
+.nuflex ul.news li:nth-child(odd) .flex-story:not(.feature) h3 {
+  box-shadow: inset 0 1px 0 #ccc;
+  margin-top: 1px;
+  padding-top: 15px;
+}
+@media screen and (max-width: 450px) {
+  .nuflex ul.news li {
+    height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+.flex-story {
+  font-family: 'Proxima Nova W01 Alternate', sans-serif;
+  padding: 0 25px;
+}
+.flex-story h3 {
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 22px;
+  font-size: 16px;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.flex-story a {
+  color: #B94444;
+  font-size: 15px;
+  font-weight: 500;
+}
+.flex-story a:hover {
+  color: black;
+}
+.flex-story.feature {
+  padding: 0 15px 0 0;
+  height: 100%;
+}
+.flex-story.feature .feat-image {
+  width: 325px;
+  height: 325px;
+  background: white center center no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  float: left;
+  margin-right: 25px;
+}
+.flex-story.feature h3 {
+  box-shadow: none;
+  padding: 0px;
+}
+.flex-story.feature p {
+  display: block;
+  max-height: 155px;
+  overflow: hidden;
+  color: #676767;
+  font-size: 15px;
+  padding: 0;
+  margin: 0 0 18px 0;
+  line-height: 22px;
+}
+.flex-story.feature.feature-mobile {
+  text-align: left;
+  box-shadow: 0 1px 0 #ccc;
+  padding-bottom: 25px;
+}
+.flex-story.feature.feature-mobile .feat-image {
+  float: none;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+@media screen and (max-width: 750px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 200px;
+    height: 200px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .flex-story.feature.feature-mobile .feat-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.grid {
+  display: flex;
+  text-align: center;
+}
+
+.gutters {
+  margin: -10px 0 10px -10px; 
+   
+  
+}
+
+.gutters > div {
+  padding: 10px 14px 10px 14px;
+  border: 1px solid black;
+}
+
+.third {
+  flex-basis: 33.333333%;
+ /* border: 1px solid black;*/
+
+}
+.inActive {
+  display: none;
+}
+.active {
+  display: block;
+}
+
+
+
+
+/*#faq-links {padding: 0px 80px}*/
+
+#faq-links div {
+    color: #aeaeaf;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 18px 0 0 7vw;
+}
+
+.faq-group {
+    /*padding: 0px 80px;*/
+    position: relative
+}
+
+.faq-group div {
+    font-weight: 700;
+    text-align: center;
+}
+
+.faq-group hr {
+        border: 0;
+    border-top: 1px solid #606060;
+    clear: both;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    height: 0;
+}
+
+.faq-group:after {
+    top: 33%;
+     left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-top-color: #393939;
+    border-width: 15px;
+  margin-left: -15px;
+  margin-top: 3.2vh;
+}
+
+.faq-accordion>li  {
+    border-top: 1px solid rgba(198, 198, 198, 0.4);
+    color: #666;
+    padding: 0.5em 0;
+    max-width: 67vw;
+}
+
+.faq-accordion li a {
+    color: #666;
+    padding: 0.5em;
+}
+
+.faq-accordion > li:last-child {
+    border-bottom: 1px solid rgba(198, 198, 198, 0.4);
+}
+
+.faq-accordion > li > a:before {
+    content: 'Q.';
+    padding-right: 0.313em
+}
+
+.faq-accordion > li > a:after {
+    color: #ff8300;
+    content: '+';
+    float: right;
+    font-weight:300;
+    margin-right: 0.5em;
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+            transform: scale(2);
+    overflow-y: hidden;
+}
+
+.faq-accordion > li > a.expanded:after {
+    color:  #ffa326;
+    content: '\2212';
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+            transform: scale(2);
+            max-width: 67vw;
+}
+
+.faq-accordion > li > a.expanded {font-weight: 700; opacity: 1 !important}
+
+.faq-content {
+    background-color: #ececec;
+    margin: 2px 0 -20px;
+}
+
+.faq-content p:before {
+    content: 'A.';
+    color: #ff8300;
+    float: left;
+    font-weight: 700;
+  margin-right: .5em
+}
+
+.faq-content p {
+    margin: 0 0.5em;
+    padding: 0.5em 0
+
+}
+
+.faq-hide {display: none}
+
+.faq-selected {
+    color: #49494b!important;
+ -webkit-transition: all 3s ease;
+         transition: all 3s ease;
+}
+
+ @media only screen and (min-width: 700px) and (min-width: 10000px) {
+
+                    .panels { display: none;}
+}
+
+
+
+
+
+
+
+
+
+.faq-accordion {
+    width: 67vw;
+
+}
+
+ .faq-accordion li a {
+        padding: 5px 7px 5px 7px;
+        color: #4c177d;
+        max-width: 67vw;
+    }
+
+
+}
+
+
+
+
+button {background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em}
+</style>
+          <h3><a href=""><button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em">Schedule Now</button></a></h3>
+ 
+
+
+  <div class="nuflex">
+    <ul class="gallery" data-nuflexHor="3" data-nuflexVert="1">
+      <li><div class="flex-image" style="background-image:url(https://lh3.googleusercontent.com/810UA1DBenUEAg6sgU9I63KvZbeQMyKCIRiN8ZgOb5P6YSEFF2dU87fpgKDRQTMoJdeg0MmlsgDE4xJ4k-VMnGH1S5Q=s487)"></div></li>
+      <li><div class="flex-image" style="background-image:url(https://lh3.googleusercontent.com/ZkbJY75LyzmLjByL3ZkWp_8uyGgAqdAuPDnhvAHm8KepnTXwDNizxKea2ljWcnFt65URreGzUtvGBWGznl9jeKBRsUBl=s608)"></div></li>
+      <li><div class="flex-image" style="background-image:url(https://dl3.pushbulletusercontent.com/u6LRLIuetZuTyzMSOK6IqlHUT9O7icm1/innerGbanner.jpg)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/cats)"></div></li>
+      <li><div class="flex-image" style="background-image:url(https://lh3.googleusercontent.com/810UA1DBenUEAg6sgU9I63KvZbeQMyKCIRiN8ZgOb5P6YSEFF2dU87fpgKDRQTMoJdeg0MmlsgDE4xJ4k-VMnGH1S5Q=s487)"></div></li>
+      <li><div class="flex-image" style="background-image:url(https://lh3.googleusercontent.com/ZkbJY75LyzmLjByL3ZkWp_8uyGgAqdAuPDnhvAHm8KepnTXwDNizxKea2ljWcnFt65URreGzUtvGBWGznl9jeKBRsUBl=s608)"></div></li>
+      <li><div class="flex-image" style="background-image:url(http://lorempixel.com/500/500/animals)"></div></li>
+    </ul>
+  </div>
+         <!--/-->
         </article>
       </article>
     </article>
     <hr/>
     <!-- Article 2-->
     <header class="article-header">
-      <h1>Article Title: Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+      <h1>Its Easy With Inner G</h1>
     </header>
     <article><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/esawhr5fhn8-oskar-krawczyk.jpg"/>
       <article class="article">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sequi praesentium, sint earum error porro ut necessitatibus ullam, aut dolorem quibusdam laborum reprehenderit, natus modi dolore inventore hic veniam labore.</p>
-        <aside class="more-trigger">
-          <p>Read More</p>
+        <p> </p>
+        <aside class="">
+         <div class="container" style="margin-left: -1vw;">
+<div id="faq-links">
+    <div id="service" class="faq-selected">Services</div>
+    <div id="installation">Important Questions</div>
+<!--     <div id="plan">Treatment Time</div>
+    <div id="features">Membership</div>
+    <div id="mobile">Scheduling</div> -->
+</div>
+
+
+
+<div id="faq-wrapper" class="about-service" style="text-align: left;">
+
+<div class="faq-group">
+        <div class="slide-left">
+            <div>Services</div>
+        </div>
+
+
+    <hr>
+</div><!--faq-group-->
+<div class="slide-left">
+              <div  class="faq">
+                 <ul class="faq-accordion">
+
+                    <li>
+                        <a href="#">Is Massage Safe for Everyone?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Most massage techniques are safe for most people of all ages. With the right touch, massage is safe and a very beneficial health support. However, there are several contraindications that a massage would not be recommended. For example, contagious disease, fever, severe pain, or a history of thrombosis. Certain contraindications, such as recent injuries or deep vein thrombosis, will require the massage treatment to be modified. Please fill out the intake form to the best of your ability to inform your therapist of any modifications or concerns that will affect massage treatment.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">Can I benefit from a massage?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Absolutely! Massage Therapy can be effective for multiple health conditions and for overall health and wellness. Massage therapy is helpful to reduce stress and anxiety, blood pressure, chronic pain, headaches and much more!. Massage therapy is a great addition to preventative care. Click here to read more about massage therapy benefits!
+
+</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">I want a deep tissue massage. Why don’t you offer deep tissue?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Our therapeutic treatment is a perfect blend of deep tissue, sports, shiatsu and swedish massage. Our techniques and pressure are dependant on your bodies ability to soften and relax. The most benefit comes when your tissue layers allow for deeper pressure. Our belief is that with patience and the right touch, the body will benefit greatly than forceful deep pressure.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Carey ipsum-->
+                      <li>
+                        <a href="#">Is Cupping safe for everyone?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>There are some contraindications that cupping would not be recommended. Pregnant women, children, the elderly and people with certain health conditions would be denied cupping therapy. Health conditions that are not safe for cupping include cancer, organ failure, hemophilia, edema, blood disorders and certain heart disease. Certain medications are contraindicated such as blood-thinners. Click here to read more about cupping
+ 
+</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">What is Biodynamic Craniosacral Therapy?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Biodynamic Craniosacral Therapy (BCST) is a healing art that centers on balancing the energies of the body. Disease and disharmony is the product of imbalance. BCST supports the nervous system and the intelligence of your systems with gentle contact holds that promotes regulation and resetting of the nervous system.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">How will aromatherapy help me?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Essential oils have been used for over thousands of year to promote health and healing of physical, mental and/or emotional aspects of one’s self. Extensive studies have proven the benefits of essential oil usage for pain, dis-ease, anxiety, disorders and much more. Click here to read more about aromatherapy</p></div>
+                            </li>
+                        </ul>
+                    </li>
+<!--  -->
+
+  <li>
+                        <a href="#"> Can I add all add-ons to my service?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Yes, only if you are clear of any contraindications listed. Each add-on will add more time to your treatment. Please note that there is an additional price for each add-on. <span id="learnPricingFaq" style="width: auto;padding: 5px 7px 5px 7px;color: green;"><a href="https://square.site/book/BRX2ZVVP44KDN/inner-g-restorative-and-holistic-care-chicago-il" style="font-size:16px; ">See Add-on Options >></a></span></p></div>
+                            </li>
+                        </ul>
+                    </li>                   <!---->
+                    </ul>
+            </div>
+</div>
+</div>
+
+
+
+
+
+
+        <div class="about-installation faq-hide">
+
+<div class="faq-group">
+        <div class="slide-left">
+            <div>Important Questions</div>
+        </div>
+    <hr>
+</div>
+                 
+          <div class="slide-left">     
+                 <ul class="faq-accordion">
+
+                    <li>
+                        <a href="#">I hasve never received a massage before. What will my first appointment be like?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Before we can begin a massage, you will need to fill out an intake form. It is necessary to discuss any health or medical conditions that you are managing and any questions regarding the intake form or massage preferences. Your therapist will guide you on etiquette regarding where to place your clothing or communicating effectively during your treatment. Typically, most individuals are relaxing and quiet during their treatment, though, 
+</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">What Should I know before my appointment?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>coming soon</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">How Should I prepare for my appointment?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>coming soon</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Carey ipsum-->
+                          <li>
+                        <a href="#">What Should I Wear?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>coming soon</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">Is free parking available?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>yes</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">What If I need to cancel or reschedule my appointment?</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>coming soon</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Carey ipsum-->
+
+                    </ul>
+                    
+                </div><!--lide-left --> 
+        </div>
+
+
+        <div  class="about-plan faq-hide">
+
+<div class="faq-group">
+    <div class="slide-left">
+    <div>plan</div>
+    </div>
+    <hr>
+</div>
+            <div class="slide-left">
+                 <ul class="faq-accordion">
+
+                    <li>
+                        <a href="#">Duh ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Bacon ipsum dolor sit amet ham beef ribs pork, sirloin tail meatball filet mignon pancetta strip steak. T-bone swine turducken fatback beef ribs andouille meatball. Corned beef short ribs ribeye, hamburger brisket venison capicola boudin filet mignon drumstick shankle bacon beef. Shoulder shank filet mignon, kevin meatball beef ribs short loin shankle kielbasa jowl pancetta. Biltong shank tri-tip prosciutto sirloin pastrami. Turkey swine pork loin ground round pig chicken kielbasa sausage kevin ham hock.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">Buh Ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>ester saccharification mead lambic draft (draught), hand pump cask. brewing ale balthazar hops, " bitter becher craft beer keg alpha acid." crystal malt racking mouthfeel mash, barrel ale; malt! brewpub; biere de garde balthazar acid rest alcohol carbonation. wit beer krug brew mash hop back? shelf life, balthazar hand pump.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">Muh ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Alrighty then it's because i'm green isn't it! here she comes to wreck the day. alrighty then kinda hot in these rhinos. i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. your entrance was good, his was better. we're going for a ride on the information super highway. we're going for a ride on the information super highway. look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. brain freeze. we got no food we got no money and our pets heads are falling off! haaaaaaarry.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Carey ipsum-->
+                    </ul>
+                </div><!--slide-left-->
+        </div>
+
+        <div class="about-features faq-hide">
+
+<div class="faq-group">
+    <div class="slide-left">
+    <div>features</div>
+    </div>
+    <hr>
+</div>
+            <div class="slide-left">
+                 <ul class="faq-accordion">
+
+                    <li>
+                        <a href="#">Veggie ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Bacon ipsum dolor sit amet ham beef ribs pork, sirloin tail meatball filet mignon pancetta strip steak. T-bone swine turducken fatback beef ribs andouille meatball. Corned beef short ribs ribeye, hamburger brisket venison capicola boudin filet mignon drumstick shankle bacon beef. Shoulder shank filet mignon, kevin meatball beef ribs short loin shankle kielbasa jowl pancetta. Biltong shank tri-tip prosciutto sirloin pastrami. Turkey swine pork loin ground round pig chicken kielbasa sausage kevin ham hock.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">Wine Ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>ester saccharification mead lambic draft (draught), hand pump cask. brewing ale balthazar hops, " bitter becher craft beer keg alpha acid." crystal malt racking mouthfeel mash, barrel ale; malt! brewpub; biere de garde balthazar acid rest alcohol carbonation. wit beer krug brew mash hop back? shelf life, balthazar hand pump.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">Woody ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Alrighty then it's because i'm green isn't it! here she comes to wreck the day. alrighty then kinda hot in these rhinos. i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. your entrance was good, his was better. we're going for a ride on the information super highway. we're going for a ride on the information super highway. look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. brain freeze. we got no food we got no money and our pets heads are falling off! haaaaaaarry.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                   
+                    </ul>
+                </div><!--slide-left-->
+        </div> <!--about-features faq-hide-->
+
+
+         <div  class="about-mobile faq-hide">
+
+<div class="faq-group">
+        <div class="slide-left">
+            <div>mobile</div>
+        </div>
+    <hr>
+</div>
+            <div class="slide-left">
+                 <ul class="faq-accordion">
+
+                    <li>
+                        <a href="#">Bacon ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Bacon ipsum dolor sit amet ham beef ribs pork, sirloin tail meatball filet mignon pancetta strip steak. T-bone swine turducken fatback beef ribs andouille meatball. Corned beef short ribs ribeye, hamburger brisket venison capicola boudin filet mignon drumstick shankle bacon beef. Shoulder shank filet mignon, kevin meatball beef ribs short loin shankle kielbasa jowl pancetta. Biltong shank tri-tip prosciutto sirloin pastrami. Turkey swine pork loin ground round pig chicken kielbasa sausage kevin ham hock.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Bacon ipsum-->
+
+                    <li>
+                        <a href="#">Beer Ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>ester saccharification mead lambic draft (draught), hand pump cask. brewing ale balthazar hops, " bitter becher craft beer keg alpha acid." crystal malt racking mouthfeel mash, barrel ale; malt! brewpub; biere de garde balthazar acid rest alcohol carbonation. wit beer krug brew mash hop back? shelf life, balthazar hand pump.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Beer ipsum-->
+
+                    <li>
+                        <a href="#">Carey ipsum</a>
+                        <ul class="faq-content">
+                            <li>
+                                <div><p>Alrighty then it's because i'm green isn't it! here she comes to wreck the day. alrighty then kinda hot in these rhinos. i just heard about evans new position,good luck to you evan backstabber, bastard, i mean baxter. your entrance was good, his was better. we're going for a ride on the information super highway. we're going for a ride on the information super highway. look at that, it's exactly three seconds before i honk your nose and pull your underwear over your head. brain freeze. we got no food we got no money and our pets heads are falling off! haaaaaaarry.</p></div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Carey ipsum-->
+                    </ul>
+                </div><!--slide-left-->
+        </div> <!--about-mobile faq-hide-->
+     </div><!--container-->
         </aside>
-        <article class="more">
+       <!--  <article class="more">
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. A enim nobis aliquid et accusantium. Necessitatibus hic quam voluptas pariatur sed architecto officia dignissimos error quaerat dicta. Id recusandae autem modi voluptatum veniam, inventore nostrum deleniti, dignissimos temporibus distinctio corporis sunt non fugit illo nihil velit at reprehenderit ullam quisquam. Exercitationem.</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat animi minus ad eius dignissimos nostrum necessitatibus ab dicta est totam.</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus in facere sint tempora velit eaque consectetur recusandae quaerat natus ut quibusdam quos numquam nemo amet sequi officia expedita quam iure ducimus nisi asperiores explicabo a, aliquam consequuntur! Atque nulla quasi quidem corporis accusantium, placeat iusto obcaecati quae iure optio ab?</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa tempore fugit, sunt obcaecati esse adipisci assumenda quibusdam doloribus doloremque consectetur nihil molestiae neque suscipit maxime, aut accusamus est molestias iusto.</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, illum sequi rem. Quisquam sed blanditiis, magni dolor, saepe laborum aspernatur consectetur officiis doloribus! Eum nobis, illo placeat accusamus. Tempore eum explicabo odit eos, voluptate modi similique saepe in, fuga facilis impedit excepturi omnis unde, doloremque ipsa ducimus sit dolore ipsum?</p>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio odit mollitia rerum saepe iste sequi voluptates eligendi sint tenetur. Officiis quis doloribus asperiores corporis praesentium dolorum molestiae quisquam velit eaque nisi, dignissimos magni vitae rem, dolor? Qui cumque nihil omnis!</p>
-        </article>
+        </article> -->
       </article>
     </article>
     <hr/>
     <!-- Article 3-->
-    <header class="article-header" id="later">
-      <h1>Article Title: Lorem ipsum dolor sit amet, consectetur adipisicing elit</h1>
+    <header class="article-header" id="later" style="display: flex;justify-content: space-around;align-items: baseline;">
+      <h1>Schedule Quick &amp; Easy Online</h1>
+    <a href="" style="transform: translate(0,5ch);"><button style="padding: 5px 7px 5px 7px;height: 3rem;width: 9rem;background-color: blue;color: white;font-size: 1rem;"><strong>Schedule Now!</strong></button></a>
     </header>
-    <article><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/i2-rentbpku-oskar-krawczyk.jpg"/>
+    <article><img src="https://dl3.pushbulletusercontent.com/u6LRLIuetZuTyzMSOK6IqlHUT9O7icm1/innerGbanner.jpg"/>
       <article class="article">
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis sequi praesentium, sint earum error porro ut necessitatibus ullam, aut dolorem quibusdam laborum reprehenderit, natus modi dolore inventore hic veniam labore.</p>
+        <p>At Inner G We care about you! We want to relieve all your muscle tension, especially the headache that comes with scheduling an appointment. With <a href="">Online Scheduling</a> its easy to create or even edit an appointment time. <a href="">Get Started Now</a></p>
         <aside class="more-trigger">
           <p>Read More</p>
         </aside>
@@ -974,13 +2274,32 @@ border-radius:6px;
         </article>
       </article>
     </article>
+    <br>
+    <button id="added1">added</button>
+    <!-- <button id="removed1">removed</button> -->
+<div class="grid gutter">
+  <div class="third" >
+    <div>1</div>
+  </div>
+  <div class="third" id="updateTwoThirds" style="flex-basis:66.666666% ">
+    <div>
+      <img src="https://dl3.pushbulletusercontent.com/TEGjuvE1nMcfqllp2hbPXPUrHVtyxECx/midGPic.jpg" alt="">
+      <caption>words words words</caption>
+    </div>
+
+  </div>
+  <!-- <div class="third" id="stillPro">
+    <div>3</div>
+  </div> -->
+</div>
+
   </section>
   <aside id="sidebar">
     <div id="mobile-trigger-close">
       <p><i class="zmdi zmdi-close"></i></p>
     </div>
     <div class="widget" id="element-1">
-      <h4>Widget Title</h4><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/rrun5qcje_s-daryan-shamkhali.jpg"/>
+      <h4 style="font-size: 1.32rem">?hablas espanol?</h4><img src="https://images.unsplash.com/photo-1489945052260-4f21c52268b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"/>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus voluptates ad recusandae iste! Ex corrupti exercitationem voluptates eius quisquam! Omnis!</p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/495197/c6dbtf4qf9u-sven-scheuermeier.jpg"/>
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus voluptates ad recusandae iste! Ex corrupti exercitationem voluptates eius quisquam! Omnis!</p>
     </div>
@@ -999,6 +2318,24 @@ border-radius:6px;
   </aside>
 </main>
 <div id="overlay"></div>
+
+<div class="overOverlay" style="background-color: transparent;opacity:1;z-index: 0">
+  <div class="grid" style="margin-top: 33vh">
+    <div class="third" style="visibility: hidden;">
+      <div>1</div>
+    </div>
+    <div class="third" style="visibility: hidden;">
+      <div>2</div>
+    </div>
+    <div class="third" style="padding-right: 0.5rem">
+
+     
+    </div>
+  </div>
+</div>
+<div class="overOverlay" style="background-image: url(https://lh3.googleusercontent.com/2T9ss01u_3RdcTFMSKwPsYwsejVsmTTgtRAr_Sft1K0eFbCinE6XiFgnbnN9LH5FH_gVfAX2QmG83fP2JJbmEqMpdV_q=s480);background-repeat: no-repeat;-webkit-background-size: cover;
+background-size: cover; opacity:0.68;z-index: 0">
+ 
 
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script>var windowSize = $(window).height();
@@ -1071,7 +2408,7 @@ $('#overlay, #mobile-trigger-close').on('click', function() {
 <script>$(document).ready(function(){
   
   var preloadbg = document.createElement("img");
-  preloadbg.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/timeline1.png";
+  preloadbg.src = "https://dl3.pushbulletusercontent.com/ZMmay0sBkCxqnmA3vb6zrHTG1stwoRlF/showCaseLogoinnerG.jpeg";
   
   $("#searchfield").focus(function(){
     if($(this).val() == "Search contacts..."){
@@ -1151,7 +2488,564 @@ $('#overlay, #mobile-trigger-close').on('click', function() {
   });     
 });</script>
 
+<script>var flexWidthLG = 1200,
+    flexWidthMD = 960,
+    flexWidthSM = 750,
+    flexWidthXSM = 600,
+    flexWidthXXSM = 450;
+
+// NUFlex begin
+$('.nuflex').each(function() {
+  var nuflex = $(this);
+  var nuflexContainer = nuflex.find('ul').width();
+  var nuflexWidth = nuflex.find('ul')[0].scrollWidth;
+  var nuflexItemWidth = nuflex.find('li').width();
+  var nuflexCount = nuflex.find('li').length;
+  var widthMinus = nuflexWidth-nuflexContainer;
+  var nuflexPos = 0;
+  // Fix for that darn IE9!
+  if ($('ul[data-nuflexVert="2"],ul[data-nuflexVert="3"]').css('display') == 'block') {
+    $(this).find('li').css('height','100%');
+  }
+  // Fade out and remove video-container 
+  function removeFlexVideo(thisFlexVideo) {
+    if (thisFlexVideo[0]) {
+      thisFlexVideo.fadeOut(150);
+      setTimeout(function() {thisFlexVideo.remove();},150); 
+    }
+  }
+  // How to treat list items with links
+  nuflex.find('li').each(function() {
+    var flexItem = $(this);
+    // If list item contains a link
+    if (flexItem.find('a')[0]) {
+      var itemLink = flexItem.find('a').attr('href');
+      var itemImage = flexItem.find('.flex-image');
+      var flexEmbedName = itemLink.replace(/[^\w\s]/gi, '').replace(/ /g, '').toLowerCase();
+      // Wrap flex-image in an <a> element
+      itemImage.prepend('<a class="flex-link-tag" href="'+itemLink+'"></a>');
+      // If link is a video
+      if (itemLink.match(/(youtube|vimeo)/)) {
+        // Add play icon to image
+        itemImage.find('.flex-link-tag').addClass('flex-video');
+        // If video link is clicked
+        flexItem.find('a').click(function() {
+          // Turn link into embed link based on the source - currently either youtube or vimeo
+          var embedLink = itemLink.match(/(youtube)/)?itemLink.replace('&list=', '?list=').replace('watch?v=', 'embed/') + '?rel=0&amp;autoplay=1&showinfo=0&autohide=1':itemLink.replace('vimeo.com/', 'player.vimeo.com/video/') + '?autoplay=1';
+          var flexIframe = '<iframe src="'+embedLink+'" class="flex-video-container '+flexEmbedName+'-video-container'+'" frameborder="0" scrolling="auto" allowfullscreen="true" allowtransparency="true" height="100%" width="100%" style="min-height:100%;"></iframe>';
+          if (!$('.'+flexEmbedName+'-video-container')[0]) {
+            removeFlexVideo($('.flex-video-container'));
+            itemImage.append(flexIframe);
+            itemImage.find('.'+flexEmbedName+'-video-container').fadeIn(125);
+          }
+          return false;
+        });
+      }
+      else {
+        // Add link icon to image
+        itemImage.find('.flex-link-tag').addClass('flex-link');
+      }
+    }
+  });
+  // Adding and removing buttons based on number of items
+  nuflex.append('<span class="next"></span><span class="prev button-inactive"></span>');
+  function nuflexDoStuff() {
+    // Check to see if buttons are necessary
+    if (nuflexWidth > nuflexContainer) {
+      nuflex.find('.next,.prev').show();
+      nuflex.css('padding-right','50px');
+    }
+    else {
+      nuflex.find('.next,.prev').hide();
+      nuflex.css('padding-right','0px');
+      nuflex.find('ul li').addClass('flex-only-child');
+    }
+    // Inactive state
+    if (nuflexPos == 0) {nuflex.find('.button-inactive').removeClass('button-inactive');nuflex.find('.prev').addClass('button-inactive');}
+    else if (Math.abs(nuflexPos) == widthMinus) {nuflex.find('.button-inactive').removeClass('button-inactive');nuflex.find('.next').addClass('button-inactive');}
+    else {nuflex.find('.button-inactive').removeClass('button-inactive');}
+    // Mobile click to show caption
+    nuflex.find('li').each(function() {
+      var item = $(this);
+      if (item.find('.caption').css('opacity') == '0') {
+        item.find('.caption').click(function() {
+          item.find('.caption').addClass('show-caption');
+        });
+      }
+    });
+  }nuflexDoStuff();
+  // If window is resized, remeasure nuflex width
+  $(window).resize(function() {
+    nuflexPos = 0;
+    nuflex.find('ul').scrollLeft(0);
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    setTimeout(function() {
+      nuflexContainer = nuflex.width();
+      nuflexWidth = nuflex.find('ul')[0].scrollWidth;
+      nuflexItemWidth = nuflex.find('li').width();
+      widthMinus = nuflexWidth-nuflexContainer;
+      nuflexDoStuff();
+    },500);
+  });
+  // If next is clicked, push slides left
+  nuflex.find('.next').click(function() {
+    if (widthMinus-Math.abs(nuflexPos) <= nuflexContainer) {nuflexPos = -widthMinus;}
+    else {nuflexPos = nuflexPos - nuflexContainer;}
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    return false;
+  });
+  // If prev is clicked, push slides right
+  nuflex.find('.prev').click(function() {
+    if (Math.abs(nuflexPos) <= nuflexContainer) {nuflexPos = 0;}
+    else if (nuflexPos < 0) {nuflexPos = nuflexPos + nuflexContainer;}
+    nuflex.find('li').css({'transform':'translateX('+nuflexPos+'px)'});
+    return false;
+  });
+  // Inactive button state
+  nuflex.find('.next,.prev').click(function() {
+    removeFlexVideo(nuflex.find('.flex-video-container'));
+    nuflexDoStuff();return false;
+  });
+});</script>
 
 
+ <script>
+           const createTab2 =  document.createElement('span');
+           createTab2.innerHTML = '<div class="friend2"><img style="display:none;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" /><p><strong style="font-size: 16px">FAQ</strong><br><span>have a question?</span></p><div class="status away" style="background-color: goldenrod"></div></div><div class="friend2"><img style="display:none;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" /><p><strong style="font-size: 16px">FAQ</strong><br><span>have a question?</span></p><div class="status active" style="background-color: green"></div></div><div class="friend2"><img style="display:none;" src="https://dl3.pushbulletusercontent.com/TAViQnnP7RTwrV4SE9hxuVapuaSqdgfq/greensquare.jpg" /><p><strong style="font-size: 16px">FAQ</strong><br><span>have a question?</span></p><div class="status away" style="background-color: goldenrod"></div></div>';
+
+            addTab2   = () => {
+              document.querySelector('.third').appendChild(createTab2)
+
+            } 
+            removeTab2 = () => {
+              document.querySelector('.third').removeChild(createTab2)
+            } 
+
+ document.getElementById('added1').addEventListener('click',addTab2);
+    document.getElementById('removed1').addEventListener('click',removeTab2);
+
+  </script>
+<script>
+
+$(function() {
+
+  
+  // default is varying levels of transparent white sparkles
+  $(".sparkley:first").sparkleh();
+  
+  // rainbow as a color generates random rainbow colros
+  // count determines number of sparkles
+  // overlap allows sparkles to migrate... watch out for other dom elements though.
+  $(".sparkley:last").sparkleh({
+    color: "rainbow",
+    count: 100,
+    overlap: 10
+  });
+  
+  // here we create fuscia sparkles
+  $("h1").sparkleh({
+    count: 80,
+    color: ["#ff0080","#ff0080","#0000FF"]
+  });
+  
+  
+  
+  $("p").sparkleh({
+    count: 20,
+    color: "#00ff00",
+    speed: 0.05
+  });
+  
+  
+  // an array can be passed, too for colours
+  // for an image, the image needs to be fully loaded to set
+  // the canvas to it's height/width.
+  // speed allows us to control... the ... velocity 
+  $("#image").imagesLoaded( function() {
+    $(".img").sparkleh({
+      count: 25,
+      color: ["#f3edc4","#253943","#659e3f"],
+    speed: 0.4
+    });
+  });
+
+
+});
+
+
+
+
+
+
+
+$.fn.sparkleh = function( options ) {
+    
+  return this.each( function(k,v) {
+    
+    var $this = $(v).css("position","relative");
+    
+    var settings = $.extend({
+      width: $this.outerWidth(),
+      height: $this.outerHeight(),
+      color: "#FFFFFF",
+      count: 30,
+      overlap: 0,
+      speed: 1
+    }, options );
+    
+    var sparkle = new Sparkle( $this, settings );
+    
+    $this.on({
+      "mouseover focus" : function(e) {
+        sparkle.over();
+      },
+      "mouseout blur" : function(e) {
+        sparkle.out();
+      }
+    });
+    
+  });
+  
+}
+
+
+
+
+function Sparkle( $parent, options ) {
+  this.options = options;
+  this.init( $parent );
+}
+
+Sparkle.prototype = {
+  
+  "init" : function( $parent ) {
+    
+    var _this = this;
+    
+    this.$canvas = 
+      $("<canvas>")
+        .addClass("sparkle-canvas")
+        .css({
+          position: "absolute",
+          top: "-"+_this.options.overlap+"px",
+          left: "-"+_this.options.overlap+"px",
+          "pointer-events": "none"
+        })
+        .appendTo($parent);
+    
+    this.canvas = this.$canvas[0];
+    this.context = this.canvas.getContext("2d");
+    
+    this.sprite = new Image();
+    this.sprites = [0,6,13,20];
+    this.sprite.src = this.datauri;
+    
+    this.canvas.width = this.options.width + ( this.options.overlap * 2);
+    this.canvas.height = this.options.height + ( this.options.overlap * 2);
+    
+    
+    this.particles = this.createSparkles( this.canvas.width , this.canvas.height );
+    
+    this.anim = null;
+    this.fade = false;
+    
+  },
+  
+  "createSparkles" : function( w , h ) {
+    
+    var holder = [];
+    
+    for( var i = 0; i < this.options.count; i++ ) {
+      
+      var color = this.options.color;
+      
+      if( this.options.color == "rainbow" ) {
+        color = '#'+ ('000000' + Math.floor(Math.random()*16777215).toString(16)).slice(-6);
+      } else if( $.type(this.options.color) === "array" ) {
+        color = this.options.color[ Math.floor(Math.random()*this.options.color.length) ];
+      }
+
+      holder[i] = {
+        position: {
+          x: Math.floor(Math.random()*w),
+          y: Math.floor(Math.random()*h)
+        },
+        style: this.sprites[ Math.floor(Math.random()*4) ],
+        delta: {
+          x: Math.floor(Math.random() * 1000) - 500,
+          y: Math.floor(Math.random() * 1000) - 500
+        },
+        size: parseFloat((Math.random()*2).toFixed(2)),
+        color: color
+      };
+            
+    }
+    
+    return holder;
+    
+  },
+  
+  "draw" : function( time, fade ) {
+        
+    var ctx = this.context;
+    
+    ctx.clearRect( 0, 0, this.canvas.width, this.canvas.height );
+          
+    for( var i = 0; i < this.options.count; i++ ) {
+
+      var derpicle = this.particles[i];
+      var modulus = Math.floor(Math.random()*7);
+      
+      if( Math.floor(time) % modulus === 0 ) {
+        derpicle.style = this.sprites[ Math.floor(Math.random()*4) ];
+      }
+      
+      ctx.save();
+      ctx.globalAlpha = derpicle.opacity;
+      ctx.drawImage(this.sprite, derpicle.style, 0, 7, 7, derpicle.position.x, derpicle.position.y, 7, 7);
+      
+      if( this.options.color ) {  
+        
+        ctx.globalCompositeOperation = "source-atop";
+        ctx.globalAlpha = 0.5;
+        ctx.fillStyle = derpicle.color;
+        ctx.fillRect(derpicle.position.x, derpicle.position.y, 7, 7);
+        
+      }
+      
+      ctx.restore();
+
+    }
+    
+        
+  },
+  
+  "update" : function() {
+    
+     var _this = this;
+    
+     this.anim = window.requestAnimationFrame( function(time) {
+
+       for( var i = 0; i < _this.options.count; i++ ) {
+
+         var u = _this.particles[i];
+         
+         var randX = ( Math.random() > Math.random()*2 );
+         var randY = ( Math.random() > Math.random()*3 );
+         
+         if( randX ) {
+           u.position.x += ((u.delta.x * _this.options.speed) / 1500); 
+         }        
+         
+         if( !randY ) {
+           u.position.y -= ((u.delta.y * _this.options.speed) / 800);
+         }
+
+         if( u.position.x > _this.canvas.width ) {
+           u.position.x = -7;
+         } else if ( u.position.x < -7 ) {
+           u.position.x = _this.canvas.width; 
+         }
+
+         if( u.position.y > _this.canvas.height ) {
+           u.position.y = -7;
+           u.position.x = Math.floor(Math.random()*_this.canvas.width);
+         } else if ( u.position.y < -7 ) {
+           u.position.y = _this.canvas.height; 
+           u.position.x = Math.floor(Math.random()*_this.canvas.width);
+         }
+         
+         if( _this.fade ) {
+           u.opacity -= 0.02;
+         } else {
+           u.opacity -= 0.005;
+         }
+         
+         if( u.opacity <= 0 ) {
+           u.opacity = ( _this.fade ) ? 0 : 1;
+         }
+         
+       }
+       
+       _this.draw( time );
+       
+       if( _this.fade ) {
+         _this.fadeCount -= 1;
+         if( _this.fadeCount < 0 ) {
+           window.cancelAnimationFrame( _this.anim );
+         } else {
+           _this.update(); 
+         }
+       } else {
+         _this.update();
+       }
+       
+     });
+
+  },
+  
+  "cancel" : function() {
+    
+    this.fadeCount = 100;
+
+  },
+  
+  "over" : function() {
+    
+    window.cancelAnimationFrame( this.anim );
+    
+    for( var i = 0; i < this.options.count; i++ ) {
+      this.particles[i].opacity = Math.random();
+    }
+    
+    this.fade = false;
+    this.update();
+
+  },
+  
+  "out" : function() {
+    
+    this.fade = true;
+    this.cancel();
+    
+  },
+  
+  
+  
+  "datauri" : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAHCAYAAAD5wDa1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozNDNFMzM5REEyMkUxMUUzOEE3NEI3Q0U1QUIzMTc4NiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozNDNFMzM5RUEyMkUxMUUzOEE3NEI3Q0U1QUIzMTc4NiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjM0M0UzMzlCQTIyRTExRTM4QTc0QjdDRTVBQjMxNzg2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjM0M0UzMzlDQTIyRTExRTM4QTc0QjdDRTVBQjMxNzg2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+jzOsUQAAANhJREFUeNqsks0KhCAUhW/Sz6pFSc1AD9HL+OBFbdsVOKWLajH9EE7GFBEjOMxcUNHD8dxPBCEE/DKyLGMqraoqcd4j0ChpUmlBEGCFRBzH2dbj5JycJAn90CEpy1J2SK4apVSM4yiKonhePYwxMU2TaJrm8BpykpWmKQ3D8FbX9SOO4/tOhDEG0zRhGAZo2xaiKDLyPGeSyPM8sCxr868+WC/mvu9j13XBtm1ACME8z7AsC/R9r0fGOf+arOu6jUwS7l6tT/B+xo+aDFRo5BykHfav3/gSYAAtIdQ1IT0puAAAAABJRU5ErkJggg=="
+
+}; 
+
+
+
+
+
+// $('img.photo',this).imagesLoaded(myFunction)
+// execute a callback when all images have loaded.
+// needed because .load() doesn't work on cached images
+ 
+// mit license. paul irish. 2010.
+// webkit fix from Oren Solomianik. thx!
+ 
+// callback function is passed the last image to load
+//   as an argument, and the collection as `this`
+ 
+ 
+$.fn.imagesLoaded = function(callback){
+  var elems = this.filter('img'),
+      len   = elems.length,
+      blank = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+      
+  elems.bind('load.imgloaded',function(){
+      if (--len <= 0 && this.src !== blank){ 
+        elems.unbind('load.imgloaded');
+        callback.call(elems,this); 
+      }
+  }).each(function(){
+     // cached images don't fire load sometimes, so we reset src.
+     if (this.complete || this.complete === undefined){
+        var src = this.src;
+        // webkit hack from https://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
+        // data uri bypasses webkit log warning (thx doug jones)
+        this.src = blank;
+        this.src = src;
+     }  
+  }); 
+ 
+  return this;
+};
+
+
+</script>
+
+
+
+<script>
+    var accordWithPage =  function() {
+  
+ var faqDiv = $('#faq-links div');
+  
+
+$(function () {
+  
+faqDiv.on("click", function() {
+    
+  var hideSec = 'faq-hide';  
+      var $this = $(this),
+      $id = $this.attr('id'),
+      $class = '.' + $('.about-' + $id).attr('class').replace(hideSec, '');
+
+  $('#faq-wrapper').addClass(hideSec);
+  $('.about-' + $id).removeClass(hideSec);
+  $('div[class*=about]').not($class).addClass(hideSec);
+     
+ });
+
+});
+
+$(function () {
+  
+        var select = 'faq-selected';      
+  
+        faqDiv.click(function () {
+
+        if ($(this).hasClass(select)) {
+            $(this).removeClass(select);
+        } else {
+            $('#faq-links .faq-selected').removeClass(select);
+            $(this).addClass(select);             
+        }
+    }); //faq link selected
+});
+
+  
+  
+//Accordion
+  
+$(function () {
+  
+  var expand = 'expanded';
+  var content = $('.faq-content');
+        //FAQ Accordion
+        $('.faq-accordion > li > a').click(function (e) {
+                e.preventDefault();
+        if ($(this).hasClass(expand)) {
+            $(this).removeClass(expand);
+//          $('.faq-accordion > li > a > div').not(this).css('opacity', '1');//returns li back to normal state
+            $(this).parent().children('ul').stop(true, true).slideUp();
+        } else {
+//            $('.faq-accordion > li > a > div').not(this).css('opacity', '0.5');//dims inactive li
+            $('.faq-accordion > li > a.expanded').removeClass(expand);
+            $(this).addClass(expand);
+            content.filter(":visible").slideUp();
+            $(this).parent().children('ul').stop(true, true).slideDown();
+        }
+    }); //accordion function
+
+    content.hide();
+
+}); 
+  
+}
+
+accordWithPage();
+
+
+
+
+
+</script>
+  <!-- <script>const babyh3 = document.createElement('h3');
+    babyh3.innerHTML=` <div class="logopogo"><a style="width: 100%;height: 120px;"  href="#home"><img src="https://dl3.pushbulletusercontent.com/xvBJddIoWPDPvnTIRptngq9ebeqUoK8H/logieLogo.png"></a></div>`;
+    addX = () => {
+      document.getElementById('pro').appendChild(babyh3);
+
+    }
+    removeX = () => {
+      document.getElementById('pro').removeChild(babyh3);
+      ;
+    }
+    document.getElementById('added1').addEventListener('click',addX);
+    document.getElementById('removed1').addEventListener('click',removeX);</script> -->
     </body>
 </html>
