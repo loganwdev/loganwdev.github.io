@@ -392,10 +392,16 @@ a {
  display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
 /*   .mobile-message {
     display: block; */
+.fixed-header__image-overflow{
+    width: 80vw;
+    margin-top: 0.8vh;
+    padding-bottom: 42.5%;
+    overflow: hidden;
   }
+  
 }
 
 #fixed-image-container {
@@ -483,12 +489,13 @@ a {
 
     <section class="sign-up" data-scroll-section>
       <div class="sign-up__container">
-        <h1 style="font-size: 1.2rem;padding-left: 5vw;transform: translate(0,1.32vh);">Need Tutoring?</h1>
-        <h3>Sign up to receive my schedule & rates</h3>
-        <p>Simply Leave your Email Below</p>
-        <form action="/" method="post" style="border: 1px solid black;color: black;">
-          <input type="email" placeholder="EMAIL" style="border: 1px solid rgba(0,0,0,0.32);color: black;">
-          <input type="submit" value="SUBSCRIBE">
+        <h1 style="font-size: 3rem;padding-left: 5vw;transform: translate(0,1.32vh);">Need Tutoring?</h1>
+        <h3 style="padding-left: 5vw;margin-top: -1vh;">Sign up to receive my schedule & rates</h3>
+        <p style="padding-left: 5vw;color: #09f;">Simply Leave your Email Below</p>
+        <form action="/" method="post" style="padding-left: 5vw;height: 32vh;" >
+          <label for="email" style="padding: 5px 7px 5px 0;">EMAIL</label>
+          <input  type="email" placeholder="EMAIL" style="height:2.3vh;border: 3px solid rgba(0,0,0,0.68);color: black;background-color: white;">
+          <input style="padding-left: 5vw" type="submit" value="SUBSCRIBE">
         </form>
       </div>
     </section>
