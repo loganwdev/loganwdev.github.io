@@ -547,11 +547,11 @@ function debounce(func,wait = 20, immediate = true) {
     let scrollNum = window.scrollY;
     console.log(window.scrollY);
     // document.getElementById('text').style.visibility = 'hidden'
-    if(scrollNum > 270){
+    if(scrollNum > 310){
       console.log('%chuzzah','font-weight:bold;font-size:1.5rem;color:red;');
       smile();
       }//end IF statement
-      else {
+      if(scrollNum < 300){
         console.log('%cworky','font-weight:bold;font-size:1.5rem;color:green;');
         frown();
       }
