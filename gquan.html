@@ -374,21 +374,25 @@ hr {
 
 
   #chatbox{
-  width:290px;
+  width:298px;
+  min-width: 298px;
   background:#fff;
   border-radius:6px;
   overflow:hidden;
   height:517px;
-  position:absolute;
-  top:60px;
+  position:relative;
+  top:24%;
   left:32%;
-  margin-left:-155px;
+  /*margin-left:-155px;*/
 }
 @media (max-width: 700px) {
  #chatbox {
-    
+        width: 298px;
     margin-left: -19% !important;
-    margin-top: 13.5vh
+    /* margin-top: 13.5vh; */
+    padding: 0;
+    width: 300px;
+    position: absolute;
 }
 }
 #friendslist{
@@ -3141,6 +3145,7 @@ accordWithPage();
     document.getElementById('added1').addEventListener('click',addX);
     document.getElementById('removed1').addEventListener('click',removeX);</script> -->
      <script>
+      
         const bellaExample = document.querySelector('#bellaExample');
         const leftDiv = document.querySelector('.left');
         const leftDivInfo = document.querySelector('#leftDivInfo');
