@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flextrial</title>
+	<!-- <link rel="stylesheet" href="base.css"> -->
+<!-- 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="djs.js"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+</head>
+<style>
+
+
+html, body {
+	padding: 0 0px;
+	margin: 0;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 100vw;
+
+}
+
+
+
+.main-body, html {
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  height: 100%;
+  background: url(https://www.toptal.com/designers/subtlepatterns/patterns/gplaypattern.png);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main-body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.main-body.is-mobile {
+  overflow: auto;
+}
+
+.main-body.loading #loader {
+    opacity: 1;
+    transition: opacity 5s ease-out;
+}
+
+#loader {
+  width: 100%;
+  height: 100%;
+  background-color: #ffe55d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#percentage {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-size: 100px;
+  margin: 0;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 30px 60px 0;
+  box-sizing: border-box;
+}
+
+.navigation a {
+  color: black;
+  text-decoration: none;
+}
+
+.navigation h1,
+.navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__logo {
+  font-size: 16px;
+}
+
+.navigation__links {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.navigation__links ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navigation__links ul:first-child {
+  margin-right: 100px;
+}
+
+.navigation__links li {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.navigation__links li:last-child {
+  margin-right: 0px;
+}
+
+.navigation__burger{
+  position: relative;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation__burger div{
+  width: 15px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+}
+
+.navigation__burger div:first-child{
+  top: 10px;
+}
+
+.navigation__burger div:last-child{
+  bottom: 10px;
+}
+
+.navigation__burger div:nth-child(2){
+  transform: translate(0%, -50%);
+  top: 50%;
+}
+
+[data-scroll] {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  top: 0;
+  left: 0;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  background: url(https://www.toptal.com//designers/subtlepatterns/patterns/gplaypattern.png);
+ /* background-image: url(https://dl3.pushbulletusercontent.com/4rYUcknl7yLuvObBzMmZ6gr12AbITKk3/waves.png);*/
+/*  background-repeat: no-repeat;*/
+}
+
+
+[data-scroll]:nth-child(-n+3) {
+     
+    background: url(https://www.toptal.com//designers/subtlepatterns/patterns/gplaypattern.png); 
+    background-image: url(https://dl3.pushbulletusercontent.com/4rYUcknl7yLuvObBzMmZ6gr12AbITKk3/waves.png); 
+}
+.main-body.is-mobile [data-scroll] {
+  overflow: auto;
+  position: relative;
+  will-change: inherit;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 100px 0 0 60px;
+}
+
+.fixed-header__headline {
+  font-size: 150px;
+  line-height: 150px;
+  margin: 0 0 0 0px;
+  position: relative;
+  z-index: 1;
+  transform: translate(-1%,10px);
+}
+
+.fixed-header__headline.front-index {
+  z-index: 3;
+  margin-bottom: 35px;
+}
+
+.fixed-header__image-container {
+  position: absolute;
+  right: 0;
+  top: 230px;
+  z-index: 2;
+  overflow: hidden;
+  transition: all 1s ease ;
+}
+
+.fixed-header__image-overflow {
+  width: 80vw;
+  padding-bottom: 42.5%;
+  overflow: hidden;
+}
+
+.fixed-header__image {
+  width: 100%;
+  position: absolute;
+}
+
+.fixed-header__image-two {
+  width: 100%;
+  position: absolute;
+}
+
+.fixed-header__text {
+  position: relative;
+  z-index: 3;
+}
+
+.fixed-header__author {
+  font-size: 1.9rem;
+  letter-spacing: 2px;
+}
+
+.fixed-header__subheadline {
+  font-size: 1.45rem;
+  max-width: 50vw;
+  letter-spacing: -1px;
+}
+
+.right-image {
+  width: 550px;
+  position: relative;
+  margin-left: auto;
+  margin-top: 140px;
+  margin-bottom: -200px;
+  z-index: 1;
+}
+
+.right-image__overflow {
+  overflow: hidden;
+  transform-origin: top;
+}
+
+.right-image__container{
+  width: 100%;
+  padding-bottom: 125%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transform-origin: top;
+}
+
+.right-image.test .right-image__overflow {
+  transform: scaleY(.25);
+}
+
+.right-image.test .right-image__container {
+  transform: scaleY(2);
+}
+
+.description {
+    position: relative;
+    display: inline-block;
+    /*margin: 7% 225px 0 auto;
+    float: right;*/
+
+    margin: auto;
+    margin-top: 5.25vh;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.description__container {
+  background: url(https://images.unsplash.com/photo-1566622589760-d01f64d3f9b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: white;
+  padding: 60px 80px 10vh ;
+  width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  margin-top: 5vh;
+  position: static;
+  border-radius: 6%;
+ 
+}
+
+
+@media (max-width: 500px) {
+ .description__container {background: url(https://images.unsplash.com/photo-1566622589760-d01f64d3f9b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    padding: 26px;
+    width: 67vw;
+    height: 100%;
+    max-height: 100%;
+    min-width: 100%;
+    margin-top: 5vh;
+    position: static;}
+  
+}
+.description h1 {
+   font-size: 1.8rem;
+   line-height: 1.6rem;
+   margin: 0 0 35px;
+   width: 32vw;
+
+}
+
+/*.description p {
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: -1px;
+}*/
+
+.description a {
+  display: block;
+}
+
+.sign-up {
+  width: 768px;
+  clear: both;
+  height: 100vh;
+  background-color: rgba();
+}
+
+.sign-up__container {
+      width: 100vw;
+    height: 67vw;
+    background: url(https://images.unsplash.com/photo-1423068657086-889315a2eba8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(0,0,0,0.45);
+    /* padding: 100px 80px; */
+    margin: auto;
+}
+
+.sign-up h1 {
+  font-size: 100px;
+  line-height: 100px;
+  margin: 0 0 50px;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.32);
+}
+
+.sign-up h3 {
+  font-size: 49px;
+  margin: 0 0 25px;
+}
+
+.sign-up p {
+  font-size: 30px;
+}
+
+.sign-up form {
+  width: 700px;
+  /*border-bottom: 2px solid white;*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sign-up input[type=email] {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 75%;
+  padding: 10px 0;
+}
+
+.sign-up input[type=email]::placeholder {
+  color: white;
+  font-size: 15px;
+}
+
+.sign-up input[type=submit] {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+.mobile-message {
+  background-color: #ffe55d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999;
+ display: none;
+}
+}
+
+
+@media (max-width: 568px) {
+/*   .mobile-message {
+    display: block; */
+.fixed-header__image-overflow{
+    width: 80vw;
+    margin-top: 0.8vh;
+    padding-bottom: 42.5%;
+    overflow: hidden;
+  }
+  .description{
+    height: 80vh;
+    width: 80vw;
+  }
+  .description__container {
+  border-radius: 1rem;
+  width: 80vw;
+}
+.description p {
+   font-size: 2rem;
+   line-height: 2.3rem;
+   margin: 1vh 0 0.5vh;
+   width: 50vw;
+   padding-bottom: 2vh;
+
+}
+}
+
+
+.description h1 {
+   font-size: 5rem;
+   line-height: 4.5rem;
+   margin: 0 0 12px;
+   width: 32vw;
+}
+.description p {
+   font-size: 2.3rem;
+   line-height: 3rem;
+   margin: 2vh 0 1vh;
+   width: 32vw;
+   padding-bottom: 2vh;
+
+}
+.description__container {
+  border-radius: 1rem;
+}
+
+#fixed-image-container {
+
+}
+
+#top-headline {
+  transition: all 1s ease;
+}
+#bottom-headline {
+  transition: all 1s ease;
+}
+#viewWorkBtn{
+  transition: all 0.5s ease;
+}
+
+.receipt__container {
+  position: relative;
+  z-index: 9999;
+ 
+  border-radius: 12px;
+/*  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);*/
+}
+.receipt__container .receipt__body {
+  width: 650px;
+  height: 395px;
+  border-radius: 12px;
+  background-color: #fff;
+  position: relative;
+}
+.receipt__container .receipt__body .left {
+  width: 325px;
+  height: 395px;
+  float: left;
+}
+.receipt__container .receipt__body .left .left__name, .receipt__container .receipt__body .left .left__items, .receipt__container .receipt__body .left .left__total {
+  border-bottom: 1px solid #E5E5E5;
+  width: 325px;
+}
+.receipt__container .receipt__body .left .left__name {
+  height: 70px;
+}
+.receipt__container .receipt__body .left .left__name span:nth-child(1) {
+  color: #32257E;
+  font-size: 20px;
+  display: inline-block;
+  width: 50%;
+  line-height: 70px;
+  padding-left: 25px;
+}
+.receipt__container .receipt__body .left .left__name span:nth-child(2) {
+  color: #C6C6C6;
+  font-size: 15px;
+  display: inline;
+  float: right;
+  width: 50%;
+  line-height: 70px;
+  padding-left: 35px;
+}
+.receipt__container .receipt__body .left .left__items {
+  height: 162px;
+  padding-left: 25px;
+  padding-top: 12px;
+}
+.receipt__container .receipt__body .left .left__items span {
+  color: #C6C6C6;
+  text-transform: uppercase;
+  padding-left: 2px;
+}
+.receipt__container .receipt__body .left .left__items .tickets {
+  display: block;
+  width: 325px;
+  padding-top: 8px;
+}
+.receipt__container .receipt__body .left .left__items .tickets .type {
+  color: #2E43B0;
+  font-size: 12px;
+  vertical-align: middle;
+  padding-bottom: 7px;
+}
+.receipt__container .receipt__body .left .left__items .tickets .type:before {
+  content: '';
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/59615/ticket-icon.png);
+  width: 23px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: 23px 12px;
+  display: inline-block;
+  margin-right: 15px;
+  margin-left: 2px;
+}
+.receipt__container .receipt__body .left .left__items .tickets .price {
+  color: #B6BAC5;
+  padding-left: 80px;
+  font-size: 15px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+.receipt__container .receipt__body .left .left__items .tickets .price:before {
+  content: '';
+  font-size: 10px;
+  font-weight: normal;
+  padding-right: 1px;
+
+}
+.receipt__container .receipt__body .left .left__items .left__notice {
+  width: 325px;
+  height: 73px;
+}
+.receipt__container .receipt__body .left .left__total {
+  height: 90px;
+}
+.receipt__container .receipt__body .left .left__total span {
+  color: #32257E;
+  display: block;
+  width: 325px;
+  padding-left: 25px;
+  line-height: 45px;
+}
+.receipt__container .receipt__body .left .left__total span:nth-child(1) {
+  padding-top: 5px;
+}
+.receipt__container .receipt__body .left .left__total span:nth-child(2) {
+  margin-top: -10px;
+}
+.receipt__container .receipt__body .left .left__notice {
+  color: #B6BAC5;
+  font-size: 12px;
+  margin: 15px 25px;
+}
+.receipt__container .receipt__body .right {
+  border-left: solid 1px #E5E5E5;
+  width: 325px;
+  height: 395px;
+  float: left;
+}
+.receipt__container .receipt__body .right .right__poster {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 149px;
+  height: 229.8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.receipt__container .receipt__body .right .right__poster#projectChgPhoto {
+  background: url("https://placehold.it/200x200.jpg") no-repeat;
+  background-size: contain;
+}
+.receipt__container .receipt__body .right .right__title {
+  color: #2E43B0;
+  padding-top: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  display: block;
+  width: 325px;
+  text-align: center;
+}
+.receipt__container .receipt__body .right .right__time {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+.receipt__container .receipt__body .right .right__time span:nth-child(1) {
+  color: #C6C6C6;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: block;
+  padding-top: 20px;
+}
+.receipt__container .receipt__body .right .right__time span:nth-child(2) {
+  color: #2E43B0;
+  font-size: 20px;
+  display: block;
+}
+.receipt__container .receipt__body .right .right__cinema {
+  width: 50%;
+  float: right;
+  text-align: center;
+  display: inline-block;
+}
+.receipt__container .receipt__body .right .right__cinema span:nth-child(1) {
+  color: #C6C6C6;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: block;
+  padding-top: 25px;
+}
+.receipt__container .receipt__body .right .right__cinema span:nth-child(2) {
+  color: #2E43B0;
+  font-size: 20px;
+  display: block;
+}
+
+
+/*--------------------
+Shop Card
+---------------------*/
+.shop-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 350px;
+  background: #f5f5f5;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  z-index: 2;
+}
+.shop-card figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  outline: none !important;
+}
+.shop-card figure img {
+  /*margin: -95px 0 -60px;*/
+  width: 100%;
+}
+.shop-card .title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #23211f;
+  margin-bottom: 5px;
+}
+.shop-card .desc {
+  font-size: 17px;
+  opacity: .8;
+  margin-bottom: 3px;
+}
+.shop-card .cta {
+  padding: 20px 20px 5px;
+}
+.shop-card .cta::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.shop-card .price {
+  float: left;
+  color: #FF3100;
+  font-size: 10px;
+  font-weight: 300;
+  padding-top: 2px;
+  transition: color .3s ease-in-out;
+  margin-top: 4px;
+}
+.shop-card .btn {
+  position: relative;
+  z-index: 1;
+  float: right;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FF3100;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  line-height: .95;
+  border: none;
+  background: none;
+  outline: none;
+  border: 1px solid #FF3100;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.shop-card .btn .bg {
+  width: 101%;
+  height: 101%;
+  display: block !important;
+  z-index: -1;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  background: linear-gradient(135deg, #a61322, #d33f34);
+}
+.shop-card .btn:hover {
+  color: #fff !important;
+  border: 1px solid transparent !important;
+}
+.shop-card .btn:hover .bg {
+  opacity: 1;
+}
+
+/*--------------------
+Slick Dots
+---------------------*/
+.slick-dots {
+  bottom: -70px;
+}
+.slick-dots a {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.slick-dots span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: scale(3.5);
+}
+.slick-dots circle {
+  fill: none;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 39 39;
+  stroke-dashoffset: 39;
+  transition: all .9s ease-in-out;
+  transition: stroke-dashoffset 0.5s;
+
+}
+.slick-dots .slick-active circle {
+  stroke-dashoffset: 0;
+}
+
+.slick-dots li {
+  position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0;
+    padding: 0 1.75rem 0 1.75rem;
+    cursor: pointer;
+}
+
+
+
+svg:not(:root) {
+  transform: scale(2.5);
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+/*--------------------
+Background
+--------------------*/
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(15deg, #d33f34 50%, #a61322 50.1%);
+  z-index: 1;
+  display: none;
+}
+
+#pngWavesContainer { /*transition: all 0.25s ease-in-out;*/
+opacity: 0; }
+
+#viewWorkBtn {
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.32s ease-in-out;
+}
+#viewWorkBtn:hover {
+  color: white;
+  background-color: black;
+}
+
+
+.typePicSwitch {
+  font-size: 14px !important;
+  font-weight: bold;
+}
+
+</style>
+<body>
+	
+
+<div class="main-body loading ">
+  <div id="loader"></div>
+
+  <nav class="navigation" id="navigation">
+    <a class="navigation__logo" id="logo" href="" target="_blank"><h1>STUDIO L.</h1></a>
+    <div class="navigation__links" id="links">
+      <ul>
+        <li><a href="#">Menu1</a></li>
+        <li><a href="#">Menu2</a></li>
+        <li><a href="#">Menu3</a></li>
+        <li><a href="#">Menu4</a></li>
+        <li><a href="#">Menu5</a></li>
+      </ul>
+      <ul>
+        <li>Cart</li>
+        <li>
+          <div class="navigation__burger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="container" data-scroll>
+    <section class="fixed-header">
+      <h1 class="fixed-header__headline back-index" id="top-headline">LOGAN J</h1>
+      <h1 class="fixed-header__headline front-index" id="bottom-headline">WILSON</h1>
+
+      <div class="fixed-header__image-container" id="fixed-image-container">
+        <div class="fixed-header__image-overflow" id="image-one-overflow">
+            <img class="fixed-header__image" id="fixed-image" src="https://res.cloudinary.com/dleusut0r/image/upload/v1566299956/2.jpg" />
+        </div>
+        <div id="image-two-overflow">
+          <img class="fixed-header__image-two" id="image-two" src="https://res.cloudinary.com/dleusut0r/image/upload/v1566299943/8.jpg" />
+        </div> 
+      </div>
+
+      <div class="fixed-header__text" id="text">
+        <p class="fixed-header__author" style="font-size: 1.8rem" >Front-End Software Engineer</p>
+        <p class="fixed-header__subheadline" style="font-size: 2.7rem">Engineering solutions to make certain areas of your life a little better, focused, and refined.</p>
+        <a href="#" style="position: absolute;z-index: 9999;width: 27vw;">
+          <button style="font-size: 1.5rem;position: absolute;width: 26vw;background-color: transparent;cursor: pointer;color: #07f; text-shadow: 1px 2px rgba(0,0,0,0.32);font-weight: bold;">Learn More →
+          
+        </button><span></span></a>
+      </div>
+    </section>
+
+    <section class="right-image" id="right-image" data-scroll-section>
+      <div class="right-image__overflow">
+          <div class="right-image__container" style="background: rgba(255,255,255,0.12);"></div>
+      </div>
+    </section>
+
+    <section class="description" id="description" data-scroll-section>
+      <div class="description__container">
+          <h1>About Me</h1>
+          <p style=>Designed to simply share a handful of my projects to showcase my recent work. I strive to create a lasting and emotional connection with the user.</p><div style="max-height: 310px;">
+         <!--  <img id='pngWavesContainer'src="" alt="" style=" max-height: 3000px;min-width: 355px;filter: invert(0);transform: translate(-6vw,19vh);"> -->
+          <a href="#"><button id="viewWorkBtn" style="font-size: 2.5rem;padding: 10px 14px 10px 14px;">View Recent Work</button></a></div>
+          <br>
+          <br>
+      </div>
+   <!--   <script>
+      const pngWavesContainer = document.querySelector('#pngWavesContainer');
+      let pngWavesArray = ['https://dl3.pushbulletusercontent.com/973k0Igzx8yUKfsXOWNlXhX9Hx2nZeYn/btnANimwaves1two.png','https://dl3.pushbulletusercontent.com/v8nQFIgdR3f1RrIJMcmmlOnV264SjPH1/btnANimwaves2two.png','https://dl3.pushbulletusercontent.com/rMTdfVeJkqTqQnu0Rry812YK9FlnVKxm/btnANimwaves3two.png'];
+       const viewWorkBtn = document.querySelector('#viewWorkBtn');
+               
+                
+               
+let numbs = [1,2,3]
+
+            
+
+let closedClosure = () =>{
+  pngWavesContainer.style.opacity = '1';
+  // pngWavesContainer.style.marginTop = '-25vh';
+  //pngWavesContainer.style.transform = 'translate(-3vw,12vh)';
+  viewWorkBtn.style.opacity = '0';
+  pngWavesContainer.style.position = 'absolute';
+  pngWavesContainer.style.top = '20vh';
+
+  
+
+  setInterval(()=>{
+  //###opened
+
+        numbs.forEach(function(wave){
+          console.log(wave)
+          if(wave === 1){setTimeout(function(){pngWavesContainer.src = pngWavesArray[0];
+            console.log('yes1yes1yes1');},900);}
+            else if (wave===2){setTimeout(function(){pngWavesContainer.src = pngWavesArray[1];
+            console.log('yee2yee2yee2');},900);}
+            else{pngWavesContainer.src = pngWavesArray[2];
+            console.log('yer3yer3yer3');}
+        });
+      
+  //###closed
+                  },1000);
+}
+// let mammma = ()=>{document.querySelector('#pngWavesContainer').style.opacity = '0';}
+document.querySelector('#viewWorkBtn').addEventListener('mouseenter',closedClosure);
+// document.querySelector('#viewWorkBtn').addEventListener('mouseleave',mammma);
+      
+
+   </script> -->
+    </section>
+<section>
+   <div id="flexCheck" class="flexHolder" style="height: 100vh;height: 100vh;display: flex;flex-wrap: nowrap;justify-content: center;align-content: center;padding-top: 10vh;">
+       <div class="receipt__container" style="transform: scale(1.3);padding-top: 15vh;">
+  <div class="receipt__body">
+    <div class="left">
+      <div class="left__name">
+        <span>Logan J Wilson</span>
+        <span>2019</span>
+      </div>
+      <div class="left__items">
+        <span>Project Spotlight</span>
+        <table class="tickets">
+          <!-- #Focusing on making a lasting and impactful impression on the user. I make it stupid simple. Using my design background and UI/UX skills IBy reducing cognitive function with next level gestures, animations and color theory -->
+          <!-- #Mobile First code following best practices and web accessibility(A11y) standards. JS and clean CSS animations with fresh designs from wire-frame to web pixel pefect. -->
+          <!-- #API's, React.js and Gatsby/Wordpress for easy integration to give the control and maintenence in the clients hands with a CMS rather than unwanted lengthy commitments and responsibilities. -->
+
+
+          <tr>
+           <a href=""><td class="type typePicSwitch" style=" border: 1px solid rgba(0,0,0,0.32);height: 5vh;width: 100%;">FHF Foundation</td>
+            <td class="price"></td>
+          </tr>
+        </a>
+          <tr>
+            <td class="type typePicSwitch" style=" border: 1px solid rgba(0,0,0,0.32);height: 5vh;">InnerGHealth.com</td>
+            <td class="price"></td>
+          </tr>
+          <tr>
+            <td class="type typePicSwitch" style=" border: 1px solid rgba(0,0,0,0.32);height: 5vh;">Google Sheets Api</td>
+            <td class="price"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="left__total">
+        <span>JS <b>placeholder</b></span>
+        <span>placehold: <b>placeholder</b></span>
+      </div>
+      <div class="left__notice">
+        <span>
+          placehold <b>placeholding for placehold stuff a placehold</b>.
+        </span>
+      </div>
+    </div>
+    <div class="right">
+      <div class="right__poster" 
+        id="projectChgPhoto">
+        <div id='greenWhip' style="width: 100%;height: 100%;background-color: green;position: inherit;z-index: 999;opacity: 0;"></div>
+       <!--  <img style="width: 100%;height: 100%;background-color: pink" src="https://placehold.it/200x200.jpg" alt=""> -->
+      </div>
+      <div class="right__title">
+        <span>PlaceHolder Yes</span>
+      </div>
+      <div class="right__time">
+        <span>placeholder</span>
+        <span>placehold</span>
+      </div>
+      <div class="right__cinema" style="margin-top: -0.75vh;">
+        <span>Plceholder</span>
+        <span>placehold</span>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+      </div>
+</section>
+
+<section style="margin-top: 100vh;z-index: 9999999;position: absolute;width: 100vw;display: flex;flex-wrap: nowrap;bottom:32vh;left: -45%;">
+  <div class="shop-card" style="transform: scale(1);">
+  <div class="title">
+    Enjoy 4 Fresh Memes
+  </div>
+  <div class="desc">
+    Today's Choice Memes
+  </div>
+  <div class="slider">
+    <figure data-color="#E24938, #A30F22">
+      <img id="memeSlot1" style="height: 30vh;" src="https://dl2.pushbulletusercontent.com/YWdln4D40FiQwCelLABnMuu5OP0LjvbD/28ONnyi.jpg" />
+    </figure>
+    <figure data-color="#6CD96A, #00986F">
+      <img id="memeSlot2" style="height: 30vh;" src="https://i0.wp.com/www.developermemes.com/wp-content/uploads/2015/08/Bill-Gates-Will-Teach-You-How-to-Count-Windows-10-Meme.jpg?w=491" />
+    </figure>
+    <figure data-color="#4795D1, #006EB8">
+      <img id="memeSlot3" style="height: 30vh;" src="https://i1.wp.com/www.developermemes.com/wp-content/uploads/2014/09/SEO-Copywriter-Walks-Into-A-Bar-Meme.jpg?w=500" />
+    </figure>
+    <figure data-color="#292a2f, #131519">
+      <img id="memeSlot4" style="height: 30vh;" src="https://external-preview.redd.it/i2UYq2CxOw48thOBTB1FG2X4ROqayI9ejoyR6AIFFV4.jpg?width=449&height=235.078534031&auto=webp&s=cb2f6015cd09e80d397692bfbfe2d937001e29c6" />
+    </figure>
+  </div>
+
+  <div class="cta">
+    <div class="price" style="font-size: 1.5rem;">I'm ready to start today!</div>
+    <button class="btn">Just Hire Logan Now<span class="bg"></span></button>
+  </div>
+</div>
+<div class="bg"></div>
+</section>
+
+
+    <section class="sign-up" data-scroll-section>
+      <div class="sign-up__container" >
+        <h1 style="font-size: 5rem;padding-left: 4.1vw;transform: translate(0,1.32vh);">Need Tutoring?</h1>
+        <h3 style="padding-left: 4.1vw;padding-top: 3.2vh; margin-left: 1px; margin-top: -5vh;font-size: 3rem;">Sign up to receive my schedule & rates</h3>
+        <p style="padding-left: 4.1vw;color: #09f;transform: translate(0,12.3vh);">Simply Leave your Email Below</p>
+        <form action="/" method="post" style="padding-left: 5vw;height: 32vh; color: black;" >
+          <label for="email" style="padding: 5px 7px 5px 0;">EMAIL</label>
+          <input  type="email" placeholder="EMAIL" style="height:2.3vh;border: 3px solid rgba(0,0,0,0.68);color: black;background-color: white;">
+          <input style="padding-left: 4.1vw;color: black;text-align: center;" type="submit" value="SUBSCRIBE">
+        </form>
+      </div>
+     <!--  <div class="flexHolder" style="background-color: transparent;max-height: auto;width: 100vw;height: 100vh;align-self: center;display: flex;justify-content: center;margin: auto;">
+        <div class="flexChild" style="background-color: transparent;background-image: url(https://media1.giphy.com/media/26uf1ClmFlG0PKbFC/200.webp?cid=790b7611369189fc84484259a11028bf2f63fcd143558311&rid=200.webp);height: 100%;width: 100%;opacity: 0.45;background-size: cover;background-repeat: no-repeat;"> -->
+          
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  
+    <!-- <div class="mobile-message"><h1>This is a desktop only experience</h1></div> -->
+  
+</div>
+<!---->
+
+
+<!--/-->
+<!-- <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script> --> <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ismobilejs/0.4.1/isMobile.min.js"></script>
+<!-- <script src="https://codepen.io/juliangarnier/pen/75efae7724dbc3c055e918057fc4aca5"></script> -->
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+
+<script>
+  function background(c1, c2) {
+  return {
+    background: '-moz-linear-gradient(15deg, ' + c1 + ' 50%, ' + c2 + ' 50.1%)',
+    background: '-o-linear-gradient(15deg, ' + c1 + ', ' + c2 + ' 50.1%)',
+    background: '-webkit-linear-gradient(15deg, ' + c1 + ' 50%, ' + c2 + ')',
+    background: '-ms-linear-gradient(15deg, ' + c1 + ' 50%, ' + c2 + ' 50.1%)',
+    background: 'linear-gradient(15deg, ' + c1 + ' 50%,' + c2 + ' 50.1%)'
+  }
+}
+
+function changeBg(c1, c2) {
+  $('div.bg').css(background(c1, c2)).fadeIn(700, function() {
+    $('body').css(background(c1, c2));
+    $('.bg').hide();
+  })
+  $('span.bg').css({
+    background: '-moz-linear-gradient(135deg, ' + c1 + ', ' + c2 + ')',
+    background: '-o-linear-gradient(135deg, ' + c1 + ', ' + c2 + ')',
+    background: '-webkit-linear-gradient(135deg, ' + c1 + ', ' + c2 + ')',
+    background: '-ms-linear-gradient(135deg, ' + c1 + ', ' + c2 + ')',
+    background: 'linear-gradient(135deg, ' + c1 + ',' + c2 + ')'
+  });
+}
+
+$slider = $('.slider');
+
+$slider.slick({
+  arrows: false,
+  dots: true,
+  infinite: true,
+  speed: 600,
+  fade: true,
+  focusOnSelect: true,
+  customPaging: function(slider, i) {
+    var color = $(slider.$slides[i]).data('color').split(',')[1];
+    return '<a><svg width="100%" height="100%" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.215" stroke="' + color + '"></circle></svg><span style="background:' + color + '"></span></a>';
+  }
+}).on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+  colors = $('figure', $slider).eq(nextSlide).data('color').split(',');
+  color1 = colors[0];
+  color2 = colors[1];
+  $('.price, .btn').css({
+    color: color1
+  });
+  changeBg(color1, color2);
+  $('.btn').css({
+    borderColor: color2
+  });
+});
+</script>
+
+<script>
+function debounce(func, wait = 20, immediate = true) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    var later = function(){
+    timeout = null;
+    if(!immediate) func.apply(context, args);
+  };
+  var callNow = immediate && !timeout;
+  clearTimeout(timeout);
+  timeout = setTimeout(later, wait);
+  if(callNow) func.apply(context, args);
+};
+};
+ 
+ const sliderItems = document.querySelectorAll('.slide-in');
+ const baloonPic = document.querySelector('fixed-image-container');
+
+
+
+  function checkSlide (e) {
+    let scrollNum = document.querySelector('#container').getBoundingClientRect();
+    console.log(scrollNum);
+    // document.getElementById('text').style.visibility = 'hidden'
+    if(scrollNum.top < -298){
+      
+     let smile = () => {
+      
+
+        console.log('%chuzzah','font-weight:bold;font-size:1.5rem;color:red;');
+        document.getElementById('text').style.visibility = 'hidden';
+      document.querySelector('#top-headline').style.transform = 'translate(-95vw,0)';
+      document.querySelector('#bottom-headline').style.transform = 'translate(-100vw,0)';
+
+      document.querySelector('#fixed-image-container').style.transform = 'translate(95vw,0)';
+      
+      
+         
+     
+      }
+
+                    smile();  
+                      }
+
+                      else {
+                        console.log('%czah','font-weight:bold;font-size:1.5rem;color:green;');
+        document.getElementById('text').style.visibility = 'visible';
+      document.querySelector('#top-headline').style.transform = 'translate(0,0)';
+      document.querySelector('#bottom-headline').style.transform = 'translate(0,0)';
+
+      document.querySelector('#fixed-image-container').style.transform = 'translate(0,0)';
+
+
+                      }
+                     
+         
+
+      } 
+
+      
+  
+     
+      //end IF statement
+     
+
+
+   
+   
+
+  
+
+    window.addEventListener('scroll', checkSlide);
+
+    let createColor = () =>{
+let red = Math.random(1)*150;
+let green = Math.random(1)*150;
+let blue = Math.random(1)*150;
+setTimeout(()=>{document.querySelector('#viewWorkBtn').style.border = `3px solid rgb(${red},${green},${blue}) `},100)
+}
+window.addEventListener('scroll', createColor);
+   
+</script> 
+
+<!-- <script>
+  // ###select elements
+let memeSlot1 = document.querySelector('#memeSlot1');
+let memeSlot2 = document.querySelector('#memeSlot2');
+let memeSlot3 = document.querySelector('#memeSlot3');
+let memeSlot4 = document.querySelector('#memeSlot4');
+
+  // ###create array of memes multiple by n-amount of memes per day(preferrably a multiple of 4 since per day is currently 4)
+  const memeArray = ['https:placehold.it/120x121','https:placehold.it/120x122','https:placehold.it/120x123','https:placehold.it/120x124','https:placehold.it/120x125','https:placehold.it/120x126','https:placehold.it/120x127','https:placehold.it/120x128'];
+
+  let memeSwap = () => {
+memeSlot1.src = memeArray[0];
+memeSlot2.src = memeArray[1];
+memeSlot3.src = memeArray[2];
+memeSlot4.src = memeArray[3];
+     memeArray.forEach(function(meme){
+          console.log(meme)
+          if(meme === 'https:placehold.it/120x121'){setTimeout(function(){memeSlot1.src = meme;
+            console.log('yes1yes1yes1');
+          },900);}
+          //   else if (wave===2){setTimeout(function(){pngWavesContainer.src = pngWavesArray[1];
+          //   console.log('yee2yee2yee2');},900);}
+          //   else{pngWavesContainer.src = pngWavesArray[2];
+          //   console.log('yer3yer3yer3');}
+        });
+
+  } 
+  memeSwap();
+</script> -->
+<script>
+  function dragon(){ 
+    const food = 'waffle'
+    const breath = 'fire';
+     function preference() {
+      return 'i like' + food
+    }
+    function attack() {
+      return 'I attack you with ' + breath + ' 10% damage'
+    }
+    return {preference,attack}
+  }
+  const fluffykins = dragon()
+  fluffykins.preference()
+  fluffykins.attack() //? 
+</script>
+
+
+
+</body>
+</html>
