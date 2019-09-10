@@ -325,8 +325,8 @@ a.button + a.button {
 
 
 .navLink a {
-	font-size: 5ch;
-	transform: translate(0,3.2vh);
+	font-size: 2ch;
+	/*transform: translate(0,3.2vh);*/
 }
 
 .f3-l{
@@ -337,6 +337,27 @@ a.button + a.button {
 	transform: scale(1.05);
 	cursor: pointer;
 }
+
+.gridChild {
+	background: linear-gradient( 0deg, #eee 67%, lightgrey );
+	border-bottom: 1px solid gray;
+}
+
+.gridList{
+	font-family: 'athelas';
+	transition: all 0.32s ease-in-out;
+}
+.gridList:hover {
+	color: indigo;
+
+}
+
+.grid-UL {
+	text-decoration: none;
+	font-size: 2.75em;
+	line-height: 1.32;
+}
+
 </style>
 </head>
 <body>
@@ -347,13 +368,13 @@ a.button + a.button {
 	 		</a>
 	<nav>
 	   <ul style="display: flex;justify-content: space-around;">
-	 	<li class="navLink"><a href=""><!-- GET STARTED NOW --></a></li>
+	 	<li class="navLink"><a href="">GET STARTED NOW</a></li>
 	 	
 	   </ul>
 	</nav>
 	 	</div>
 	 	<div class="sub-bar" style="line-height: 1.32;padding-bottom:1vh;padding-left: 2.3em;">
-	 		<h1>Our mission is to provide an exceptional service that exceeds your expectations</h1>
+	 		<h1 class="athelas" style="transform: none;">Our mission is to provide an exceptional service that exceeds your expectations</h1>
 	 	</div>
 	 </header> 
 	 <div class="inner">
@@ -382,12 +403,13 @@ a.button + a.button {
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/alan/36/alan_beige-taupe_36_main_rc_nt_1000x1270.jpg')"/></div>
+        style="background-image: url('http://placehold.it/201x200.jpg')"/></div>
+        <!-- http://media.aldoshoes.com/v2/product/alan/36/alan_beige-taupe_36_main_rc_nt_1000x1270.jpg --><!--/-->
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/alan/97/alan_black_97_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/202x200.jpg')"></div>
     </div>
 
     <div class="white fw6 flex items-center ph3 ph4-l" style="background-color: indigo;">
@@ -399,48 +421,114 @@ a.button + a.button {
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/2/wyanet_blue_2_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/203x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/36/wyanet_beige-taupe_36_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/204x200.jpg.jpg')"></div>
     </div>
 
     <div class="wide-2 tall-2 overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/freinia/22/freinia_brown_22_look-full_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/205x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/97/wyanet_black_97_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/206x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/areawen/1/areawen_blue_1_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/207x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/areawen/38/areawen_beige-taupe_38_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/208x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/mccrery/36/mccrery_beige-taupe_36_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/209x200.jpg')"></div>
     </div>
 
     <div class="overflow-hidden pointer">
       <div class="zoom bg-center cover w-100 h-100"
-        style="background-image: url('http://media.aldoshoes.com/v2/product/mccrery/98/mccrery_black_98_main_rc_nt_1000x1270.jpg')"></div>
+        style="background-image: url('http://placehold.it/210x200.jpg')"></div>
     </div>
   </article>
+  <article style="display: flex;width:100vw;height: 80vh;background-color: white; flex-direction: column; ">
+  	<div class="outtie" style="display:flex;margin: 0;padding: 0 5%;width: 100vw;height: 67vw;
+  	max-width: 1000px;align-items: top;">
+  		<div class="innie" style="width: 100vw;height: 32%;background-color: white;justify-content: center;">
+  			<h1 class="sans-serif" style="transform: none;text-align: center;">Benefits Of Massage Therapy</h1>
+  			<div class="tcBox" style="width: 100%;height: 67vh;background-color: indigo;display: flex;flex-direction: column;">
+  				<h2 style="color:white;text-align: left;font-size: 3em;padding: 5px 7px 5px 7px;">Therapeutic Massage can…</h2>
+  				
+  					<div class="gridInner" style="display:grid;grid-template-columns: 25% 1fr 1fr 1fr background-color: red;height: 60vh;width: 100%;">
+  						<div class="gridChild">
+  							<ul class="grid-UL">
+								<li class="gridList">Help strengthen the immune system</li>
+								<li class="gridList">Decrease recovery time from injury	</li>
+								<li class="gridList">Improves sleep qualityRelieve stress & anxiety</li>
+								<li class="gridList">Relieve tired and achy muscles</li>
+								<li class="gridList">Increase athletic performance</li>
+								<li class="gridList">Help improve posture</li>
+								<li class="gridList">Enhance mood</li>
+								<li class="gridList">Reduce tension headaches</li>
+								<li class="gridList">Promote relaxation </li>
+								<li class="gridList">Increase flexibility & range of motion</li>
+							</ul>
+						</div>
+					<h2 style="color:#4ff;text-align: left;font-size: 3em;padding: 5px 7px 5px 7px;">At Inner G, we work with…</h2>
+  						<div class="gridChild">
+  							<ul class="grid-UL">
+								<li class="gridList">Stress related tension</li>
+								<li class="gridList">Cancer related fatigue[1] </li>
+								<li class="gridList">Sleep disorders</li>
+								<li class="gridList">Insomnia related stress[3]</li>
+								<li class="gridList">High blood pressure</li>
+								<li class="gridList">Diabetes</li>
+								<li class="gridList">Physical pain (musculoskeletal)</li>
+								<li class="gridList">Mental/Emotional concerns</li>
+								<li class="gridList">Post-surgical recovery</li>
+  						    </ul>
+  						</div>
+  						<!-- <div class="gridChild"><ul class="grid-UL">
+  							<li class="gridList">Relieve tired and achy muscles</li>
+								<li class="gridList">Increase athletic performance</li>
+								<li class="gridList">Help improve posture</li>
+								<li class="gridList">Enhance mood</li>
+								<li class="gridList">Reduce tension headaches</li>
+								<li class="gridList">Promote relaxation </li>
+								<li class="gridList">Increase flexibility & range of motion</li>
+  						</ul></div>
+  						<div class="gridChild"><ul class="grid-UL">
+  							<li class="gridList">Relieve tired and achy muscles</li>
+								<li class="gridList">Increase athletic performance</li>
+								<li class="gridList">Help improve posture</li>
+								<li class="gridList">Enhance mood</li>
+								<li class="gridList">Reduce tension headaches</li>
+								<li class="gridList">Promote relaxation </li>
+								<li class="gridList">Increase flexibility & range of motion</li>
+  						</ul></div> -->
+
+  					</div>
+  				</div>
+  				
+  			</div>
+  		</div>
+  	</div>
+  </article>
+
 </main>
+<footer style="margin-top: 15vh;"> 
+  <article style="display: flex;position: relative;flex-direction: column;bottom: 0;height: 100vh;">
+  	
 
-
-<a href="https://github.com/winkerVSbecks/grid-experiments"
+<a href="google.com"
    target="_blank"
    class="dib grow f4 pa3 lh-solid fixed bottom-1 right-1">
   <svg class="bg-white-50 br-100 dark-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill-rule="nonzero" fill="currentColor" d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8 "></path></svg>
@@ -474,6 +562,8 @@ a.button + a.button {
     <p>Footer</p>
   </div>
 </div>
+  </article></footer>
 	 <!--/-->
+	 <script src="./index.js"></script>
 </body>
 </html>
