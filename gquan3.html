@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.6.2/tachyons.min.css">
+<style>
+	  @font-face {
+    font-family: 'radnika_next';
+    src: url('/static/radnikanext-medium-webfont.woff2')format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  html { 
+    box-sizing: border-box;
+    font-size:10px;
+  }
+  *, *:before, *:after, {
+    box-sizing: inherit;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    font-size:1.5rem;
+    line-height:2rem;
+    font-family: 'radnika_next';
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+	h1 {
+    padding-top: 3.2rem;
+    font-size:4rem;
+    margin-left: 2rem;
+    position: relative;
+    z-index: 2;
+    transform: skew(-7deg);}
+    h1 a {
+      padding: 0.5rem 1rem;
+      background: red;
+      color: white;
+      text-transform:
+      uppercase;
+      text-decoration: none;
+    }
+
+    @media (max-width: 1300px) {
+    	.logo{
+      margin: 0;
+      text-align: center; 
+    }
+}
+
+header{
+	width: 100%;
+	height: auto;
+}
+
+  .bar{
+    border-bottom: 10px solid black;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    justify-content: space-between;
+    align-content: stretch;
+}
+
+    @media (max-width:1300px) {
+    	.bar{
+      grid-template-columns: 1fr;
+      justify-content: center; 
+    }
+  }
+  .sub-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    border-bottom: 1px solid lightgrey;
+  }
+
+
+
+nav ul { 
+  margin: -10px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-self: end;
+  font-size: 2rem;
+}
+  a,
+  button {
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1em;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: black;
+    font-weight: 800;
+}
+
+
+    @media (max-width: 700px) {
+  a, button {
+      font-size: 10px;
+      padding: 0 10px;
+    }
+}
+
+
+
+
+  
+ body{
+background: white;
+color: black;   
+}
+
+.inner{
+max-width:1000px;
+margin: 0 auto;
+padding: 2rem; 
+}
+
+
+/*
+**
+### added golden ratio
+*
+**
+*/
+#header {
+  width: 100%;
+  background-color: #eee;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-top: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#header:before {
+  content: '';
+  width: 85vw;
+  height: 100px;
+  display: block;
+  background: url("https://images.unsplash.com/photo-1513363136477-3efb163fd99d?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ%3D%3D%0A&s=aedd11291431c7290237ff11a5112643");
+  background-size: 85vw;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#header h1 {
+  height: 80px;
+  line-height: 80px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#container {
+  text-align: left;
+}
+#content {
+  padding: 0 10px;
+}
+#content h1 {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  padding-left: 10px;
+}
+#content p {
+  font-size: 15px;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  line-height: 1.5;
+  text-align: justify;
+}
+#menu {
+  background: #eee;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-top: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+#menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#menu li {
+  padding: 10px;
+  width: calc(100% - 20px);
+}
+#menu li:hover {
+  background: #e2e2e2;
+  cursor: pointer;
+}
+#menu li:first-child {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+#menu li:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#extra {
+  background: #eee;
+}
+#footer {
+  background: #eee;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #e7e7e7;
+  border-right: 1px solid #e7e7e7;
+  border-top: 1px solid #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+#footer p {
+  margin: 0;
+  padding: 5px 10px;
+}
+#container {
+  width: 85vw;
+  margin: 0 auto;
+}
+#wrapper {
+  float: left;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+#content {
+  margin-left: 130px;
+}
+#menu {
+  float: left;
+  width: 130px;
+  margin-left: -85vw;
+}
+#footer {
+  clear: left;
+  width: 100%;
+}
+.hidden {
+  display: none;
+}
+a.button {
+  background-color: #fcd000;
+  padding: 10px 15px;
+  font-family: 'Inter UI', 'Segoe UI', 'Roboto', Helvetica, sans-serif;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+}
+a.button:hover {
+  border-color: #fcd000;
+  background-color: #ffd612;
+}
+a.button + a.button {
+  margin: 0 5px;
+}
+/*
+**
+* end adding golden ratio
+**
+*/
+.grid { display: grid; }
+
+/**
+ * Grid Layout
+ * Width = (width_of_grid - (gutters + padding)) / no_of_cols
+ * Height = 1270 * width / 1000
+ */
+:root {
+  --width: calc((100vw - 3rem) / 2);
+  --height: calc(1270 * var(--width) / 1000);
+}
+
+.layout {
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, var(--width));
+  grid-auto-rows: var(--height);
+}
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  :root { --width: calc((100vw - 4rem) / 3); }
+  .layout { grid-template-columns: repeat(3, var(--width)); }
+}
+
+@media screen and (min-width: 60em) {
+  :root { --width: calc((60em - 5rem) / 4); }
+  .layout { grid-template-columns: repeat(4, var(--width)); }
+}
+
+/**
+ * Col and row spans
+ */
+.wide-2 { grid-column-end: span 2; }
+.tall-2 { grid-row-end: span 2; }
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .wide-3-m { grid-column-end: span 3; }
+}
+
+
+.zoom {
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.3s ease-out;
+}
+.zoom:hover,
+.zoom:focus { transform: scale(1.05); }
+.zoom:active { transform: scale(1); }
+
+
+.navLink a {
+	font-size: 5ch;
+	transform: translate(0,3.2vh);
+}
+
+.f3-l{
+	font-size: 3.2em !important;
+}
+
+#cta_1:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<header>
+	 	<div class="bar">
+	 		<a href="./">
+	 				<img src="https://dl3.pushbulletusercontent.com/7G0OzqNoJ806Svkg9AGI23mLODbsGZFc/gqlogo19.png" alt="" style="max-width: 700px;width: 32vw;height: auto;border-radius: 6%;">
+	 		</a>
+	<nav>
+	   <ul style="display: flex;justify-content: space-around;">
+	 	<li class="navLink"><a href=""><!-- GET STARTED NOW --></a></li>
+	 	
+	   </ul>
+	</nav>
+	 	</div>
+	 	<div class="sub-bar" style="line-height: 1.32;padding-bottom:1vh;padding-left: 2.3em;">
+	 		<h1>Our mission is to provide an exceptional service that exceeds your expectations</h1>
+	 	</div>
+	 </header> 
+	 <div class="inner">
+	 	
+	 </div>	
+	 <!---->
+	 <main class="ph3">
+  <article class="dark-gray athelas mv5 center grid layout justify-center">
+
+    <header class="wide-2 wide-3-m flex items-center">
+      <div>
+        <button id="cta_1" class="fw4 f4 f3-l mv0" style="line-height: 1;background-color: #06f;margin-top: -2.1vh;color: white;transition: all 0.32s ease-in;"><b>Enter Our Mailing List!</b></button>
+        <h1 class="f2 f1-l mv0" style="line-height: 1.1;margin-top: -1.32vh;">Receive Our Seasonal Offers &amp; Giveaways &mdash;</h1>
+        <p class="f1-l" style="margin-top: 1vh;padding-bottom: 0;margin-bottom: 0.2vh">Receive Our Bi-Weekly Newsletter</p>
+
+      <!--   <div class="w4 h2 bg-dark-blue"></div> -->
+
+      </div>
+    </header>
+
+    <div class="wide-2 tall-2 overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('https://dl3.pushbulletusercontent.com/BdKOk54MWQoyYnW4E9aBfUxwfme6BhQR/GqFinalHablas.jpg')"/></div><!-- ###this is a picture of a guy in a suit. grey background with his leg kicked out to create almost a K like stance ### -  
+        http://media.aldoshoes.com/v2/product/freinia/36/freinia_beige-taupe_36_look-full_rc_nt_1000x1270.jpg -->
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/alan/36/alan_beige-taupe_36_main_rc_nt_1000x1270.jpg')"/></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/alan/97/alan_black_97_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="white fw6 flex items-center ph3 ph4-l" style="background-color: indigo;">
+      <div class="f5 f3-l lh-copy lh-title-l" style="font-size: 1.8vh !important;">
+        $20 Off Your First Treatment
+        <hr class="bt bw1 bb-0 bl-0 br-0 b--white w2 ma0 mt3" />
+      </div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/2/wyanet_blue_2_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/36/wyanet_beige-taupe_36_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="wide-2 tall-2 overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/freinia/22/freinia_brown_22_look-full_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/wyanet/97/wyanet_black_97_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/areawen/1/areawen_blue_1_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/areawen/38/areawen_beige-taupe_38_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/mccrery/36/mccrery_beige-taupe_36_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+
+    <div class="overflow-hidden pointer">
+      <div class="zoom bg-center cover w-100 h-100"
+        style="background-image: url('http://media.aldoshoes.com/v2/product/mccrery/98/mccrery_black_98_main_rc_nt_1000x1270.jpg')"></div>
+    </div>
+  </article>
+</main>
+
+
+<a href="https://github.com/winkerVSbecks/grid-experiments"
+   target="_blank"
+   class="dib grow f4 pa3 lh-solid fixed bottom-1 right-1">
+  <svg class="bg-white-50 br-100 dark-blue" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill-rule="nonzero" fill="currentColor" d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8 "></path></svg>
+</a>
+	 <!--/-->
+	 <!---->
+	 <div id="container">
+  <div id="header">
+   LOGO?
+  </div>
+  <div id="wrapper">
+    <div id="content">
+      <h1>Content here.</h1>
+      <!--/////////////////////-->
+      <p>Sapibulumnibh phasellus nulla egestibulum enim pretium elit tincidunt estiquam ultrisque donectetur. Sedcondimentumsan odio hendrerit proin vitae dignis nibh ac justo id congue. Amesintesque vel curabitae volutpat donec alique nasceleifendimentesque montesque rhoncus quis eros. Vestnunc nonummy</p>
+      <p>Montegeraliquam sed pede in cursus praesenec vestas rhoncus wisi at wisi. Condisseloborttis enim et ipsum mauristie id felit adipiscipit ac auctortorttitor sempor. Vitantesqueat sempus non sed et mus sit vivamus purus netus hendiment. Pretiuma diam et id tempus dolor por wisi sed volutpat.</p>
+      <p>Wisiet sus adipit phasellentum elit condissim consecteturpiscing sapien vivamus et congue. Utvel tris quismod cursus liberos elit nisse curabitur tur parturpis tellenterdum. Semperligula curabitae tellentesque nulla trices vestas ristibulum id justo auctor facinia. Natisdonec consequat nibh pellus.</p>
+      <p><a class="button" href="#">Visit our website</a><a class="button" href="#"><strong>Call Us:</strong> 801-123-4567</a></p>
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+      <li><a href="#">Link 5</a></li>
+    </ul>
+  </div>
+  <div id="footer">
+    <p>Footer</p>
+  </div>
+</div>
+	 <!--/-->
+</body>
+</html>
