@@ -1875,6 +1875,252 @@ header > h2 {
 }
 
 
+.device-options ul {
+  margin: 2em 2em 0;
+}
+.device-options ul li {
+  padding: .5em .8em;
+  margin: 2px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  color: #777;
+  position: relative;
+}
+.device-options ul li.active {
+  background: #fff;
+  color: #333;
+}
+.device-options ul li:hover {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+.device-options ul li:focus, .device-options ul li:active {
+  box-shadow: none;
+  top: 1px;
+}
+
+.showroom {
+  text-align: center;
+  padding: 3em 2em 5em;
+}
+
+.screen-placeholder {
+  width: 100%;
+}
+
+.iphone {
+  width: 16.5em;
+  height: 33em;
+  background: #eee;
+  margin: auto;
+  border-radius: 2em;
+  border: 3px solid #ccc;
+  position: relative;
+  padding: 3.5em .5em .5em;
+}
+.iphone .camera {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  top: 15px;
+  left: 50%;
+  margin-left: -5px;
+  border-radius: 50%;
+}
+.iphone .screen {
+  background: #fff;
+  width: 100%;
+  height: 89.5%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.iphone .speaker {
+  background: #ccc;
+  border-radius: 20px;
+  width: 50px;
+  height: 6px;
+  top: 35px;
+  position: absolute;
+  left: 50%;
+  margin-left: -25px;
+}
+.iphone .home-btn {
+  border: 4px solid #ccc;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: 8px;
+  left: 50%;
+  margin-left: -20px;
+}
+
+.samsung {
+  width: 18em;
+  height: 34.5em;
+  background: transparent;
+  margin: auto;
+  border-radius: 3em;
+  border: 3px solid #ccc;
+  position: relative;
+  padding: 3.5em .8em .5em;
+  display: none;
+}
+.samsung .screen {
+  background: transparent;
+  width: 100%;
+  height: 92%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.samsung .home-btn {
+  border: 3px solid #ccc;
+  width: 70px;
+  height: 20px;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 12px;
+  left: 50%;
+  margin-left: -35px;
+}
+.samsung .speaker {
+  background: #ccc;
+  border-radius: 20px;
+  width: 70px;
+  height: 6px;
+  top: 12px;
+  position: absolute;
+  left: 50%;
+  margin-left: -35px;
+}
+.samsung .camera, .samsung .dot, .samsung .moar-dot, .samsung .one-more-dot {
+  border-radius: 50%;
+  background: #ccc;
+  positioN: absolute;
+  top: 7px;
+}
+.samsung .camera, .samsung .dot, .samsung .one-more-dot {
+  width: 12px;
+  height: 12px;
+}
+.samsung .camera {
+  left: 97px;
+}
+.samsung .dot {
+  left: 198px;
+}
+.samsung .moar-dot {
+  width: 16px;
+  height: 16px;
+  right: 85px;
+}
+.samsung .one-more-dot {
+  right: 50px;
+  top: 14px;
+}
+
+.ipad {
+  width: 36.5em;
+  height: 23em;
+  background: transparent;
+  margin: auto;
+  border-radius: 1.5em;
+  border: 3px solid #ccc;
+  position: relative;
+  padding: 2em .5em;
+  display: none;
+}
+.ipad .screen {
+  background: transparent;
+  width: 86%;
+  margin: auto;
+  height: 100%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.ipad .home-btn {
+  border: 3px solid #ccc;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  border-radius: 50%;
+  right: 9px;
+  top: 50%;
+  margin-top: -11px;
+}
+.ipad .camera {
+  border-radius: 50%;
+  background: #ccc;
+  position: absolute;
+  left: 20px;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  top: 50%;
+}
+
+.macbook {
+  width: 31em;
+  height: 18.5em;
+  background: transparent;
+  margin: auto;
+  border-radius: 1.5em 1.5em 0 0;
+  border: 3px solid #ccc;
+  position: relative;
+  padding: 2em 1.5em 1em;
+  display: none;
+}
+.macbook .screen {
+  background: transparent;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+.macbook .camera {
+  border-radius: 50%;
+  background: #ccc;
+  position: absolute;
+  top: 10px;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  left: 50%;
+}
+.macbook .keyboard {
+  border: 3px solid #ccc;
+  position: absolute;
+  top: 100%;
+  width: calc(100% + 160px);
+  height: 35px;
+  left: -80px;
+  border-radius: 0 0 30px 30px;
+}
+.macbook .keyboard:before {
+  background: #ccc;
+  height: 2px;
+  width: 100%;
+  content: "";
+  top: 16px;
+  position: absolute;
+  left: 0;
+}
+.macbook .mini-dent {
+  border: 3px solid #ccc;
+  position: absolute;
+  top: 100%;
+  width: 120px;
+  height: 5px;
+  left: 50%;
+  margin-left: -60px;
+  border-radius: 0 0 30px 30px;
+}
+
+
   </style>
 </head>
 <body>
@@ -1922,7 +2168,56 @@ header > h2 {
             <div class="inner3" style="grid-area: third;">1</div>
             <div class="inner3" style="grid-area: onefr;">2</div>
             <div class="inner3" style="grid-area: thirdX;">3</div>
-            <div class="inner3" id="form" style="grid-area: formX;">4rm</div>
+            <div class="inner3" id="form" style="grid-area: formX;"><div class="device-options">
+     <ul>
+       <li class="active" data-type="iphone">iPhone</li>
+       <li data-type="samsung">Samsung</li>
+       <li data-type="ipad">iPad</li>
+       <li data-type="macbook">Macbook</li>
+    </ul>
+  </div>
+
+<div class="showroom">
+    <div class="device iphone">
+      <div class="camera"></div>
+      <div class="speaker"></div>
+      <div class="screen">
+        <img class="screen-placeholder" src="http://images.mobile-patterns.com/320/1379622964445-2013-09-19%2009.24.37.png" alt="Placeholder ayy"/>
+      </div>
+      <div class="home-btn"></div>
+    </div>
+
+    <div class="device samsung">
+      <div class="camera"></div>
+      <div class="speaker"></div>
+      <div class="dot"></div>
+      <div class="moar-dot"></div>
+      <div class="one-more-dot"></div>
+      <div class="screen">
+        <img class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" alt="Youtube bro"/>
+      </div>
+      <div class="home-btn"></div>
+    </div>
+    
+  <div class="device ipad">
+    <div class="camera"></div>
+    <div class="screen">
+      <img class="screen-placeholder" src="http://ipadinsight.com/wp-content/uploads/2012/11/Netflix-iPad-main-screen.jpg" alt="Netflix and chill?"/>
+    </div>
+    <div class="home-btn"></div>
+  </div>
+  
+  <div class="device macbook">
+    <div class="camera"></div>
+    <div class="screen">
+      <img class="screen-placeholder" src="http://blog.shareaholic.com/wp-content/uploads/2012/01/pinterest.png" placeholder="Pinterest"/>
+    </div>
+      <div class="keyboard"></div>
+    
+    <div class="mini-dent"></div>
+  </div>
+</div>
+</div>
           </div>
          <!--  <h3>Take awareness to create a better customer experience.</h3> -->
 
@@ -2352,21 +2647,15 @@ function handle(delta) {
 
 
 
-
-
-
-           
-
-
-
-
-
-
-
-
-
-
   	
   </script>
+  <script>$('.device-options li').click(function(){
+  var $device = $(this).data('type');
+  $('.device').hide();
+  $('.'+ $device).fadeIn();
+  
+  $('.device-options li').removeClass('active');
+  $(this).addClass('active');
+});</script>
 </body>
 </html>
