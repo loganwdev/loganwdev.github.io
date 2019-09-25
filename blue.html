@@ -1844,30 +1844,10 @@ body.dark .cursor2.hover {
 
 @media (max-width:700px) {
 
- 
-  html {
-    max-width: 100vw !important;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-
-  }
-
-  #resumeBtn {
-  box-sizing: border-box;
-  width: 7vw;
-  height: 7vh;
-  color: #09f;
-  font-size: 0.88em;
-  margin-left: -32vw;
-}
-
-
-	#yaaa {
-	 	font-size: 88px !important;
-	 	line-height: 1.2;
-	 }
+  #yaaa {
+    font-size: 88px !important;
+    line-height: 1.2;
+   }
 
    .grid1{
       display: grid;
@@ -1889,6 +1869,9 @@ header > h2 {
 
 
 }
+
+
+
 
 
 .inner3 {
@@ -2175,22 +2158,270 @@ header > h2 {
 #navi4:hover{color: #09f;}
 
 
-.boutMeP {
-  min-width: 64vw;
-} 
-
-#resumeBtn {
-  box-sizing: border-box;
-  width: 18vw;
-  height: 7vh;
-  color: #09f;
-  font-size: 0.88em;
+.neo {
+    position: relative;
+    margin: auto;
+    width: 540px;
+    height: 540px;
+    perspective: 1000px;
+    perspective-origin: 50% 0;
 }
+
+.neo-device {
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    width: 240px;
+    height: 360px;
+    box-sizing: content-box;
+    padding: 40px 10px;
+    border-radius: 20px;
+    background: hsl(0,0%,24%);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transform: rotateX(0deg) rotateY(-20deg) rotateZ(10deg) scale(.84);
+    transition: transform 2s cubic-bezier(.5,.05,.09,1);
+}
+
+.neo:hover .neo-device {
+    transition-duration: 1.6s;
+    transform: translateX(-120px) rotateX(10deg) rotateY(40deg) rotateZ(-20deg);
+}
+
+
+.neo--has3D {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: translateZ(1px); /* Needs to be > 0 to avoid flickering */
+    animation: neo-pulse 2s 1.3s cubic-bezier(.7,0,.3,1) alternate infinite;
+    animation-play-state: paused;
+}
+
+.neo:hover .neo--has3D {
+    animation-play-state: running;
+}
+
+.neo--has3D:nth-child(1) { 
+    animation-delay: 1.3s;
+}
+.neo--has3D:nth-child(2) { 
+    animation-delay: 1.4s;
+}
+.neo--has3D:nth-child(3) { 
+    animation-delay: 1.5s;
+}
+.neo--has3D:nth-child(4) { 
+    animation-delay: 1.6s;
+}
+
+@keyframes neo-pulse {
+  100% { transform: translateZ(80px); opacity: .8; }
+}
+
+
+
+/* Neo App ---------------- */
+
+.neo-App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: none;
+    background-color: hsl(0,0%,20%);
+    resize: none;
+}
+
+
+/* Neo Header ---------------- */
+
+.neo-Header {
+    display: flex;
+    color: hsla(0,0%,0%,.6);
+    border-bottom: 2px solid hsla(0,0%,0%,.3);
+    background-color: #2ecc71;
+}
+
+.neo-Header-title {
+    flex: 1;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+    font-size: 1.2em;
+    line-height: 50px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 1px solid hsla(0,0%,0%,.1);
+    border-right: 1px solid hsla(0,0%,0%,.1);
+    background: inherit;
+}
+
+.neo-Header-button {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: inherit;
+    border-radius: 0;
+    margin: 0;
+    background: inherit;
+}
+.neo-Header-button[data-icon]:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.neo-Header-button:active {
+    color: #fff;
+    background-color: hsla(0,0%,0%,.2);
+}
+
+
+/* Neo Search ---------------- */
+
+.neo-Search {
+    display: flex;
+    padding: 10px;
+    background-color: #1abc9c;
+}
+
+.neo-Search .neo-Search-input {
+    flex: 1;
+    -webkit-appearance: none; /* Removes inner shadow on iOS. */
+    display: block;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 2.5em;
+    padding: 0.5em;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: 2px solid hsla(0, 0%, 0%, 0.1);
+    background-color: inherit;
+}
+
+.neo-Search-input:focus {
+    border-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.neo-Search-input::-webkit-input-placeholder {
+    color: hsla(0,0%,0%,.5);
+}
+
+.neo-Search-badge {
+    display: block;
+    margin: 0 0 0 10px;
+    padding: 0 9px;
+    min-width: 30px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: bold;
+    color: hsla(0,0%,0%,.5);
+    border: 2px solid hsla(0, 0%, 0%, 0.1);
+    background-color: inherit;
+}
+
+
+/* Neo Content ---------------- */
+
+.neo-Content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    padding: 5px;
+    text-align: center;
+    font-size: 0;
+    background: hsl(200,30%,30%);
+}
+
+.neo-Content-img { 
+    flex: 1 0 50%;
+    box-sizing: border-box;
+    padding: inherit;
+    background-color: hsl(200,30%,40%);
+    background-clip: content-box;
+}
+
+@-moz-document url-prefix() {
+    /* Hack since FF doesn't support flex-flow: row wrap; but already is unprefixed */
+    .neo-Content {
+        flex-direction: column;
+    }
+    .neo-Content-img {
+        flex: 1;
+    }
+}
+
+
+/* Neo TabBar ---------------- */
+
+.neo-TabBar {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: #3498db;
+}
+
+.neo-TabBar-tab {
+    flex: 1;
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 4px;
+    height: 50px;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    color: hsla(0,0%,0%,.5);
+    border: none;
+    border-left: 1px solid hsla(0,0%,0%,.1);
+    background: inherit;
+}
+
+.neo-TabBar-tab[data-icon] {
+    position: relative;
+    padding: 30px 0 0 0;
+    font-size: 10px;
+}
+
+.neo-TabBar-tab[data-icon]:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 50px;
+    line-height: 40px;
+
+}
+
+.neo-TabBar-tab--active,
+.neo-TabBar-tab:active {
+    color: hsla(0,0%,100%,.6);
+    background-color: #2980b9;
+}
+
+
 
   </style>
 </head>
 <body>
-	
+  
   <div class="sidebar">
     <div class="side">
       <div class="logo">
@@ -2217,7 +2448,7 @@ header > h2 {
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><polygon class="logo_bar" points="11.5 11.3 0 11.3 21.1 54.7 21.2 54.7 26.9 43"/><polygon class="logo_bar" points="34.4 11.3 22.9 11.3 44 54.7 44.1 54.7 49.8 43"/><polygon class="logo_tip" points="64 11.3 52.5 11.3 49.2 18.1 54.9 29.9"/></svg></a>  
        </div>
        <div class="theme">
-        <a href="" class="resumeLink" style="box-sizing: border-box;width: 18vw;height: 10vh"><button id="resumeBtn" style="" class="resumePdf" >Download My Resume</button></a>
+        <a href="" class="resumeLink" style="box-sizing: border-box;width: 18vw;height: 10vh"><button style="box-sizing: border-box;width: 18vw;height: 7vh;color: #09f;font-size: 0.88em;" class="resumePdf" >Download My Resume</button></a>
          <!-- <input type="checkbox" id="brightness" />
          <label for="brightness" class="hover-target"></label> -->
          <div class="bg"></div>
@@ -2317,21 +2548,41 @@ header > h2 {
 </div>
           </div>
          
-           <div class="inner3" style="grid-area: thirdX;margin-top: 50vh;margin-left: 0;/*padding: 2em 3em;*/width: 64vw;"> <header style="display: flex;flex-direction:column;justify-content: start;"><h1 style="padding: 5px 7px 5px 7px;text-align: center;">Experience</h1>
-        <h2 style="width: 100%;">"Be obsessed or be average"</h2>
+           <div class="inner3" style="grid-area: thirdX;margin-top: 50vh;margin-left: 0;/*padding: 2em 3em;*/width: 64vw;"> <header style="display: flex;flex-direction:column;justify-content: start;"><h1 style="padding: 5px 7px 5px 7px;text-align: center;">React.JS</h1>
+        <h2 style="width: 100%;">I make a lasting connections with the user! Also I love my career, absolutely love it.</h2>
+      </header>
 
-      </header></div> 
+<div class="neo">
+    <div class="neo-device">
+        <div class="neo-App">
+            <header class="neo-Header neo--has3D">
+                <button class="neo-Header-button neo--has3D" data-icon="&#9776;"></button>
+                <h3 class="neo-Header-title neo--has3D">Title</h3>
+                <button class="neo-Header-button neo--has3D" data-icon="&#59157;"></button>
+            </header>
+            <div class="neo-Search neo--has3D">
+                <input class="neo-Search-input neo--has3D" type="search" placeholder="Search">
+                <output class="neo-Search-badge neo--has3D">13</output>
+            </div>
+            <div class="neo-Content neo--has3D">
+                <div class="neo-Content-img neo--has3D"></div>
+                <div class="neo-Content-img neo--has3D"></div>
+                <div class="neo-Content-img neo--has3D"></div>
+                <div class="neo-Content-img neo--has3D"></div>
+            </div>
+            <nav class="neo-TabBar neo--has3D">
+                <button class="neo-TabBar-tab neo--has3D" data-icon="&#128227;">New</button>
+                <button class="neo-TabBar-tab neo--has3D neo-TabBar-tab--active" data-icon="&#128640;">Popular</button>
+                <button class="neo-TabBar-tab neo--has3D" data-icon="&#9733;">Favs</button>
+                <button class="neo-TabBar-tab neo--has3D" data-icon="&#9206;">More</button>
+            </nav>
+        </div>
+    </div>
+</div>
+
+    </div> 
          <!--  <h3>Take awareness to create a better customer experience.</h3> -->
-<p class="boutMeP">I'm Logan Wilson,<br>
-My work is not tied to tech trends.. I am a problem solver and entreprenuer. My unique value comes from my ability to handle ambiguity. For example I work to first- understand the needs of the problem rather than jumping to a solution and using whatever cool things in my toolbox or whatever trend I see.</p>
 
-
-<p class="boutMeP">I am business minded. - cognisant of how my actions, attitude & quality of work can and will affect the relationship, experience & satisfaction of current and potential business.
-I work well with others</p>
-
-<p class="boutMeP">I'm an experienced artist in graphic design and a programmer. I bring the ability to conceptualize a design and take it all the way to production. Effectively doing the job of multiple positions within a company. The design knowledge I possess enables me to edit/embellish, and create exceptional work. Others wont always have the UX/UI psychology, concepts like color theory, balance, harmony, rhythm, and awareness for color blindedness.</p>
-
-<p class="boutMeP">"PREPARE FOR THE WORST, PRAY FOR THE BEST"</p>
         </div>
              
       </article>
@@ -2341,11 +2592,11 @@ I work well with others</p>
 
     <section id="experience">
       <header>
-        <h1>Projects / Positions</h1>
-        <h2>My Recent Professional Experience</h2>
+        <h1>Take Awareness</h1>
+        <h2>Better Customer Experience</h2>
       </header>
       <article>
-        <h4>Front End</h4>
+        <h4>Think outside the box</h4>
         <div class="details">
           <h3>Driving sprints</h3>
           <p class="time-span"><time datetime="2018-03">March 2018</time> &ndash; <time datetime="2015-05">May 2015</time></p>
@@ -2525,7 +2776,7 @@ I work well with others</p>
   
 <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script>
-  	$(window).on('beforeunload', function() {
+    $(window).on('beforeunload', function() {
   $(window).scrollTop(0);
 });
 
@@ -2592,8 +2843,8 @@ $(function() {
 })
 $('.two, .five').on('click', function(){
   event.preventDefault();
-	$('body, html').animate({
-		scrollTop: $($(this).attr('href')).offset().top + 400 }, 400);
+  $('body, html').animate({
+    scrollTop: $($(this).attr('href')).offset().top + 400 }, 400);
  
 });
 
@@ -2614,34 +2865,34 @@ $(".four").click(function() {
 });
 
 $(window).on('scroll', function(){
-	
-	const scroll = $(window).scrollTop();
-	const half = $(window).height() / 2;
-	
-	if(scroll <= $('#home').offset().top + half){
-		$('a').removeClass('active');
-		$('.one').addClass('active');
-	}
-	
-	if(scroll > $('#quotes').offset().top - half){
-		$('a').removeClass('active');
-		$('.two').addClass('active');
-	}
-	
-	if(scroll > $('#experience').offset().top - half){
-		$('a').removeClass('active');
-		$('.three').addClass('active');
-	}
-	
-	if(scroll > $('#work').offset().top - half){
-		$('a').removeClass('active');
-		$('.four').addClass('active');
-	}
   
-  	if(scroll > $('#contact').offset().top - half){
-		$('a').removeClass('active');
-		$('.five').addClass('active');
-	}
+  const scroll = $(window).scrollTop();
+  const half = $(window).height() / 2;
+  
+  if(scroll <= $('#home').offset().top + half){
+    $('a').removeClass('active');
+    $('.one').addClass('active');
+  }
+  
+  if(scroll > $('#quotes').offset().top - half){
+    $('a').removeClass('active');
+    $('.two').addClass('active');
+  }
+  
+  if(scroll > $('#experience').offset().top - half){
+    $('a').removeClass('active');
+    $('.three').addClass('active');
+  }
+  
+  if(scroll > $('#work').offset().top - half){
+    $('a').removeClass('active');
+    $('.four').addClass('active');
+  }
+  
+    if(scroll > $('#contact').offset().top - half){
+    $('a').removeClass('active');
+    $('.five').addClass('active');
+  }
 });
 
 
@@ -2673,11 +2924,11 @@ var end = null;
 var interval = null;
 
 function handle(delta) {
-	var animationInterval = 5; //lower is faster
+  var animationInterval = 5; //lower is faster
   var scrollSpeed = 5; //lower is faster
 
-	if (end == null) {
-  	end = $(window).scrollTop();
+  if (end == null) {
+    end = $(window).scrollTop();
   }
   end -= 20 * delta;
   goUp = delta > 0;
@@ -2710,14 +2961,14 @@ function handle(delta) {
 
 
 (function($) { "use strict";
-		
-	//Page cursors
+    
+  //Page cursors
 
     document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
     t.style.left = n.clientX + "px", 
-		t.style.top = n.clientY + "px", 
-		e.style.left = n.clientX + "px", 
-		e.style.top = n.clientY + "px"
+    t.style.top = n.clientY + "px", 
+    e.style.left = n.clientX + "px", 
+    e.style.top = n.clientY + "px"
     });
     var t = document.getElementById("cursor"),
         e = document.getElementById("cursor2")
@@ -2734,10 +2985,10 @@ function handle(delta) {
     function o(t) {
         t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
     }
-	
+  
 
-	
-	
+  
+  
   })(jQuery); 
 
 
@@ -2751,14 +3002,14 @@ function handle(delta) {
 'use strict';(function($){$.fn.inertiaScroll=function(options){var settings=$.extend({parent:'',childDelta1:0.02,childDelta2:0.1,parentDelta:0.08},options);var $window=$(window);var $body=$('body');var $parent=settings.parent;var $child=this;var ChildBox=function(elm,offset,speed,margin){this.elm=elm;this.offset=offset!==undefined?offset:0;this.speed=speed!==undefined?speed:1;this.margin=margin!==undefined?margin:0};ChildBox.prototype.update=function(windowOffset,offsetBottom){this.offset+=(windowOffset*settings.childDelta1*Number(this.speed)-this.offset)*settings.childDelta2;this.elm.css({transform:'translate3d('+0+','+(Number(this.margin)-Number(this.offset))+'px ,'+0+')'})};var ParentBox=function(elm,offset,speed,margin){ChildBox.apply(this,arguments)};ParentBox.prototype=Object.create(ChildBox.prototype,{constructor:{value:ParentBox}});ParentBox.prototype.update=function(windowOffset){this.offset+=(windowOffset-this.offset)*settings.parentDelta;this.elm.css({transform:'translate3d('+0+','+(-this.offset)+'px ,'+0+')'})};ParentBox.prototype.setcss=function(){this.elm.css({'width':'100%','position':'fixed'})};var Boxes=function(){this.ChildBox=[];this.ChildBoxLength=0;this.ParentBox='';this.windowHeight=0};Boxes.prototype={init:function(){this.createElm($child,$parent);this.loop()},createElm:function(child,parent){this.ParentBox=new ParentBox(parent,0,1);this.ParentBox.setcss();this.boxArrayLength=child.length;for(var i=0;i<this.boxArrayLength;i++){var e=child.eq(i);var speed=e.data('speed');var margin=e.data('margin');this.ChildBox.push(new ChildBox(e,0,speed,margin))}},smoothScroll:function(){var windowOffset=$window.scrollTop();var offsetBottom=windowOffset+this.windowHeight;this.ParentBox.update(windowOffset);for(var i=0;i<this.boxArrayLength;i++){this.ChildBox[i].update(windowOffset,offsetBottom)}},loop:function(){this.smoothScroll();window.requestAnimationFrame(this.loop.bind(this))}};$(function(){$body.height($parent.height());var boxes=new Boxes();boxes.init()});return this}})(jQuery)
 
 
-	  $(".item, .bg-text, .badge").inertiaScroll({
-	    parent: $("")
-	  });  
+    $(".item, .bg-text, .badge").inertiaScroll({
+      parent: $("")
+    });  
 
 
 
 
-  	
+    
   </script>
   <script>$('.device-options li').click(function(){
   var $device = $(this).data('type');
