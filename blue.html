@@ -1844,10 +1844,25 @@ body.dark .cursor2.hover {
 
 @media (max-width:700px) {
 
- /* .neo {
-    display: none;
-  }*/
+#head4React {
+ grid-area: thirdX;
+ margin-top: 50vh;
+ margin-left: 0;/*padding: 2em 3em;*/
+ width: 91vw !important;
 
+}
+
+
+.neo {
+   position: relative;
+    margin: 0 0 0 1vw;
+    width: 400px;
+    height: 540px;
+    perspective: 1000px;
+    perspective-origin: 50% 0;
+    display: flex;
+    justify-content: center;
+}
   #yaaa {
     font-size: 88px !important;
     line-height: 1.2;
@@ -1883,6 +1898,17 @@ header > h2 {
   height: 100%;
   background-color: #333;
   filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.05));
+}
+
+#head4React > h3{
+ font-size:2em;
+}
+#head4React > h2{
+ font-size:1.5em;
+}
+
+#head4React:after{
+ content: 'click or hover me'
 }
 
 
@@ -2339,7 +2365,11 @@ header > h2 {
     background-color: inherit;
 }
 
-
+#head4React {
+  grid-area: thirdX;
+  margin-top: 50vh;
+  margin-left: 0;/*padding: 2em 3em;*/
+  width: 64vw;}
 /* Neo Content ---------------- */
 
 .neo-Content {
@@ -2556,7 +2586,7 @@ header > h2 {
 
 
          
-<div class="inner3" style="grid-area: thirdX;margin-top: 50vh;margin-left: 0;/*padding: 2em 3em;*/width: 64vw;"> 
+<div class="inner3" id="head4React" style=""> 
  <h3>React.js Developer</h3>
  <h2>I make lasting connections<br>
   with the users of my sites :)
