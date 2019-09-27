@@ -1704,8 +1704,8 @@ body.dark .logo_bar {
   stroke: #eee;
 }
 body.dark .logo_tip {
-  fill: #bc956a;
-  stroke: #bc956a;
+  fill: #09f;
+  stroke: #09f;
 }
 body.dark h1 {
   color: #EEE;
@@ -1715,10 +1715,10 @@ body.dark header {
   border-color: #444;
 }
 body.dark h2 {
-  color: #bc956a;
+  color: #09f;
 }
 body.dark h2:before {
-  background: #bc956a;
+  background: #09f;
 }
 body.dark h3, body.dark .time-span, body.dark time, body.dark cite {
   color: #888;
@@ -1727,13 +1727,13 @@ body.dark h4 {
   color: #ccc;
 }
 body.dark blockquote:before {
-  color: #bc956a;
+  color: #09f;
 }
 body.dark blockquote p {
   color: #999;
 }
 body.dark .sidebar .side nav ul li a:after {
-  background: #bc956a;
+  background: #09f;
 }
 body.dark .side-social svg {
   fill: #777;
@@ -1745,7 +1745,7 @@ body.dark #experience .details:after, body.dark h1.bg-text {
   color: rgba(255, 255, 255, 0.01);
 }
 body.dark .reveal::after {
-  background-color: #bc956a;
+  background-color: #09f;
 }
 body.dark input[type=checkbox] + label:before {
   content: "";
@@ -1758,7 +1758,7 @@ body.dark .side {
   background: #252525;
 }
 body.dark .badge {
-  border-color: #bc956a;
+  border-color: #09f;
   background: #282828;
 }
 body.dark .badge:before {
@@ -1766,7 +1766,7 @@ body.dark .badge:before {
   background: #2b2b2b;
 }
 body.dark .badge .badge-border {
-  fill: #bc956a;
+  fill: #09f;
 }
 body.dark .badge .badge-title {
   fill: #eee;
@@ -1834,7 +1834,7 @@ body.dark .cursor2.hover {
   'thirdX formX formX'
   ;
   height: 67vh;
-  background-color: red;
+  background-color: #09f;
   width: 64vw;
 }
 
@@ -1844,47 +1844,6 @@ body.dark .cursor2.hover {
   to make sure they reveal the whole mobile screen */
 
 
-.item:nth-of-type(1) {
-  grid-column: 1/8;
-  grid-row: 2/3;
-  height: 22.50015rem;
-}
-.item:nth-of-type(2) {
-  grid-column: 1/8;
-  grid-row: 3/4;
-  height: 9.00006rem;
-}
-.item:nth-of-type(3) {
-  grid-column: 1/8;
-  grid-row: 3/4;
-  height: 22.50015rem;
-}
-.item:nth-of-type(4) {
-  grid-column: 1/8;
-  grid-row: 4/5;
-  height: 9.00006rem;
-}
-.item:nth-of-type(5) {
-  grid-column: 1/8;
-  grid-row: 4/5;
-  z-index: 9;
-  height: 15.0001rem;
-}
-.item:nth-of-type(6) {
-  grid-column: 1/7;
-  grid-row: 4/5;
-  height: 22.50015rem;
-}
-.item:nth-of-type(7) {
-  grid-column: 1/9;
-  grid-row: 1/2;
-  height: 15.0001rem;
-}
-.item:nth-of-type(8) {
-  grid-column: 1/9;
-  grid-row: 4/5;
-  height: 9.00006rem;
-}
 
   /*###*/
 
@@ -1902,7 +1861,7 @@ body.dark .cursor2.hover {
       'formX'
       ;
       height: 67vh;
-      background-color: red;
+      background-color: #09f;
       width: 75vw;
 }
 
@@ -2168,8 +2127,33 @@ header > h2 {
   border-radius: 0 0 30px 30px;
 }
 
+#yaaa {
+  font-size: 3.32em;
 
+}
+
+
+
+
+.turntable {
+  margin: 0px; 
+}
+.turntable ul {
+  padding: 0px;
+  margin: 0px; 
+}
+.turntable ul li {
+  list-style-type: none;
+  display: none; 
+}
+.turntable ul li img {
+  width: 100%; 
+}
+.turntable ul li.active {
+  display: block; 
+}
   </style>
+
 </head>
 <body>
 	
@@ -2198,12 +2182,15 @@ header > h2 {
         <a href="#home" class="hover-target">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><polygon class="logo_bar" points="11.5 11.3 0 11.3 21.1 54.7 21.2 54.7 26.9 43"/><polygon class="logo_bar" points="34.4 11.3 22.9 11.3 44 54.7 44.1 54.7 49.8 43"/><polygon class="logo_tip" points="64 11.3 52.5 11.3 49.2 18.1 54.9 29.9"/></svg></a>  
        </div>
+<!--  Resume Button -->
        <div class="theme">
-         <input type="checkbox" id="brightness" />
-         <label for="brightness" class="hover-target"></label>
-         <div class="bg"></div>
+         <a href="" class="resumeLink">
+           <button id="resumeBtn" style="height: auto;width: 32vw;box-sizing: border-box;padding: 5px 7px 5px 7px;font-size: 1em;">
+             Download My Resume
+           </button>
+         </a>
        </div>
-
+<!--end resume btn -->
      </div>
      <section id="home">
       <header>
@@ -2288,18 +2275,19 @@ header > h2 {
       </header>
     
       <article>
-        <h4>Think outside the box</h4>
+        <h4>Title</h4>
         <div class="details">
-          <h3>Driving sprints</h3>
-          <p class="time-span"><time datetime="2018-03">March 2018</time> &ndash; <time datetime="2015-05">May 2015</time></p>
+          <h3>WorkPlace</h3>
+          <p class="time-span"><time datetime="2018-03">desc</time> &ndash; <time datetime="2015-05">stack teechstack</time></p>
         </div>
        <!--  <p>Creating sprints to, consequently, disrupt the balance. Leverage brand integration with a goal to improve overall outcomes. Executing bleeding edge and possibly think outside the box. Generate social in order to further your reach. Repurposing above the fold so that as an end result, we improve overall outcomes. Take awareness in order to create a better customer experience.</p> -->
       </article>
       <article>
-        <h4>Strategic engagement</h4>
+      
+        <h4>title</h4>
         <div class="details">
-          <h3>Hackathon</h3>
-          <p class="time-span"><time datetime="2015-05">May 2015</time> &ndash; <time datetime="2012-05">August 2012</time></p>
+          <h3>workplace</h3>
+          <p class="time-span"><time datetime="2015-05">desc 2015</time> &ndash; <time datetime="2012-05">tehsack 2012</time></p>
         </div>
         <p>Push the envelope cross platform good fit regroup value creation. Usability deliverables tackle it EOD. Strategic engagement next level bandwidth conversion streamline proximity affiliate marketing. Onboarding scope out functionality segment EOD onboarding. Flesh out B2B innovation functionality EOD hackathon API ETA. Look and feel heads down above the fold B2B proximity. ROI usability mobile-first internally. Usability whiteboard heads down ecosystem scope out digest reach. Deliverables conversion third party hackathon.</p>
       </article>
@@ -2332,6 +2320,42 @@ header > h2 {
 
 
     <section id="work" class="full">
+        <div id="myTurntable" class="turntable">
+  <ul>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/KfYliXdrfHRCEpMuK2SzWZ15nbTHY6R7/finalPose1.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/KfYliXdrfHRCEpMuK2SzWZ15nbTHY6R7/finalPose1.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/2NgAqdPk8IVaiSlWtpQfxLt25MGWJG1U/finalPose2.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/2NgAqdPk8IVaiSlWtpQfxLt25MGWJG1U/finalPose2.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/QX4w9tA1pmrj1b7FyI2wKS0skiBOXJDL/finalPose3.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/QX4w9tA1pmrj1b7FyI2wKS0skiBOXJDL/finalPose3.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/0YT71nQ2O1fowdvBL905AHChj2WFTtBj/finalPose4.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/0YT71nQ2O1fowdvBL905AHChj2WFTtBj/finalPose4.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/9CVbWwZEb27F7GuqkwacMb6y5TtXAswO/finalPose5.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/9CVbWwZEb27F7GuqkwacMb6y5TtXAswO/finalPose5.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/jUktFDv0pADPIexLdsa2qa5mb3Hkk3UA/finalPose6.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/jUktFDv0pADPIexLdsa2qa5mb3Hkk3UA/finalPose6.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/MOZ6Dzv65qZxYWxsYtenrXVZyHyIsIjJ/finalPose7.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/MOZ6Dzv65qZxYWxsYtenrXVZyHyIsIjJ/finalPose7.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/WXTcBAZ8S959RWe3prC1NLf729kZUTau/finalPose8.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/WXTcBAZ8S959RWe3prC1NLf729kZUTau/finalPose8.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/tohU7fN0R6DvqqHzFnP3DAjrSgSDHDS5/finalPose9.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/tohU7fN0R6DvqqHzFnP3DAjrSgSDHDS5/finalPose9.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/On9XIJJIt8yJ1CuvB6Q2IYq2hHenjyDD/loganCoding04.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/On9XIJJIt8yJ1CuvB6Q2IYq2hHenjyDD/loganCoding04.jpg"></li>
+     
+     <!-- <li data-img-src="https://dl3.pushbulletusercontent.com/On9XIJJIt8yJ1CuvB6Q2IYq2hHenjyDD/loganCoding04.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/bZoiTeiMce2nhsfMjACCEWkHal8oZV9p/loganCoding03.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/wBz62epTDv9FDTQ6kSaoxYs9Kgzp50fd/loganCoding02.jpg"></li>
+     <li data-img-src="https://dl3.pushbulletusercontent.com/wBz62epTDv9FDTQ6kSaoxYs9Kgzp50fd/loganCoding02.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/O3bBplHcrr6ON1ZqzdEGmaYGt97q80VS/loganCoding01.jpg"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/O3bBplHcrr6ON1ZqzdEGmaYGt97q80VS/loganCoding01.jpg"></li> -->
+   
+   <!--  <li data-img-src="https://dl3.pushbulletusercontent.com/keQ0ZUOjP4xbKJQ5A9YekWxDFx4DfhZQ/loganCoding3.png"></li>
+    <li data-img-src="https://dl3.pushbulletusercontent.com/keQ0ZUOjP4xbKJQ5A9YekWxDFx4DfhZQ/loganCoding3.png"></li>
+ -->
+  
+  </ul>
+</div>
 
  <!--     <h1 class="bg-text" data-margin="1340" data-speed="10">Portfolio</h1>  -->  
      <div class="badge" data-margin="600" data-speed="4">
@@ -2712,5 +2736,125 @@ function handle(delta) {
   $('.device-options li').removeClass('active');
   $(this).addClass('active');
 });</script>
+
+<script>
+/*
+ * TurntableSlider
+ * v 1.0.1
+ * Copyright (c) 2016 Polar Notion
+ * Licensed under the MIT license.
+ */
+(function($){
+
+  $.fn.turntable = function(options){
+
+    // variable declarations
+    'use strict';
+
+    var mobilecheck = function() {
+      var check = false;
+      (function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check = true})(navigator.userAgent||navigator.vendor||window.opera);
+      return check;
+    }
+
+    var $listItems = $('ul', this).children(),
+        settings = $.extend({}, $.fn.turntable.defaults, options),
+        $turntable = $(this),
+        sections = [];
+
+    // splits container based on
+    // amount of li's in turntable
+    function divideContainer(images) {
+
+      var initialLength = undefined,
+          dividend = images.length;
+
+      if (settings.axis === 'y') {
+        initialLength = $turntable.height();
+      } else {
+        initialLength = $turntable.width();
+      }
+
+      var sectionLength = initialLength / dividend;
+
+      // creates array of value pairs with min and max ranges
+      for (var j = 0; j < images.length; j++) {
+        sections[j] = {
+          min: sectionLength * j,
+          max: sectionLength + (sectionLength * j),
+          index: j
+        };
+      }
+    }
+
+    //loads images one at a time on page load
+    (function appendImages(callback) {
+      $listItems.each(function () {
+        $(this).append('<img src="' + $(this).data("imgSrc") + '">');
+      });
+    })();
+
+    // divides container once image is loaded
+    $("li:first-child>img", $turntable).on('load',function () {
+      $(this).parent().addClass('active');
+      divideContainer($listItems);
+    });
+
+    //redivides window on resize
+    $(window).resize(function(){
+      divideContainer($listItems);
+    });
+
+    // loop through array and find correct range pair
+    var applyClasses = function(sections, position) {
+      $.each(sections, function () {
+          if (position >= this.min && position <= this.max) {
+            $listItems.removeClass('active');
+            $listItems.eq(this.index).addClass("active");
+          }
+        });
+      };
+
+    // finds mouse position and appends body
+    // based on location
+    if(mobilecheck()){
+      return $turntable.on("touchmove", function (e) {
+        e.preventDefault();
+        var offset = $(this).offset();
+        var t = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        var position;
+        if (settings.axis === 'y') {
+          position = t.pageY - offset.top;
+        } else {
+          position = t.pageX - offset.left;
+        }
+        // loop through array and find correct range pair
+        applyClasses(sections, position);
+      });   
+    } else {
+      return $turntable.on("mousemove", function (e) {
+        var offset = $(this).offset();
+        var position;
+        if (settings.axis === 'y') {
+          position = e.pageY - offset.top;
+        } else {
+          position = e.pageX - offset.left;
+        }
+        applyClasses(sections, position);
+        
+      });   
+    }
+  }
+
+  $.fn.turntable.defaults = {
+    axis: 'y'
+  }
+
+})(jQuery);
+$(document).ready(function() { 
+  $('#myTurntable').turntable();
+});
+
+</script>
 </body>
 </html>
