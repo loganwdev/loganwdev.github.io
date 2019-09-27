@@ -847,7 +847,7 @@ h1 {
 }
 
 h2 {
-  color: #09f;
+  color: #74AEDE;
   text-transform: uppercase;
   position: relative;
   font-weight: 600;
@@ -1095,8 +1095,8 @@ svg {
 }
 
 .logo_tip {
-  fill: #09f;
-  stroke: #09f;
+  fill: #74AEDE;
+  stroke: #74AEDE;
   transition: fill .2s ease, stroke .2s ease;
 }
 
@@ -1299,7 +1299,7 @@ h1.bg-text {
   position: absolute;
   width: 60%;
   height: 60%;
-  border: 1px dashed #09f;
+  border: 1px dashed #74AEDE;
   border-radius: 50%;
   top: 20%;
   left: 20%;
@@ -1345,7 +1345,7 @@ h1.bg-text {
   top: -5%;
   left: -5%;
   z-index: -999;
-  border: 2px dotted #09f;
+  border: 2px dotted #74AEDE;
   box-shadow: 0 7px 30px -10px rgba(0, 0, 0, 0.25);
 }
 
@@ -1374,7 +1374,7 @@ h1.bg-text {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #09f;
+  background-color: #74AEDE;
   transform: scaleX(0);
   transform-origin: 0 50%;
   pointer-events: none;
@@ -1501,7 +1501,7 @@ h1.bg-text {
 .contact-grid input[type="url"]:hover,
 .contact-grid textarea:hover,
 .contact-grid select:hover {
-  box-shadow: 0px 0px 0px 1px #09f inset;
+  box-shadow: 0px 0px 0px 1px #74AEDE inset;
 }
 .contact-grid input[type="text"]:focus,
 .contact-grid input[type="password"]:focus,
@@ -1704,8 +1704,8 @@ body.dark .logo_bar {
   stroke: #eee;
 }
 body.dark .logo_tip {
-  fill: #09f;
-  stroke: #09f;
+  fill: #bc956a;
+  stroke: #bc956a;
 }
 body.dark h1 {
   color: #EEE;
@@ -1715,10 +1715,10 @@ body.dark header {
   border-color: #444;
 }
 body.dark h2 {
-  color: #09f;
+  color: #bc956a;
 }
 body.dark h2:before {
-  background: #09f;
+  background: #bc956a;
 }
 body.dark h3, body.dark .time-span, body.dark time, body.dark cite {
   color: #888;
@@ -1727,13 +1727,13 @@ body.dark h4 {
   color: #ccc;
 }
 body.dark blockquote:before {
-  color: #09f;
+  color: #bc956a;
 }
 body.dark blockquote p {
   color: #999;
 }
 body.dark .sidebar .side nav ul li a:after {
-  background: #09f;
+  background: #bc956a;
 }
 body.dark .side-social svg {
   fill: #777;
@@ -1745,7 +1745,7 @@ body.dark #experience .details:after, body.dark h1.bg-text {
   color: rgba(255, 255, 255, 0.01);
 }
 body.dark .reveal::after {
-  background-color: #09f;
+  background-color: #bc956a;
 }
 body.dark input[type=checkbox] + label:before {
   content: "";
@@ -1758,7 +1758,7 @@ body.dark .side {
   background: #252525;
 }
 body.dark .badge {
-  border-color: #09f;
+  border-color: #bc956a;
   background: #282828;
 }
 body.dark .badge:before {
@@ -1766,7 +1766,7 @@ body.dark .badge:before {
   background: #2b2b2b;
 }
 body.dark .badge .badge-border {
-  fill: #09f;
+  fill: #bc956a;
 }
 body.dark .badge .badge-title {
   fill: #eee;
@@ -1792,8 +1792,6 @@ body.dark .cursor2.hover {
 ================================================== */
 .cursor,
 .cursor2 {
-   /*background-image: url(https://placehold.it/25x25.jpg);
-  background-repeat: no-repeat;*/
   position: fixed;
   border-radius: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -1803,7 +1801,6 @@ body.dark .cursor2.hover {
 }
 
 .cursor {
-
   background-color: #fff;
   height: 0;
   width: 0;
@@ -1837,44 +1834,72 @@ body.dark .cursor2.hover {
   'thirdX formX formX'
   ;
   height: 67vh;
-  /*background-color: #09f;*/
-  background-color: #333;
+  background-color: red;
   width: 64vw;
 }
 
 @media (max-width:700px) {
+  /*
+  ### here is the media query for the reveal figures grid columns
+  to make sure they reveal the whole mobile screen */
 
-#head4React {
- grid-area: thirdX;
- margin-top: 50vh;
- margin-left: 0;/*padding: 2em 3em;*/
- width: 91vw !important;
 
+.item:nth-of-type(1) {
+  grid-column: 1/8;
+  grid-row: 2/3;
+  height: 22.50015rem;
+}
+.item:nth-of-type(2) {
+  grid-column: 1/8;
+  grid-row: 3/4;
+  height: 9.00006rem;
+}
+.item:nth-of-type(3) {
+  grid-column: 1/8;
+  grid-row: 3/4;
+  height: 22.50015rem;
+}
+.item:nth-of-type(4) {
+  grid-column: 1/8;
+  grid-row: 4/5;
+  height: 9.00006rem;
+}
+.item:nth-of-type(5) {
+  grid-column: 1/8;
+  grid-row: 4/5;
+  z-index: 9;
+  height: 15.0001rem;
+}
+.item:nth-of-type(6) {
+  grid-column: 1/7;
+  grid-row: 4/5;
+  height: 22.50015rem;
+}
+.item:nth-of-type(7) {
+  grid-column: 1/9;
+  grid-row: 1/2;
+  height: 15.0001rem;
+}
+.item:nth-of-type(8) {
+  grid-column: 1/9;
+  grid-row: 4/5;
+  height: 9.00006rem;
 }
 
+  /*###*/
 
-.neo {
-   position: relative;
-    margin: 0 0 0 1vw;
-    width: 400px;
-    height: 540px;
-    perspective: 1000px;
-    perspective-origin: 50% 0;
-    display: flex;
-    justify-content: center;
-}
-  #yaaa {
-    font-size: 88px !important;
-    line-height: 1.2;
-   }
+	#yaaa {
+	 	font-size: 88px !important;
+	 	line-height: 1.2;
+	 }
 
    .grid1{
       display: grid;
       grid-template-areas: 
       'third'
       'onefr'
-      'formX'
       'thirdX'
+      'formX'
       ;
       height: 67vh;
       background-color: red;
@@ -1890,25 +1915,11 @@ header > h2 {
 }
 
 
-
-
-
 .inner3 {
   width: 100%;
   height: 100%;
   background-color: #333;
   filter: drop-shadow(1px 2px 1px rgba(0,0,0,0.05));
-}
-
-#head4React > h3{
- font-size:2em;
-}
-#head4React > h2{
- font-size:1.5em;
-}
-
-#head4React:after{
- content: 'click or hover me'
 }
 
 
@@ -2157,307 +2168,11 @@ header > h2 {
   border-radius: 0 0 30px 30px;
 }
 
-.techStackItem {
-  width: 100%;
-  -ms-text-align-last: auto;
-  text-align:left;
-}
-.gridInPhone {
-  /*color: #09f;*/
-  color: #333;
-}
-
-.gridInChild h4{
-  color: #09f !important;
-  /*color: #333;*/
-}
-.liTechs > li{
-  line-height: 1.32;
-  transition: all 0.15s ease-in-out;
-
-}
-.liTechs > li:hover{
-  line-height: 1.32;
-  font-weight: bold;
-  
-}
-
-#navi1:hover{color: #09f;}
-#navi2:hover{color: #09f;}
-#navi3:hover{color: #09f;}
-#navi4:hover{color: #09f;}
-
-
-.neo {
-   position: relative;
-    margin: 0 0 0 1vw;
-    width: 400px;
-    height: 540px;
-    perspective: 1000px;
-    perspective-origin: 50% 0;
-    display: flex;
-    justify-content: center;
-}
-
-.neo-device {
-    position: absolute;
-    top: 40px;
-    right: 60px;
-    width: 240px;
-    height: 360px;
-    box-sizing: content-box;
-    padding: 40px 10px;
-    border-radius: 20px;
-    background: hsl(0,0%,24%);
-    transform-style: preserve-3d;
-    backface-visibility: hidden;
-    transform: rotateX(0deg) rotateY(-20deg) rotateZ(10deg) scale(.84);
-    transition: transform 2s cubic-bezier(.5,.05,.09,1);
-}
-
-.neo:hover .neo-device {
-    transition-duration: 1.6s;
-    transform: translateX(-120px) rotateX(10deg) rotateY(40deg) rotateZ(-20deg);
-}
-
-
-.neo--has3D {
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform: translateZ(1px); /* Needs to be > 0 to avoid flickering */
-    animation: neo-pulse 2s 1.3s cubic-bezier(.7,0,.3,1) alternate infinite;
-    animation-play-state: paused;
-}
-
-.neo:hover .neo--has3D {
-    animation-play-state: running;
-}
-
-.neo--has3D:nth-child(1) { 
-    animation-delay: 1.3s;
-}
-.neo--has3D:nth-child(2) { 
-    animation-delay: 1.4s;
-}
-.neo--has3D:nth-child(3) { 
-    animation-delay: 1.5s;
-}
-.neo--has3D:nth-child(4) { 
-    animation-delay: 1.6s;
-}
-
-@keyframes neo-pulse {
-  100% { transform: translateZ(80px); opacity: .8; }
-}
-
-
-
-/* Neo App ---------------- */
-
-.neo-App {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    text-shadow: none;
-    background-color: hsl(0,0%,20%);
-    resize: none;
-}
-
-
-/* Neo Header ---------------- */
-
-.neo-Header {
-    display: flex;
-    color: hsla(0,0%,0%,.6);
-    border-bottom: 2px solid hsla(0,0%,0%,.3);
-    background-color: #2ecc71;
-}
-
-.neo-Header-title {
-    flex: 1;
-    display: block;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: inherit;
-    font-size: 1.2em;
-    line-height: 50px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    border-left: 1px solid hsla(0,0%,0%,.1);
-    border-right: 1px solid hsla(0,0%,0%,.1);
-    background: inherit;
-}
-
-.neo-Header-button {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    border: none;
-    color: inherit;
-    border-radius: 0;
-    margin: 0;
-    background: inherit;
-}
-.neo-Header-button[data-icon]:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 50px;
-    line-height: 50px;
-}
-
-.neo-Header-button:active {
-    color: #fff;
-    background-color: hsla(0,0%,0%,.2);
-}
-
-
-/* Neo Search ---------------- */
-
-.neo-Search {
-    display: flex;
-    padding: 10px;
-    background-color: #1abc9c;
-}
-
-.neo-Search .neo-Search-input {
-    flex: 1;
-    -webkit-appearance: none; /* Removes inner shadow on iOS. */
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    font-size: 14px;
-    height: 2.5em;
-    padding: 0.5em;
-    vertical-align: middle;
-    border-radius: 3px;
-    border: 2px solid hsla(0, 0%, 0%, 0.1);
-    background-color: inherit;
-}
-
-.neo-Search-input:focus {
-    border-color: hsla(0, 0%, 0%, 0.3);
-}
-
-.neo-Search-input::-webkit-input-placeholder {
-    color: hsla(0,0%,0%,.5);
-}
-
-.neo-Search-badge {
-    display: block;
-    margin: 0 0 0 10px;
-    padding: 0 9px;
-    min-width: 30px;
-    border-radius: 3px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: bold;
-    color: hsla(0,0%,0%,.5);
-    border: 2px solid hsla(0, 0%, 0%, 0.1);
-    background-color: inherit;
-}
-
-#head4React {
-  grid-area: thirdX;
-  margin-top: 50vh;
-  margin-left: 0;/*padding: 2em 3em;*/
-  width: 64vw;}
-/* Neo Content ---------------- */
-
-.neo-Content {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-flow: row wrap;
-    position: relative;
-    padding: 5px;
-    text-align: center;
-    font-size: 0;
-    background: hsl(200,30%,30%);
-}
-
-.neo-Content-img { 
-    flex: 1 0 50%;
-    box-sizing: border-box;
-    padding: inherit;
-    background-color: hsl(200,30%,40%);
-    background-clip: content-box;
-}
-
-@-moz-document url-prefix() {
-    /* Hack since FF doesn't support flex-flow: row wrap; but already is unprefixed */
-    .neo-Content {
-        flex-direction: column;
-    }
-    .neo-Content-img {
-        flex: 1;
-    }
-}
-
-
-/* Neo TabBar ---------------- */
-
-.neo-TabBar {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    background-color: #3498db;
-}
-
-.neo-TabBar-tab {
-    flex: 1;
-    display: block;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 4px;
-    height: 50px;
-    border-radius: 0;
-    font-size: 16px;
-    cursor: pointer;
-    outline: none;
-    color: hsla(0,0%,0%,.5);
-    border: none;
-    border-left: 1px solid hsla(0,0%,0%,.1);
-    background: inherit;
-}
-
-.neo-TabBar-tab[data-icon] {
-    position: relative;
-    padding: 30px 0 0 0;
-    font-size: 10px;
-}
-
-.neo-TabBar-tab[data-icon]:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    font-size: 50px;
-    line-height: 40px;
-
-}
-
-.neo-TabBar-tab--active,
-.neo-TabBar-tab:active {
-    color: hsla(0,0%,100%,.6);
-    background-color: #2980b9;
-}
-
-
 
   </style>
 </head>
 <body>
-  
+	
   <div class="sidebar">
     <div class="side">
       <div class="logo">
@@ -2484,9 +2199,8 @@ header > h2 {
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><polygon class="logo_bar" points="11.5 11.3 0 11.3 21.1 54.7 21.2 54.7 26.9 43"/><polygon class="logo_bar" points="34.4 11.3 22.9 11.3 44 54.7 44.1 54.7 49.8 43"/><polygon class="logo_tip" points="64 11.3 52.5 11.3 49.2 18.1 54.9 29.9"/></svg></a>  
        </div>
        <div class="theme">
-        <a href="" class="resumeLink" style="box-sizing: border-box;width: 18vw;height: 10vh"><button style="box-sizing: border-box;width: 18vw;height: 7vh;color: #09f;font-size: 0.88em;" class="resumePdf" >Download My Resume</button></a>
-         <!-- <input type="checkbox" id="brightness" />
-         <label for="brightness" class="hover-target"></label> -->
+         <input type="checkbox" id="brightness" />
+         <label for="brightness" class="hover-target"></label>
          <div class="bg"></div>
        </div>
 
@@ -2497,18 +2211,21 @@ header > h2 {
         <h2>Frontend Software Engineer</h2>
       </header>
       <article> 
+         <div class="designTools" style="">
+  <img style="height: 6.32vh;width: auto;max-width: 70vw;" src="https://dl3.pushbulletusercontent.com/BOmhPQq8kXhSO9pT0CwxmvNml1DvwiOK/designTools2darkmode.jpg" alt="deisgn tools">
+</div>
         <div class="details">
-          <div class="grid1" style="">
 
+          <div class="grid1" style="">
            <!--  <div class="inner3" style="grid-area: third;">1</div>
             <div class="inner3" style="grid-area: onefr;">2</div>
-            -->
+            <div class="inner3" style="grid-area: thirdX;">3</div> -->
             <div class="inner3" id="form" style="grid-area: formX;"><div class="device-options">
      <ul>
-       <li class="active" data-type="iphone" id="navi1">About</li>
-       <li data-type="samsung" id="navi1">Goals</li>
-       <li data-type="ipad" id="navi2">Work</li>
-       <li data-type="macbook" id="navi3">Contact</li>
+       <li class="active" data-type="iphone">iPhone</li>
+       <li data-type="samsung">Samsung</li>
+       <li data-type="ipad">iPad</li>
+       <li data-type="macbook">Macbook</li>
     </ul>
   </div>
 
@@ -2517,35 +2234,7 @@ header > h2 {
       <div class="camera"></div>
       <div class="speaker"></div>
       <div class="screen">
-        <div class="gridInPhone" style="width: 100%;height: 100%;
-        background-color: #333;transition: all 1s ease-in-out;display: grid;grid-template-columns: 20px 1fr 20px;">
-          <div class="gridInChild" style="background-color: #fff;width: 100%;height: 100%;background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/linedpaper.png);background-repeat:repeat;"><!-- 🧠 --></div>
-          <div class="gridInChild" style="background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/linedpaper.png);background-repeat:repeat; background-color: #fff;width: 100%;height: 100%;box-sizing: border-box;justify-content: center;justify-items:center;margin: auto;">
-            <h6 style="padding: 5px 7px 5px 7px;font-size: 2em;background-color: #09f;color: white;">About Me</h1>
-            <p style="margin-top: -1em;">Front End Software Engineer</p>
-            <h4>My Preferred Stack</h4>
-            <p>
-              <ul class="liTechs">
-                 <li class="techStackItem">Adobe CC- Ps,Ai,Ae,Xd</li>
-
-                <li class="techStackItem">Javascript</li>
-                <li class="techStackItem">Node.js</li>
-                <li class="techStackItem">React.js</li>
-               
-                <li class="techStackItem">SQL / NoSQL</li>
-                <li class="techStackItem">GRAPH QL/Dynamo</li>
-                
-                
-                <li class="techStackItem">Git, Github </li>
-                
-              </ul>
-            </p>
-          </div>
-          <div class="gridInChild" style="background-color: #fff;width: 100%;height: 100%;background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/linedpaper.png);background-repeat:repeat;"><!-- ⚡️ --></div>
-        </div>
-
-        <!-- <img class="screen-placeholder" src="https://dl3.pushbulletusercontent.com/AwXyYScnIjVTazFRTXNp1k8FfYiT09Yq/loganDesign2.jpg" alt="Placeholder ayy"/> -->
-        <!-- facebook placeholder -- http://images.mobile-patterns.com/320/1379622964445-2013-09-19%2009.24.37.png -->
+        <img class="screen-placeholder" src="http://images.mobile-patterns.com/320/1379622964445-2013-09-19%2009.24.37.png" alt="Placeholder ayy"/>
       </div>
       <div class="home-btn"></div>
     </div>
@@ -2557,24 +2246,23 @@ header > h2 {
       <div class="moar-dot"></div>
       <div class="one-more-dot"></div>
       <div class="screen">
-        techhhhh
         <img class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" alt="Youtube bro"/>
       </div>
       <div class="home-btn"></div>
     </div>
     
-  <div class="device ipad" style="max-width: 68vw;">
+  <div class="device ipad">
     <div class="camera"></div>
-    <div class="screen" style="max-width: 68vw;">
-      <img style="max-width: 67vw;" class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" alt="Netflix and chill?"/>
+    <div class="screen">
+      <img class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" alt="Netflix and chill?"/>
     </div>
     <div class="home-btn"></div>
   </div>
   
-  <div class="device macbook" style="max-width: 68vw;">
+  <div class="device macbook">
     <div class="camera"></div>
-    <div class="screen" style="max-width: 67vw;">
-      <img style="max-width: 67vw;margin-left: 0;padding-left: 0;" class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" placeholder="Pinterest"/>
+    <div class="screen">
+      <img class="screen-placeholder" src="http://appinformers.com/wp-content/uploads/2015/10/youtube-new-design-ios-4.jpeg" placeholder="Pinterest"/>
     </div>
       <div class="keyboard"></div>
     
@@ -2583,44 +2271,6 @@ header > h2 {
 </div>
 </div>
           </div>
-
-
-         
-<div class="inner3" id="head4React" style=""> 
- <h3>React.js Developer</h3>
- <h2>I make lasting connections<br>
-  with the users of my sites :)
- </h2>
-
-<div class="neo">
-    <div class="neo-device">
-        <div class="neo-App">
-            <header class="neo-Header neo--has3D">
-                <button class="neo-Header-button neo--has3D" data-icon="&#9776;"></button>
-                <h3 class="neo-Header-title neo--has3D">Title</h3>
-                <button class="neo-Header-button neo--has3D" data-icon="&#59157;"></button>
-            </header>
-            <div class="neo-Search neo--has3D">
-                <input class="neo-Search-input neo--has3D" type="search" placeholder="Search">
-                <output class="neo-Search-badge neo--has3D">13</output>
-            </div>
-            <div class="neo-Content neo--has3D">
-                <div class="neo-Content-img neo--has3D"></div>
-                <div class="neo-Content-img neo--has3D"></div>
-                <div class="neo-Content-img neo--has3D"></div>
-                <div class="neo-Content-img neo--has3D"></div>
-            </div>
-            <nav class="neo-TabBar neo--has3D">
-                <button class="neo-TabBar-tab neo--has3D" data-icon="&#128227;">New</button>
-                <button class="neo-TabBar-tab neo--has3D neo-TabBar-tab--active" data-icon="&#128640;">Popular</button>
-                <button class="neo-TabBar-tab neo--has3D" data-icon="&#9733;">Favs</button>
-                <button class="neo-TabBar-tab neo--has3D" data-icon="&#9206;">More</button>
-            </nav>
-        </div>
-    </div>
-</div>
-
-    </div> 
          <!--  <h3>Take awareness to create a better customer experience.</h3> -->
 
         </div>
@@ -2634,7 +2284,9 @@ header > h2 {
       <header>
         <h1>Take Awareness</h1>
         <h2>Better Customer Experience</h2>
+
       </header>
+    
       <article>
         <h4>Think outside the box</h4>
         <div class="details">
@@ -2678,9 +2330,10 @@ header > h2 {
     </section> 
 
 
+
     <section id="work" class="full">
 
-     <h1 class="bg-text" data-margin="1340" data-speed="10">Portfolio</h1>   
+ <!--     <h1 class="bg-text" data-margin="1340" data-speed="10">Portfolio</h1>  -->  
      <div class="badge" data-margin="600" data-speed="4">
        <svg viewBox="0 0 300 300" width="160" heigh="160">
         <defs>
@@ -2706,17 +2359,17 @@ header > h2 {
         <img alt="Montefiore Health System" src="https://www.christopher-ware.com/CW_new/img/work/mf/mf_work6.png">
         <figcaption></figcaption>
       </figure>
-<br>
+
       <figure class="MS item" data-margin="600" data-speed="7">
         <img alt="MEDSEEK" src="https://www.christopher-ware.com/CW_new/img/work/ms/ms_header.jpg">
         <figcaption></figcaption>
       </figure>
-<br>
+
       <figure class="rd item" data-margin="160" data-speed="2">
         <img alt="Red Diamond" src="https://www.christopher-ware.com/CW_new/img/work/rd/rd_work8.jpg">
         <figcaption></figcaption>
       </figure>
-<br>
+
       <figure class="da item" data-margin="540" data-speed="7">
         <img alt="Daxko" src="https://www.christopher-ware.com/CW_new/img/work/dax/dax_header3.jpg">
         <figcaption></figcaption>
@@ -2726,12 +2379,12 @@ header > h2 {
         <img alt="GradesFirst" src="https://www.christopher-ware.com/CW_new/img/work/gf/gf_header.jpg">
         <figcaption></figcaption>
       </figure>
-<br>
+
       <figure class="sf item" data-speed="0">
         <img alt="St. Francis Health System" src="https://www.christopher-ware.com/CW_new/img/work/sf/sf_header.jpg">
         <figcaption></figcaption>
       </figure>
-<br>
+
       <figure class="qu item" data-speed="0">
         <img alt="Quore" src="https://www.christopher-ware.com/CW_new/img/work/qu/qu_work3.png">
         <figcaption></figcaption>
@@ -2816,7 +2469,7 @@ header > h2 {
   
 <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script>
-    $(window).on('beforeunload', function() {
+  	$(window).on('beforeunload', function() {
   $(window).scrollTop(0);
 });
 
@@ -2883,8 +2536,8 @@ $(function() {
 })
 $('.two, .five').on('click', function(){
   event.preventDefault();
-  $('body, html').animate({
-    scrollTop: $($(this).attr('href')).offset().top + 400 }, 400);
+	$('body, html').animate({
+		scrollTop: $($(this).attr('href')).offset().top + 400 }, 400);
  
 });
 
@@ -2905,34 +2558,34 @@ $(".four").click(function() {
 });
 
 $(window).on('scroll', function(){
+	
+	const scroll = $(window).scrollTop();
+	const half = $(window).height() / 2;
+	
+	if(scroll <= $('#home').offset().top + half){
+		$('a').removeClass('active');
+		$('.one').addClass('active');
+	}
+	
+	if(scroll > $('#quotes').offset().top - half){
+		$('a').removeClass('active');
+		$('.two').addClass('active');
+	}
+	
+	if(scroll > $('#experience').offset().top - half){
+		$('a').removeClass('active');
+		$('.three').addClass('active');
+	}
+	
+	if(scroll > $('#work').offset().top - half){
+		$('a').removeClass('active');
+		$('.four').addClass('active');
+	}
   
-  const scroll = $(window).scrollTop();
-  const half = $(window).height() / 2;
-  
-  if(scroll <= $('#home').offset().top + half){
-    $('a').removeClass('active');
-    $('.one').addClass('active');
-  }
-  
-  if(scroll > $('#quotes').offset().top - half){
-    $('a').removeClass('active');
-    $('.two').addClass('active');
-  }
-  
-  if(scroll > $('#experience').offset().top - half){
-    $('a').removeClass('active');
-    $('.three').addClass('active');
-  }
-  
-  if(scroll > $('#work').offset().top - half){
-    $('a').removeClass('active');
-    $('.four').addClass('active');
-  }
-  
-    if(scroll > $('#contact').offset().top - half){
-    $('a').removeClass('active');
-    $('.five').addClass('active');
-  }
+  	if(scroll > $('#contact').offset().top - half){
+		$('a').removeClass('active');
+		$('.five').addClass('active');
+	}
 });
 
 
@@ -2964,11 +2617,11 @@ var end = null;
 var interval = null;
 
 function handle(delta) {
-  var animationInterval = 5; //lower is faster
+	var animationInterval = 5; //lower is faster
   var scrollSpeed = 5; //lower is faster
 
-  if (end == null) {
-    end = $(window).scrollTop();
+	if (end == null) {
+  	end = $(window).scrollTop();
   }
   end -= 20 * delta;
   goUp = delta > 0;
@@ -3001,14 +2654,14 @@ function handle(delta) {
 
 
 (function($) { "use strict";
-    
-  //Page cursors
+		
+	//Page cursors
 
     document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
     t.style.left = n.clientX + "px", 
-    t.style.top = n.clientY + "px", 
-    e.style.left = n.clientX + "px", 
-    e.style.top = n.clientY + "px"
+		t.style.top = n.clientY + "px", 
+		e.style.left = n.clientX + "px", 
+		e.style.top = n.clientY + "px"
     });
     var t = document.getElementById("cursor"),
         e = document.getElementById("cursor2")
@@ -3025,10 +2678,10 @@ function handle(delta) {
     function o(t) {
         t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
     }
-  
+	
 
-  
-  
+	
+	
   })(jQuery); 
 
 
@@ -3042,14 +2695,14 @@ function handle(delta) {
 'use strict';(function($){$.fn.inertiaScroll=function(options){var settings=$.extend({parent:'',childDelta1:0.02,childDelta2:0.1,parentDelta:0.08},options);var $window=$(window);var $body=$('body');var $parent=settings.parent;var $child=this;var ChildBox=function(elm,offset,speed,margin){this.elm=elm;this.offset=offset!==undefined?offset:0;this.speed=speed!==undefined?speed:1;this.margin=margin!==undefined?margin:0};ChildBox.prototype.update=function(windowOffset,offsetBottom){this.offset+=(windowOffset*settings.childDelta1*Number(this.speed)-this.offset)*settings.childDelta2;this.elm.css({transform:'translate3d('+0+','+(Number(this.margin)-Number(this.offset))+'px ,'+0+')'})};var ParentBox=function(elm,offset,speed,margin){ChildBox.apply(this,arguments)};ParentBox.prototype=Object.create(ChildBox.prototype,{constructor:{value:ParentBox}});ParentBox.prototype.update=function(windowOffset){this.offset+=(windowOffset-this.offset)*settings.parentDelta;this.elm.css({transform:'translate3d('+0+','+(-this.offset)+'px ,'+0+')'})};ParentBox.prototype.setcss=function(){this.elm.css({'width':'100%','position':'fixed'})};var Boxes=function(){this.ChildBox=[];this.ChildBoxLength=0;this.ParentBox='';this.windowHeight=0};Boxes.prototype={init:function(){this.createElm($child,$parent);this.loop()},createElm:function(child,parent){this.ParentBox=new ParentBox(parent,0,1);this.ParentBox.setcss();this.boxArrayLength=child.length;for(var i=0;i<this.boxArrayLength;i++){var e=child.eq(i);var speed=e.data('speed');var margin=e.data('margin');this.ChildBox.push(new ChildBox(e,0,speed,margin))}},smoothScroll:function(){var windowOffset=$window.scrollTop();var offsetBottom=windowOffset+this.windowHeight;this.ParentBox.update(windowOffset);for(var i=0;i<this.boxArrayLength;i++){this.ChildBox[i].update(windowOffset,offsetBottom)}},loop:function(){this.smoothScroll();window.requestAnimationFrame(this.loop.bind(this))}};$(function(){$body.height($parent.height());var boxes=new Boxes();boxes.init()});return this}})(jQuery)
 
 
-    $(".item, .bg-text, .badge").inertiaScroll({
-      parent: $("")
-    });  
+	  $(".item, .bg-text, .badge").inertiaScroll({
+	    parent: $("")
+	  });  
 
 
 
 
-    
+  	
   </script>
   <script>$('.device-options li').click(function(){
   var $device = $(this).data('type');
