@@ -1,4 +1,4 @@
-<html lang="en" class="gr__themeies_com"><head>
+<html lang="en" class=""><head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -76,8 +76,8 @@ svg {
 .carousel-inner > .item {
   background: #fff;
 }
-
-.carousel-caption {
+@media screen and (min-width:500px) {
+	.carousel-caption {
   display: flex;
   align-items: center;
   left: 0;
@@ -86,7 +86,26 @@ svg {
   bottom: 0;
   min-height: 32vh;
   max-height: 68vh;
-  padding-top: 27%;
+  padding-top: 15%;
+  padding-right: 15%;
+  padding-left: 15%;
+  text-align: left;
+  color: #000;
+  text-shadow: none;
+}
+
+}
+
+.carousel-caption {
+  display: flex;
+  align-items: center;
+  left: 0;
+  top: 88px;
+  right: 0;
+  bottom: 0;
+  min-height: 32vh;
+  max-height: 68vh;
+  padding-top: 15%;
   padding-right: 15%;
   padding-left: 15%;
   text-align: left;
