@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--NOTE: Most Web WorldWind examples use jquery, Bootstrap and requirejs but those technologies are NOT-->
+    <!--required by Web WorldWind. See SimplestExample.html for an example of using Web WorldWind without them.-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Starbucks Data Set </title>
+</head>
+<body>
+	
+	<script src="https://cdn.flexmonster.com/flexmonster.js"></script>
+
+<div id="pivot-container"></div>
+
+<div id="pivot-container-charts"></div>
+<script>
+	'use strict';
+
+	var pivot = new Flexmonster({
+    container: "pivot-container",
+    componentFolder: "https://cdn.flexmonster.com/",
+    licenseFilePath: "https://cdn.flexmonster.com/codepen.key",
+    width: "100%",
+    height: 430,
+    toolbar: true,
+    report: {
+        dataSource: {
+            data: getData()
+        },
+        "slice": {
+            "rows": [{
+                "uniqueName": "Name"
+            }],
+            "columns": [{
+                "uniqueName": "[Measures]"
+            }],
+            "measures": [{
+                    "uniqueName": "Calories",
+                    "aggregation": "sum"
+                },
+                {
+                    "uniqueName": "Carb. (g)",
+                    "aggregation": "sum"
+                },
+                {
+                    "uniqueName": "Protein",
+                    "aggregation": "sum"
+                }
+            ],
+            "sorting": {
+                "column": {
+                    "type": "desc",
+                    "tuple": [],
+                    "measure": {
+                        "uniqueName": "Calories",
+                        "aggregation": "sum"
+                    }
+                }
+            }
+        },
+        "conditions": [{
+                "formula": "#value <= 100",
+                "measure": "Calories",
+                "format": {
+                    "backgroundColor": "#F1F8E9",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "AND(#value > 100, #value < 250)",
+                "measure": "Calories",
+                "format": {
+                    "backgroundColor": "#DCEDC8",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value >= 250",
+                "measure": "Calories",
+                "format": {
+                    "backgroundColor": "#AED581",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value >= 350",
+                "measure": "Calories",
+                "format": {
+                    "backgroundColor": "#8BC34A",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value <= 30",
+                "measure": "Carb. (g)",
+                "format": {
+                    "backgroundColor": "#FFFDE7",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "AND(#value > 30, #value < 60)",
+                "measure": "Carb. (g)",
+                "format": {
+                    "backgroundColor": "#FFF9C4",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value >= 60",
+                "measure": "Carb. (g)",
+                "format": {
+                    "backgroundColor": "#FFF176",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value <= 10",
+                "measure": "Protein",
+                "format": {
+                    "backgroundColor": "#F3E5F5",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "AND(#value > 10, #value < 20)",
+                "measure": "Protein",
+                "format": {
+                    "backgroundColor": "#E1BEE7",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            },
+            {
+                "formula": "#value >= 20",
+                "measure": "Protein",
+                "format": {
+                    "backgroundColor": "#CE93D8",
+                    "color": "#000000",
+                    "fontFamily": "Arial",
+                    "fontSize": "12px"
+                }
+            }
+        ]
+    }
+});
+
+var pivot_with_charts = new Flexmonster({
+    container: "pivot-container-charts",
+    componentFolder: "https://cdn.flexmonster.com/",
+    licenseFilePath: "https://cdn.flexmonster.com/codepen.key",
+    width: "100%",
+    height: 430,
+    report: {
+        dataSource: {
+            data: getData()
+        },
+        "slice": {
+            "rows": [{
+                "uniqueName": "Name",
+                "filter": {
+                    "type": "top",
+                    "quantity": 5,
+                    "measure": {
+                        "uniqueName": "Calories",
+                        "aggregation": "sum"
+                    }
+                },
+                "sort": "unsorted"
+            }],
+            "columns": [{
+                "uniqueName": "[Measures]"
+            }],
+            "measures": [{
+                    "uniqueName": "Calories",
+                    "aggregation": "sum"
+                },
+                {
+                    "uniqueName": "Carb. (g)",
+                    "aggregation": "sum"
+                },
+                {
+                    "uniqueName": "Protein",
+                    "aggregation": "sum"
+                }
+            ],
+            "sorting": {
+                "column": {
+                    "type": "desc",
+                    "tuple": [],
+                    "measure": {
+                        "uniqueName": "Calories",
+                        "aggregation": "sum"
+                    }
+                }
+            }
+        },
+        "options": {
+            "viewType": "charts",
+            "chart": {
+                "type": "pie"
+            }
+        }
+    }
+});
+
+function getData() {
+    return [{
+            "Name": "Cool Lime Starbucks Refreshers™ Beverage",
+            "Calories": 45,
+            "Fat (g)": 0,
+            "Carb. (g)": 11,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Ombré Pink Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Pink Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Strawberry Acai Starbucks Refreshers™ Beverage",
+            "Calories": 80,
+            "Fat (g)": 0,
+            "Carb. (g)": 18,
+            "Fiber (g)": 1,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Very Berry Hibiscus Starbucks Refreshers™ Beverage",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 14,
+            "Fiber (g)": 1,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Violet Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Evolution Fresh™ Cold-Pressed Apple Berry Juice",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Evolution Fresh™ Defense Up",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Evolution Fresh™ Organic Ginger Limeade",
+            "Calories": 110,
+            "Fat (g)": 0,
+            "Carb. (g)": 28,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Iced Coffee",
+            "Calories": 0,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Iced Coffee with Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Espresso Classics - Vanilla Latte",
+            "Calories": 130,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 21,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 65
+        },
+        {
+            "Name": "Iced Espresso Classics - Caffe Mocha",
+            "Calories": 140,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 23,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 90
+        },
+        {
+            "Name": "Iced Espresso Classics - Caramel Macchiato",
+            "Calories": 130,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 21,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 65
+        },
+        {
+            "Name": "Starbucks® Caramel Iced Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Iced Coffee + Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Low Calorie Iced Coffee + Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Vanilla Iced Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Shaken Sweet Tea",
+            "Calories": 80,
+            "Fat (g)": 0,
+            "Carb. (g)": 19,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Berry Blossom White",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 15,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Black Mango",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 38,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Black with Lemon",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Brambleberry",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Giant Peach",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 37,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Iced Passion",
+            "Calories": 70,
+            "Fat (g)": 0,
+            "Carb. (g)": 17,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Lemon Ginger",
+            "Calories": 120,
+            "Fat (g)": 0,
+            "Carb. (g)": 31,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Black Lemonade",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Iced Black Tea",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 15,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Iced Green Tea",
+            "Calories": 120,
+            "Fat (g)": 0,
+            "Carb. (g)": 31,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Plum Pomegranate",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Tazoberry",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 38,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled White Cranberry",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Teavana® Shaken Iced Black Tea",
+            "Calories": 30,
+            "Fat (g)": 0,
+            "Carb. (g)": 8,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Teavana® Shaken Iced Black Tea Lemonade",
+            "Calories": 70,
+            "Fat (g)": 0,
+            "Carb. (g)": 17,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Teavana® Shaken Iced Green Tea",
+            "Calories": 30,
+            "Fat (g)": 0,
+            "Carb. (g)": 8,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Teavana® Shaken Iced Green Tea Lemonade",
+            "Calories": 70,
+            "Fat (g)": 0,
+            "Carb. (g)": 17,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Teavana® Shaken Iced Passion Tango™ Tea",
+            "Calories": 30,
+            "Fat (g)": 0,
+            "Carb. (g)": 8,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Teavana® Shaken Iced Passion Tango™ Tea Lemonade",
+            "Calories": 90,
+            "Fat (g)": 0,
+            "Carb. (g)": 24,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Teavana® Shaken Iced Peach Green Tea",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 15,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Iced Espresso Classics - Vanilla Latte",
+            "Calories": 130,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 21,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 65
+        },
+        {
+            "Name": "Iced Espresso Classics - Caffe Mocha",
+            "Calories": 140,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 23,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 90
+        },
+        {
+            "Name": "Iced Espresso Classics - Caramel Macchiato",
+            "Calories": 130,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 21,
+            "Fiber (g)": 0,
+            "Protein": 5,
+            "Sodium": 65
+        },
+        {
+            "Name": "Iced Espresso Classics - Skinny Caramel Macchiato",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Espresso Classics - Skinny Vanilla Latte",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy Mexican Mocha",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy Mocha Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy Vanilla Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy White Chocolate Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Energy+Cinnamon Dolce Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Espresso Cubano",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Espresso Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Espresso Salted Caramel Cream",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Light Espresso Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® Protein Caramel",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Refreshers™ Raspberry Pomegranate",
+            "Calories": 90,
+            "Fat (g)": 0,
+            "Carb. (g)": 27,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Starbucks Refreshers™ Strawberry Lemonade",
+            "Calories": 90,
+            "Fat (g)": 0,
+            "Carb. (g)": 27,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Starbucks® Bottled Caramel Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Coffee Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Cold Brew Black, Unsweetened",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Cold Brew Cocoa and Honey with Cream",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Dulce de Leche Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Mocha Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Mocha Light Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled S'mores Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Vanilla Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Bottled Vanilla Light Frappuccino® Coffee Drink",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Caramel Iced Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Doubleshot Protein Dark Chocolate",
+            "Calories": 210,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 33,
+            "Fiber (g)": 2,
+            "Protein": 20,
+            "Sodium": 115
+        },
+        {
+            "Name": "Starbucks® Doubleshot Protein Vanilla",
+            "Calories": 200,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 34,
+            "Fiber (g)": 2,
+            "Protein": 20,
+            "Sodium": 120
+        },
+        {
+            "Name": "Starbucks® Iced Coffee + Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Iced Coffee Caramel",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 13,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 0
+        },
+        {
+            "Name": "Starbucks® Iced Coffee Light Sweetened",
+            "Calories": 50,
+            "Fat (g)": 0,
+            "Carb. (g)": 11,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 0
+        },
+        {
+            "Name": "Starbucks® Iced Coffee Unsweetened",
+            "Calories": 10,
+            "Fat (g)": 0,
+            "Carb. (g)": 2,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 0
+        },
+        {
+            "Name": "Starbucks® Low Calorie Iced Coffee + Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Refreshers™ - Black Cherry Limeade with Coconut Water",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks® Vanilla Iced Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Tazo® Bottled Berry Blossom White",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 15,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Black Mango",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 38,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Black with Lemon",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Brambleberry",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Giant Peach",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 37,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled Iced Passion",
+            "Calories": 70,
+            "Fat (g)": 0,
+            "Carb. (g)": 17,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Lemon Ginger",
+            "Calories": 120,
+            "Fat (g)": 0,
+            "Carb. (g)": 31,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Black Lemonade",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Iced Black Tea",
+            "Calories": 60,
+            "Fat (g)": 0,
+            "Carb. (g)": 15,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Organic Iced Green Tea",
+            "Calories": 120,
+            "Fat (g)": 0,
+            "Carb. (g)": 31,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Plum Pomegranate",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Tazo® Bottled Tazoberry",
+            "Calories": 150,
+            "Fat (g)": 0,
+            "Carb. (g)": 38,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Tazo® Bottled White Cranberry",
+            "Calories": 140,
+            "Fat (g)": 0,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Teavana® Mango Black Tea",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Teavana® Passion Tango® Herbal Tea",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Teavana® Peach Green Tea",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "White Chocolate Mocha Bottled Frappuccino",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Blonde Roast",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 10
+        },
+        {
+            "Name": "Caffè Misto",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Clover® Brewed Coffee",
+            "Calories": 10,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 10
+        },
+        {
+            "Name": "Coffee Traveler",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Decaf Pike Place® Roast",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 10
+        },
+        {
+            "Name": "Featured Dark Roast",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 10
+        },
+        {
+            "Name": "Iced Coffee",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 5
+        },
+        {
+            "Name": "Iced Coffee with Milk",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Nariño 70 Cold Brew",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 15
+        },
+        {
+            "Name": "Nariño 70 Cold Brew with Milk",
+            "Calories": 0,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 0
+        },
+        {
+            "Name": "Nitro Cold Brew",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 0,
+            "Sodium": 10
+        },
+        {
+            "Name": "Nitro Cold Brew with Sweet Cream",
+            "Calories": 70,
+            "Fat (g)": 5,
+            "Carb. (g)": 5,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 20
+        },
+        {
+            "Name": "Pike Place® Roast",
+            "Calories": 5,
+            "Fat (g)": 0,
+            "Carb. (g)": 0,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 10
+        },
+        {
+            "Name": "Toasted Coconut Cold Brew",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Vanilla Sweet Cream Cold Brew",
+            "Calories": 110,
+            "Fat (g)": 6,
+            "Carb. (g)": 14,
+            "Fiber (g)": 0,
+            "Protein": 1,
+            "Sodium": 25
+        },
+        {
+            "Name": "Hot Chocolate",
+            "Calories": 320,
+            "Fat (g)": 9,
+            "Carb. (g)": 47,
+            "Fiber (g)": 4,
+            "Protein": 14,
+            "Sodium": 160
+        },
+        {
+            "Name": "Starbucks® Signature Hot Chocolate",
+            "Calories": 430,
+            "Fat (g)": 26,
+            "Carb. (g)": 45,
+            "Fiber (g)": 5,
+            "Protein": 12,
+            "Sodium": 115
+        },
+        {
+            "Name": "Caffè Americano",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Caffè Latte",
+            "Calories": 190,
+            "Fat (g)": 7,
+            "Carb. (g)": 19,
+            "Fiber (g)": 0,
+            "Protein": 13,
+            "Sodium": 170
+        },
+        {
+            "Name": "Caffè Mocha",
+            "Calories": 290,
+            "Fat (g)": 8,
+            "Carb. (g)": 42,
+            "Fiber (g)": 4,
+            "Protein": 13,
+            "Sodium": 140
+        },
+        {
+            "Name": "Cappuccino",
+            "Calories": 120,
+            "Fat (g)": 4,
+            "Carb. (g)": 12,
+            "Fiber (g)": 0,
+            "Protein": 8,
+            "Sodium": 100
+        },
+        {
+            "Name": "Caramel Macchiato",
+            "Calories": 250,
+            "Fat (g)": 7,
+            "Carb. (g)": 35,
+            "Fiber (g)": 0,
+            "Protein": 10,
+            "Sodium": 150
+        },
+        {
+            "Name": "Cascara Coconutmilk Latte",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Cinnamon Dolce Latte",
+            "Calories": 260,
+            "Fat (g)": 6,
+            "Carb. (g)": 40,
+            "Fiber (g)": 0,
+            "Protein": 11,
+            "Sodium": 150
+        },
+        {
+            "Name": "Coconutmilk Mocha Macchiato",
+            "Calories": 250,
+            "Fat (g)": 9,
+            "Carb. (g)": 32,
+            "Fiber (g)": 0,
+            "Protein": 12,
+            "Sodium": 180
+        },
+        {
+            "Name": "Espresso",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Espresso Con Panna",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Espresso Macchiato",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Flat White",
+            "Calories": 180,
+            "Fat (g)": 7,
+            "Carb. (g)": 18,
+            "Fiber (g)": 0,
+            "Protein": 12,
+            "Sodium": 160
+        },
+        {
+            "Name": "Iced Caffè Americano",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Caffè Latte",
+            "Calories": 130,
+            "Fat (g)": 4.5,
+            "Carb. (g)": 13,
+            "Fiber (g)": 0,
+            "Protein": 8,
+            "Sodium": 115
+        },
+        {
+            "Name": "Iced Caffè Mocha",
+            "Calories": 230,
+            "Fat (g)": 6,
+            "Carb. (g)": 36,
+            "Fiber (g)": 4,
+            "Protein": 9,
+            "Sodium": 90
+        },
+        {
+            "Name": "Iced Caramel Macchiato",
+            "Calories": 250,
+            "Fat (g)": 7,
+            "Carb. (g)": 37,
+            "Fiber (g)": 0,
+            "Protein": 10,
+            "Sodium": 150
+        },
+        {
+            "Name": "Iced Cascara Coconutmilk Latte",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Cinnamon Dolce Latte",
+            "Calories": 200,
+            "Fat (g)": 4,
+            "Carb. (g)": 34,
+            "Fiber (g)": 0,
+            "Protein": 7,
+            "Sodium": 95
+        },
+        {
+            "Name": "Iced Coconutmilk Mocha Macchiato",
+            "Calories": 260,
+            "Fat (g)": 9,
+            "Carb. (g)": 34,
+            "Fiber (g)": 0,
+            "Protein": 11,
+            "Sodium": 180
+        },
+        {
+            "Name": "Iced Skinny Cinnamon Dolce Latte",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Skinny Mocha",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Iced Vanilla Latte",
+            "Calories": 190,
+            "Fat (g)": 4,
+            "Carb. (g)": 30,
+            "Fiber (g)": 0,
+            "Protein": 7,
+            "Sodium": 100
+        },
+        {
+            "Name": "Iced White Chocolate Mocha",
+            "Calories": 300,
+            "Fat (g)": 8,
+            "Carb. (g)": 47,
+            "Fiber (g)": 0,
+            "Protein": 10,
+            "Sodium": 190
+        },
+        {
+            "Name": "Latte Macchiato",
+            "Calories": 190,
+            "Fat (g)": 7,
+            "Carb. (g)": 19,
+            "Fiber (g)": 0,
+            "Protein": 12,
+            "Sodium": 160
+        },
+        {
+            "Name": "Latte Macchiato",
+            "Calories": 190,
+            "Fat (g)": 7,
+            "Carb. (g)": 19,
+            "Fiber (g)": 0,
+            "Protein": 12,
+            "Sodium": 160
+        },
+        {
+            "Name": "Skinny Mocha",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Starbucks Doubleshot® on Ice Beverage",
+            "Calories": 45,
+            "Fat (g)": 1,
+            "Carb. (g)": 5,
+            "Fiber (g)": 0,
+            "Protein": 3,
+            "Sodium": 40
+        },
+        {
+            "Name": "Vanilla Latte",
+            "Calories": 250,
+            "Fat (g)": 6,
+            "Carb. (g)": 37,
+            "Fiber (g)": 0,
+            "Protein": 12,
+            "Sodium": 150
+        },
+        {
+            "Name": "White Chocolate Mocha",
+            "Calories": 360,
+            "Fat (g)": 11,
+            "Carb. (g)": 53,
+            "Fiber (g)": 0,
+            "Protein": 14,
+            "Sodium": 240
+        },
+        {
+            "Name": "Caffè Vanilla Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Caffè Vanilla Light Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Caramel Cocoa Cluster Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Caramel Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Caramel Light Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Chai Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Cinnamon Dolce Frappuccino® Blended Coffee",
+            "Calories": 350,
+            "Fat (g)": 4.5,
+            "Carb. (g)": 64,
+            "Fiber (g)": 0,
+            "Protein": 15,
+            "Sodium": 0
+        },
+        {
+            "Name": "Cinnamon Dolce Light Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Cinnamon Roll Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Coffee Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Coffee Light Frappuccino® Blended Coffee",
+            "Calories": 110,
+            "Fat (g)": 0,
+            "Carb. (g)": 24,
+            "Fiber (g)": 0,
+            "Protein": 3,
+            "Sodium": 200
+        },
+        {
+            "Name": "Cupcake Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Green Tea Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Java Chip Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Java Chip Light Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Lemon Bar Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Midnight Mint Mocha Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Midnight Mint Mocha Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Mocha Frappuccino® Blended Coffee",
+            "Calories": 280,
+            "Fat (g)": 2.5,
+            "Carb. (g)": 60,
+            "Fiber (g)": 2,
+            "Protein": 4,
+            "Sodium": 220
+        },
+        {
+            "Name": "Mocha Light Frappuccino® Blended Coffee",
+            "Calories": 140,
+            "Fat (g)": 0.5,
+            "Carb. (g)": 28,
+            "Fiber (g)": 1,
+            "Protein": 4,
+            "Sodium": 180
+        },
+        {
+            "Name": "Oprah Cinnamon Chai Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Red Velvet Cake Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "S'mores Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "S'mores Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Strawberries & Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "The Pokémon™ GO Frappuccino® Blended Beverage",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Vanilla Bean Crème Frappuccino® Blended Crème",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "White Chocolate Mocha Frappuccino® Blended Coffee",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Cinnamon Dolce Crème",
+            "Calories": 200,
+            "Fat (g)": 6,
+            "Carb. (g)": 28,
+            "Fiber (g)": 0,
+            "Protein": 10,
+            "Sodium": 135
+        },
+        {
+            "Name": "Organic Chocolate Milk Box",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Steamed Apple Juice",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Vanilla Crème",
+            "Calories": 200,
+            "Fat (g)": 6,
+            "Carb. (g)": 28,
+            "Fiber (g)": 0,
+            "Protein": 10,
+            "Sodium": 135
+        },
+        {
+            "Name": "Chocolate Smoothie",
+            "Calories": 320,
+            "Fat (g)": 5,
+            "Carb. (g)": 53,
+            "Fiber (g)": 8,
+            "Protein": 20,
+            "Sodium": 170
+        },
+        {
+            "Name": "Strawberry Smoothie",
+            "Calories": 300,
+            "Fat (g)": 2,
+            "Carb. (g)": 60,
+            "Fiber (g)": 7,
+            "Protein": 16,
+            "Sodium": 130
+        },
+        {
+            "Name": "Ginger Ale",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Lemon Ale",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        },
+        {
+            "Name": "Orange Cream Soda",
+            "Calories": "-",
+            "Fat (g)": "-",
+            "Carb. (g)": "-",
+            "Fiber (g)": "-",
+            "Protein": "-",
+            "Sodium": "-"
+        }
+    ];
+}
+</script>
+</body>
+</html>
